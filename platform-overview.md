@@ -1,42 +1,80 @@
-title: "Introducing the OCaml Platform, the natural evolution of OPAM"
+title: "Asssembling the OCaml Platform around OPAM"
 authors: "Amir Chaudhry" {"http://amirchaudhry.com"}
 date: "2014-08-11"
 --BODY--
 
-The OCaml Platform combines the OCaml compiler toolchain with a coherent
-set of tools for build, documentation, testing and IDE integration. The
-project is a *collaborative* effort across the OCaml community, tied
-together by the OCaml Labs group in Cambridge and with other major
-contributors including OCamlPro. The requirements of the Platform are being
-guided by the industrial OCaml Consortium (primarily Jane Street and
-Citrix).
+It has only been 18 months since the first release of OPAM, but it is already
+difficult to remember a time when we did OCaml development without it.  OPAM
+has helped bring together much of the open-source code in the OCaml community
+under a single umbrella, making it easier to discover, depend on, and maintain
+OCaml applications and libraries.  We have seen steady growth in the number
+of new packages, updates to existing code, and a diverse group of contributors.
 
-The OCaml Platform is the natural evolution of OPAM. Specifically, OPAM
-forms the substrate on which components can be built and it naturally
-facilitates a convenient development workflow. Since OPAM underpins the OCaml
-Platform efforts, we will use [opam.ocaml.org][] to chart its
-progress — hence
-this new blog. Over the next three weeks we will have a series of posts that
-cover the new features in OPAM 1.2, describe the additional components, and
-highlight some of the relevant work from the community that supports these
-integrative efforts.
+![Growth of OPAM packages](/images/opam-package-growth.jpg)
 
-The first item to announce is the **beta release of OPAM 1.2**.
-This release provides a number of new features, which we will cover in a
-separate post.
-In the meantime, please do read the [release notes][opam-12]!
+OPAM has turned out to be more than just another package manager. It is also
+increasingly central to the demanding workflow of industrial OCaml development,
+since it supports multiple simultaneous (patched) compiler installations,
+sophisticated package version constraints that ensure statically-typed code can
+be recompiled without conflict, and a distributed workflow that integrates
+seamlessly with Git, Mercurial or Darcs version control.  OPAM tracks multiple
+revisions of a single package, thereby letting packages rely on older
+interfaces if they need to for long-term support. It also supports multiple
+package repositories, letting users blend the global stable package set with
+their internal revisions, or building completely isolated package universes for
+closed-source products.
 
-In the rest of this post we will give an overview of what the Platform is
-(and is not), briefly cover some of the major elements and then describe an
-example workflow that the Platform can enable. Later posts in this series
-will go into more depth on each of the components and how they fit together,
-beginning with OPAM. We welcome wider feedback so please do join the
-[Platform mailing list][platform-list] to discuss or comment on these posts.
+Since its initial release, we have been learning from the extensive feedback
+from our users about how they use these features as part of their day-to-day
+workflows.  Larger projects like [XenAPI][], the [Ocsigen][] web suite, and the
+[Mirage OS][] publish OPAM [remotes][] that build their particular software
+suites.  Individual contributors such as [Daniel Buenzli][] or [Markus Mottl][]
+have adopted their own custom workflows for feeding their own library
+collections back to the wider community.  Complex applications such as the
+[Pfff][] static analysis and [Hack][] language from Facebook, the [Frenetic][]
+SDN language and the [Arakoon][] distributed key store have all appeared
+alongside these libraries.
 
+One pleasant side-effect of the growing package database has been the
+contribution of tools from the community that make the day-to-day use of OCaml
+easier.  These include the [utop][] interactive toplevel, the [IOCaml][]
+browser notebook, and the [Merlin][] IDE editor.  While these tools are an
+essential first step, there's still some distance to go to make the OCaml
+development experience feel fully integrated and polished.
+
+Today, we are kicking off the next phase of evolution of OPAM and starting the
+journey towards building an *OCaml Platform* that combines the OCaml compiler
+toolchain with a coherent workflow for build, documentation, testing and IDE
+integration. As always with OPAM, this effort has been a collaborative effort,
+coordinated by the [OCaml Labs][] group in Cambridge and OCamlPro in France.
+The OCaml Platform builds heavily on OPAM, since it forms the substrate that
+pulls together the tools and facilitates a consistent development workflow.
+We've therefore created this blog on [opam.ocaml.org][] to chart its progress,
+announce major milestones, and eventually become a community repository of all
+significant activity.
+
+Major points:
+
+* **OPAM 1.2 beta available**: 
+  Firstly, we're announcing **the availability of the OPAM 1.2 beta**,
+  which includes a number of new features, hundreds of bug fixes, and pretty new
+  colours in the CLI.  We really need your feedback to ensure a polished release,
+  so please do read the [release notes][opam-12] and the [blog announcement][].
+
+* The rest of this post we will give an overview of what the Platform is
+  (and is not), cover some of the major elements and then describe an
+  example workflow that the Platform can enable.
+
+* Later posts in this series in the next couple of weeks will go into more
+  depth on each of the components and how they fit together, beginning with OPAM.
+
+* **Feedback**: If you have questions or comments as you read these posts,
+  then please do join the [platform@lists.ocaml.org][platform-list] and make
+  them known to us.
 
 ## Overall ethos
 
-OCaml Labs has initially taken direction from major industrial users
+We have initially taken direction from major industrial users
 because these groups have a great deal of experience of using the
 language at scale (e.g. millions of lines of code, thousands of
 directories with complicated testing and build requirements as well as
@@ -47,7 +85,7 @@ the problems that such organizations have will ultimately result in a
 large and positive impact on the wider community through significantly
 improved tooling, libraries, and documentation.
 Ensuring that the Platform is viable for industrial users also
-ensures that it (1) has a long-term future and that (2) has the ability
+ensures that it has a long-term future and that it has the ability
 to scale right from beginner through to industrial use-cases.
 A Platform that can scale in this way also has benefits for
 establishing workflows and practices that help every community member.
@@ -69,7 +107,7 @@ operating system.
 ### Creating a modular Platform, based on OPAM
 
 To restate the above, the Platform does not *mandate* the use of
-specific libraries or even tools. In fact, the only pre-requisite is the
+specific libraries or even tools. In fact, the only prerequisite is the
 use of OPAM and OPAM repositories. These repositories can be custom OPAM
 repositories, such as those maintained by Citrix for Xen packages and by
 the Ocsigen team for their packages, as well as the main OPAM
@@ -106,22 +144,11 @@ with the tools we have released so far (e.g. OPAM).
 
 ## OPAM
 
-*More detail about OPAM 1.2 will be available in a post tomorrow but in
-meantime we encourage users to try the newly released beta.
-Instructions are with the [release notes][opam-12].*
-
-![Growth of OPAM packages](/images/opam-pacakge-growth.jpg)
-
-OPAM plays a key role in the tooling for the Platform, by providing a
+OPAM plays a key role in the tooling for the Platform by providing a
 frontend that can control a concurrently installed set of compiler
 versions and package sets. Since its public release, thousands of
 packages and revisions have been added to the central repository, and
-growth continues strongly in 2014 (see Figure above). An important
-feature of OPAM is that it tracks multiple revisions of a single
-package, thereby letting packages rely on older interfaces if they need
-to. It also supports multiple package repositories, letting users blend
-the global stable package set with their internal revisions, or building
-completely isolated package universes.
+growth continues strongly in 2014 (see Figure above).
 
 The [OPAM 1.2 release][opam-12] has been adapted
 to make OPAM easier to package up on
