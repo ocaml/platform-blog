@@ -215,9 +215,10 @@ home-grown one developed at Jane Street, called [Iron][]).
 **Submit Package to an OPAM Repository**: The release
 candidate is then submitted to an OPAM repository. In the case of the
 main OPAM repository this is done as a GitHub pull request.
-This process is automated via a command-line plugin to OPAM that stores
+This process can be automated via a command-line plugin to OPAM that stores
 the user's GitHub login token and creates the pull request to the
 central OPAM repository without having to use the web interface.
+This tool is in development and not yet available.
 
 **Automated Testing**: When a package release is submitted to an OPAM
 repository that repository can initiate automated integration testing. 
