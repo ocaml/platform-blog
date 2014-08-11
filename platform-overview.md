@@ -178,7 +178,7 @@ form of type information and code completion, and by libraries such as
 [Ctypes][], which allows you to glue together OCaml code and C code without
 writing any C.
 
-**Initiate OPAM Package**: In essence, this involves the creation of files
+**Initiate an OPAM Package**: In essence, this involves the creation of files
 and scripts to deal with configuring, building and installing the
 package. Building can be done using whichever tool the developer
 prefers, for example `make`, `ocamlbuild` or `jenga`.
@@ -200,10 +200,10 @@ required data.
 **Push Code to Git**: Once the package release has been
 written and tested locally, it is time to publish a release
 candidate. In our case, we use GitHub as the default
-online site, but the Platform is intended to work with any similar
-Git-style hosting platform in the future.
+online site for sharing code, but the Platform is intended to
+work with any similar Git-style hosting platform.
 (NB: There is a pure [OCaml Git][ocaml-git] implementation now
-available in OPAM, to make manipulating such git repositories easier
+available in OPAM, to make manipulating such git repositories easy
 from within Platform tools.)
 
 **Code Review**: An emergent trend in OPAM packages has been for users
