@@ -9,8 +9,7 @@ has helped bring together much of the open-source code in the OCaml community
 under a single umbrella, making it easier to discover, depend on, and maintain
 OCaml applications and libraries.  We have seen steady growth in the number
 of new packages, updates to existing code, and a diverse group of contributors.
-
-![Growth of OPAM packages](images/opam-package-growth.jpg)
+<a href="http://www.cl.cam.ac.uk/~avsm2/packages.png"><img style="float:right; padding: 5px" src="http://www.cl.cam.ac.uk/~avsm2/packages.png" width="250px" /></a>
 
 OPAM has turned out to be more than just another package manager. It is also
 increasingly central to the demanding workflow of industrial OCaml development,
