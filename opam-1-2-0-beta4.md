@@ -31,6 +31,8 @@ their particular software suites.
 Complex applications such as the [Pfff][] static analysis tool and [Hack][]
 language from Facebook, the [Frenetic][] SDN language and the [Arakoon][]
 distributed key store have all appeared alongside these libraries.
+[Jane Street][janestreet] pushes regular releases of their
+production [Core/Async][http://janestreet.github.io/] suite every couple of weeks.
 
 One pleasant side-effect of the growing package database has been the
 contribution of tools from the community that make the day-to-day use of OCaml
