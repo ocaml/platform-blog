@@ -1,4 +1,4 @@
-title: "Announcing the OPAM 1.2 beta"
+title: "OPAM 1.2.0 public beta released"
 authors: "OCaml Platform Team" {"https://opam.ocaml.org"}
 date: "2014-08-14"
 --BODY--
