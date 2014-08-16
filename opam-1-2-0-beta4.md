@@ -38,7 +38,7 @@ of weeks.
 One pleasant side-effect of the growing package database has been the
 contribution of tools from the community that make the day-to-day use of OCaml
 easier.  These include the [utop][] interactive toplevel, the [IOCaml][]
-browser notebook, and the [Merlin][] IDE editor.  While these tools are an
+browser notebook, and the [Merlin][] IDE extension.  While these tools are an
 essential first step, there's still some distance to go to make the OCaml
 development experience feel fully integrated and polished.
 
