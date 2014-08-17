@@ -9,7 +9,7 @@ Files should be markdown (omd) with a preamble using the following format:
     --BODY--
     ```
 
-Publication is done by the scripts at https://github.com/ocaml/opam.ocaml.org.
+Publication is done by the scripts at https://github.com/ocaml/opam.ocaml.org (a private repo).
 Manually, as user `opam` on the server, you can simply run
 `~/local/bin/update-opam-repo.sh` to update.
 
