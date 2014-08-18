@@ -119,11 +119,12 @@ review tools and testing infrastructure), to provide an up-to-date view about
 the status of existing and submitted packages. These tools are based on
 `opam2web`, which currently generates the site at [opam.ocaml.org][] and will
 enable any organisation to create an accessible web-view into their workflow.
+More detail about how to set these up will follow in a later post.
 
-TODO More detail about this will follow in a later post but for examples of how
+<!-- but for examples of how
 this works in practice, we can examine the package sets for the
 [Mirage OS libraries][mir-opam] and the [Xapi project libraries][xapi-opam],
-as well as the main [OPAM site][opam.ocaml.org].
+as well as the main [OPAM site][opam.ocaml.org]. -->
 
 
 ## OCaml.org
@@ -281,8 +282,8 @@ features in OPAM 1.2. We welcome wider feedback so please do join the
 [opam-lib]: http://opam.ocaml.org/packages/opam-lib/opam-lib.1.1.1/
 [anil-docker]: http://anil.recoil.org/2013/11/15/docker-and-opam.html
 [opam.ocaml.org]: https://opam.ocaml.org
-[mir-opam]: TODO
-[xapi-opam]: TODO
+<!-- [mir-opam]: TODO
+[xapi-opam]: TODO -->
 
 <!-- OCaml.org -->
 
