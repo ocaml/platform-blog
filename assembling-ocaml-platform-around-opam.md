@@ -317,8 +317,7 @@ of automated tools and the OPAM developers.
 
 **Publish Release on an OPAM Repository:** When a package release passes
 testing and review, its release can be finalised and merged into the OPAM
-repository. Finalising a release is automated using the OPAM command-line and
-the web-view can be automatically generated.
+repository. Finalising a release is automated using the OPAM command-line.
 
 
 ### Distribute
