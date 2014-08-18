@@ -149,8 +149,98 @@ more widely in production.  Remember also that the individual tools that we
 discuss can be swapped out with others in many cases, depending on the
 developer's preference.
 
-<!-- TODO: INSERT LEO'S WORKFLOW DIAGRAM -->
-<!-- https://github.com/lpw25/platform/blob/master/blog/table.html -->
+<div>
+    <style type="text/css">
+    .tg  {border-collapse:separate;border-spacing:0;border: 0}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border: 0}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border: 0}
+    .tg .tg-yellow{background-color:#fff6ca}
+    .tg .tg-purple{background-color:#e6e7fd}
+    .tg .tg-green{background-color:#dff9df}
+    .tg .tg-title{font-weight:bold;font-size:16pt;text-align:center}
+    .tg .tg-downarrow{font-weight:bold;font-size:32px;text-align:center;padding:0}
+    .tg .tg-rightarrow{font-weight:bold;font-size:32px;text-align:center}
+    .tg .tg-box{background-color:#ffffff;text-align:center;border:1px solid black;border-radius:10px}
+    </style>
+    <table class="tg" style="undefined;table-layout: fixed; width: 525px">
+    <colgroup>
+    <col class="tg-yellow" style="width: 20px">
+    <col class="tg-yellow" style="width: 105px">
+    <col class="tg-yellow" style="width: 20px">
+    <col style="width: 40px">
+    <col class="tg-purple" style="width: 20px">
+    <col class="tg-purple" style="width: 105px">
+    <col class="tg-purple" style="width: 20px">
+    <col style="width: 40px">
+    <col class="tg-green" style="width: 20px">
+    <col class="tg-green" style="width: 105px">
+    <col class="tg-green" style="width: 20px">
+    </colgroup>
+      <tr>
+        <th rowspan="11"></th>
+        <th class="tg-title">Develop</th>
+        <th rowspan="11"></th>
+        <th class="tg-rightarrow" rowspan="11">&rArr;</th>
+        <th rowspan="11"></th>
+        <th class="tg-title">Publish</th>
+        <th rowspan="11"></th>
+        <th class="tg-rightarrow" rowspan="11">&rArr;</th>
+        <th rowspan="11"></th>
+        <th class="tg-title">Distribute</th>
+        <th rowspan="11"></th>
+      </tr>
+      <tr>
+        <td class="tg-box">Write source code<br></td>
+        <td class="tg-box">Create release candidate<br></td>
+        <td class="tg-box"><br>Source release<br><br></td>
+      </tr>
+      <tr>
+        <td class="tg-downarrow">&darr;</td>
+        <td class="tg-downarrow">&darr;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="tg-box">Assemble an OPAM package</td>
+        <td class="tg-box">Submit release to an OPAM repository</td>
+        <td class="tg-box"><br>Online documentation<br><br></td>
+      </tr>
+      <tr>
+        <td class="tg-downarrow">&darr;</td>
+        <td class="tg-downarrow">&darr;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="tg-box">Local Install and Testing</td>
+        <td class="tg-box"><br>Automated Testing<br><br></td>
+        <td class="tg-box">Multi-arch Binary Releases</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="tg-downarrow">&darr;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="tg-box">Code review<br></td>
+        <td><br><br><br><br></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="tg-downarrow">&darr;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="tg-box">Publish release on an OPAM repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+</div>
 
 ### Develop
 
