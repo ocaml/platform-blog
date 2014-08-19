@@ -6,12 +6,12 @@ date: "2014-08-19"
 <img style="float:left; padding: 5px" src="camel-pin.jpg" width="200px"></img>
 
 Most package managers support some _pin_ functionality to ensure that a given
-package remain at a particular version without being upgraded.
-The stable OPAM 1.1 already supports this by allowing any existing package to be
+package remains at a particular version without being upgraded.
+The stable OPAM 1.1 already supported this by allowing any existing package to be
 pinned to a _target_, which could be a specific released version, a local filesystem
 path, or a remote version-controlled repository.
 
-However, the OPAM 1.1 pinning workflow only let you pin packages that _already exist_ in your OPAM
+However, the OPAM 1.1 pinning workflow only lets you pin packages that _already exist_ in your OPAM
 repositories. To declare a new package, you had to go through creating a
 local repository, registering it in OPAM, and adding your package definition there.
 That workflow, while reasonably clear, required the user to know about the repository
@@ -20,13 +20,13 @@ writing a package. Besides, you were on your own for writing the package
 definition, and the edit-test loop wasn't as friendly as it could have been.
 
 A natural, simpler workflow emerged from allowing users to _pin_ new package
-names that don't yet exist in the repository:
+names that don't yet exist in an OPAM repository:
 
-* choose a name for your new package
-* `opam pin add` in the development source tree
-* the package is created on-the-fly and registered locally.
+1. choose a name for your new package
+2. `opam pin add` in the development source tree
+3. the package is created on-the-fly and registered locally.
 
-To make it even easier, OPAM can now interactively help you in writing the
+To make it even easier, OPAM can now interactively help you write the
 package definition, and you can test your updates with a single command.
 This blog post explains this new OPAM 1.2 functionality in more detail;
 you may also want to check out the new [Packaging tutorial][doc-packaging]
@@ -137,7 +137,7 @@ that are dependent on `ocp-reloc` as well, if any.
 So far, we've been dealing with the metadata locally used by your OPAM
 installation, but you'll probably want to share this among developers of your
 project even if you're not releasing anything yet. OPAM takes care of this
-by prompting you to save the `opam` file back to your source directory, where
+by prompting you to save the `opam` file back to your source tree, where
 you can commit it directly into your code repository.
 
 ```
@@ -166,15 +166,15 @@ opam pin add ocp-reloc/
 
 Even specifying the package name is optional since this is documented in
 `ocp-reloc/opam`. They can start hacking, and if needed use `opam pin edit` to
-amend the opam file too. No need for a repository, no need to share more than a
+amend the opam file too. No need for a repository, no need to share anything more than a
 versioned `opam` file within your project.
 
 #### Cloning already existing packages
 
 We have been focusing on an unreleased package, but the same 
-functionality is also of great help to handle existing packages, whether you
+functionality is also of great help in handling existing packages, whether you
 need to quickly hack into them or are just curious.  Let's consider how to
-modify the `omd` Markdown library.
+modify the [`omd` Markdown library][omd-www].
 
 ```
 opam source omd --pin
@@ -203,6 +203,11 @@ The idea is to have:
   be updated independently without making a new release of the source code.
 
 How to get from the former to the latter will be the subject of another post!
+In the meantime, all users of the [beta][opam-beta] are welcome to share their
+experience and thoughts on the new workflow on the [bug tracker][opam-bugs].
 
 [doc-packaging]: https://opam.ocaml.org/doc/1.2/Packaging.html "OPAM 1.2 doc preview, packaging guide"
 [ocp-reloc]: https://github.com/OCamlPro/ocp-reloc "ocp-reloc repo on Github"
+[omd-www]: https://github.com/ocaml/omd "OMD page on Github"
+[opam-beta]: ../opam-1-2-0-beta4 "OPAM 1.2.0 beta4 announcement"
+[opam-bugs]: https://github.com/ocaml/opam/issues "OPAM bug-tracker on Github"
