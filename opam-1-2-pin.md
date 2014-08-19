@@ -7,7 +7,7 @@ date: "2014-08-19"
 
 Most package managers support some _pin_ functionality to ensure that a given
 package remain at a particular version without being upgraded.
-The stable OPAM 1.1 already supports this by allowing any existing package to be
+The stable OPAM 1.1 already supported this by allowing any existing package to be
 pinned to a _target_, which could be a specific released version, a local filesystem
 path, or a remote version-controlled repository.
 
