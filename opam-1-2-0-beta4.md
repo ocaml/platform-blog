@@ -194,6 +194,7 @@ newer releases of OPAM directly from OPAM if you choose so.
 ### Yet more control for the packagers
 
 Packaging new libraries has been made as straight-forward as possible.
+Here is a quick overview, you may also want to check the [OPAM 1.2 pinning][opam-1-2-pin] post.
 
 ```
 opam pin add <name> <sourcedir>
@@ -284,3 +285,4 @@ benefit from the new features.
 [opam12-doc]: http://opam.ocaml.org/1.2/doc/Basic_Usage.html "Preview of documentation for OPAM 1.2"
 [opam-admin-scripts]: https://github.com/ocaml/opam/tree/master/admin-scripts "Opam admin scripts directory on Github"
 [opam200]: https://github.com/ocaml/opam/issues/200
+[opam-1-2-pin]: ../opam-1-2-pin "Blog post on OPAM Pin"
