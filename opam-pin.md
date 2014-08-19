@@ -11,39 +11,39 @@ The stable OPAM 1.1 already supports this by allowing any existing package to be
 pinned to a _target_, which could be a specific released version, a local filesystem
 path, or a remote version-controlled repository.
 
-The OPAM 1.1 pinning workflow only let you pin packages that _already exist_ in your OPAM
-repositories though. To declare a new package, you had to go through creating a
-local repository, register it in OPAM, and add your package definition there.
-While clear enough, that workflow required the user to know about the repository
-format and the configuration of an internal repository in OPAM before getting to
-writing a simple package. Besides, you were on your own for writing the package
-definition, and the edit-test loop wasn't as friendly as it could have.
+However, the OPAM 1.1 pinning workflow only let you pin packages that _already exist_ in your OPAM
+repositories. To declare a new package, you had to go through creating a
+local repository, registering it in OPAM, and adding your package definition there.
+That workflow, while reasonably clear, required the user to know about the repository
+format and the configuration of an internal repository in OPAM before actually getting to
+writing a package. Besides, you were on your own for writing the package
+definition, and the edit-test loop wasn't as friendly as it could have been.
 
 A natural, simpler workflow emerged from allowing users to _pin_ new package
 names that don't yet exist in the repository:
 
-* choose a name for your new package package
+* choose a name for your new package
 * `opam pin add` in the development source tree
 * the package is created on-the-fly and registered locally.
 
 To make it even easier, OPAM can now interactively help you in writing the
 package definition, and you can test your updates with a single command.
-This blog post explains this new OPAM 1.2 functionality in more detail,
-and you may also want to check out the new [Packaging tutorial][doc-packaging]
+This blog post explains this new OPAM 1.2 functionality in more detail;
+you may also want to check out the new [Packaging tutorial][doc-packaging]
 relying on this workflow.
 
 
 ### From source to package
 
-For this post I found a tiny tool that I wrote some time ago and
-never got released: [ocp-reloc][].  It's a simple binary that fixes up the
-headers of OCaml bytecode files to make them relocatable, and would like
-to release it into the public OPAM repository.
+For illustration purposes in this post I'll use a tiny tool that I wrote some time ago and
+never released: [ocp-reloc][].  It's a simple binary that fixes up the
+headers of OCaml bytecode files to make them relocatable, which I'd like
+to release into the public OPAM repository.
 
 #### "opam pin add"
 
-The command `opam pin add <name> <target>` will pin package `<name>` to
-`<target>`. Now what we're interested in is pinning the `ocp-reloc` package
+The command `opam pin add <name> <target>` pins package `<name>` to
+`<target>`. We're interested in pinning the `ocp-reloc` package
 name to the project's source directory.
 
 ```
@@ -52,7 +52,7 @@ opam pin add ocp-reloc .
 ```
 
 If `ocp-reloc` were an existing package, the metadata would be fetched from
-the package description in the OPAM repositories. Since it doesn't exist yet,
+the package description in the OPAM repositories. Since the package doesn't yet exist,
 OPAM 1.2 will instead prompt for on-the-fly creation:
 
 ```
@@ -124,7 +124,7 @@ it does.
 #### Package Updates
 
 How do you keep working on your project as you edit the source code, now that
-you are installing through OPAM? This is as simple as :
+you are installing through OPAM? This is as simple as:
 
 ```
 opam upgrade ocp-reloc
@@ -166,12 +166,12 @@ opam pin add ocp-reloc/
 Even specifying the package name is optional since this is documented in
 `ocp-reloc/opam`. They can start hacking, and if needed use `opam pin edit` to
 amend the opam file too. No need for a repository, no need to share more than a
-versionned `opam` file within your project.
+versioned `opam` file within your project.
 
 #### Cloning already existing packages
 
 We have been focusing on an unreleased package, but the same 
-functionality is also of great help to handle existing packages, wether you
+functionality is also of great help to handle existing packages, whether you
 need to quickly hack into them or are just curious.  Let's consider how to
 modify the `omd` Markdown library.
 
@@ -192,16 +192,16 @@ so that you notice any issues right away.
 > this in your metadata, you can directly pin to the upstream repository via
 > `opam source --dev-repo --pin`.
 
-If the upstream repository contains an `opam` file, it will be picked up
+If the upstream repository for the package contains an `opam` file, that file will be picked up
 in preference to the one from the OPAM repository as soon as you pin the package.
 The idea is to have:
 
 * a _development_ `opam` file that is versioned along with your source code
- (and thus accurately track the latest dependencies for your package).
+ (and thus accurately tracks the latest dependencies for your package).
 * a _release_ `opam` file that is published on the OPAM repository and can
   be updated independently without making a new release of the source code.
 
-How to get from the former to the latter will be the subject of another post !
+How to get from the former to the latter will be the subject of another post!
 
 [doc-packaging]: https://opam.ocaml.org/doc/1.2/Packaging.html "OPAM 1.2 doc preview, packaging guide"
 [ocp-reloc]: https://github.com/OCamlPro/ocp-reloc "ocp-reloc repo on Github"
