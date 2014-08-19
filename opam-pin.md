@@ -35,21 +35,25 @@ relying on this workflow.
 
 ### From source to package
 
+For this post I found a tiny tool that I wrote some time ago and
+never got released: [ocp-reloc][].  It's a simple binary that fixes up the
+headers of OCaml bytecode files to make them relocatable, and would like
+to release it into the public OPAM repository.
+
 #### "opam pin add"
 
 The command `opam pin add <name> <target>` will pin package `<name>` to
-`<target>`. Now what we're interested in is pinning to a project's source
-directory. For this post I found a tiny tool that I wrote some time ago and
-never got released: [ocp-reloc][]
+`<target>`. Now what we're interested in is pinning the `ocp-reloc` package
+name to the project's source directory.
 
 ```
 cd src/ocp-reloc
 opam pin add ocp-reloc .
 ```
 
-Now if `ocp-reloc` was an existing package, the metadata would be fetched from
-the repositories. Here it doesn't exist, and OPAM will instead ask for
-on-the-fly creation :
+If `ocp-reloc` were an existing package, the metadata would be fetched from
+the package description in the OPAM repositories. Since it doesn't exist yet,
+OPAM 1.2 will instead prompt for on-the-fly creation:
 
 ```
 Package ocp-reloc does not exist, create as a NEW package ? [Y/n] y
@@ -57,17 +61,17 @@ ocp-reloc is now path-pinned to ~/src/ocp-reloc
 ```
 
 > NOTE: if you are using __beta4__, you may get a _version-control_-pin instead,
-> because we added auto-detection of version-controlled repos. It turned out to
+> because we added auto-detection of version-controlled repos. This turned out to
 > be confusing, because your changes wouldn't be reflected until you commit, so
-> this has been reverted in favor of a warning. Use `--kind path` to make sure
-> you get a _path_-pin.
+> this has been reverted in favor of a warning. Add the `--kind path` option to
+> make sure > you get a _path_-pin.
 
 
-#### Template
+#### OPAM Package Template
 
 Now your package still needs some kind of definition for OPAM to acknowledge it;
 that's where templates kick in, the above triggering an editor with a pre-filled
-`opam` file that you will just have to complete. This not only saves time in
+`opam` file that you just have to complete. This not only saves time in
 looking up the documentation, it also helps getting consistent package
 definitions, reduces errors, and promotes filling in optional but recommended
 fields (homepage, etc.).
@@ -90,9 +94,9 @@ remove: ["ocamlfind" "remove" "ocp-reloc"]
 depends: "ocamlfind" {build}
 ```
 
-After filling this with some details, most importantly the dependencies and
-build instructions, I can just save and exit; in case of syntax errors, I can
-edit again right away :
+After filling this with some details (most importantly the dependencies and
+build instructions), I can just save and exit.  Much like other system tools like
+`visudo`, it checks for syntax errors immediately:
 
 ```
 [ERROR] File "/home/lg/.opam/4.01.0/overlay/ocp-reloc/opam", line 13, character 35-36: '.' is not a valid token.
@@ -101,8 +105,8 @@ Errors in /home/lg/.opam/4.01.0/overlay/ocp-reloc/opam, retry editing ? [Y/n]
 
 #### Installation
 
-And then you probably want to try your package right away, so OPAM's default
-action is to try and install (unless you specified `-n`) :
+You probably want to try your brand new package package right away, so
+OPAM's default action is to try and install it (unless you specified `-n`):
 
 ```
 ocp-reloc needs to be installed.
@@ -117,33 +121,45 @@ I usually don't get it working the first time around, but `opam pin edit
 ocp-reloc` and `opam install ocp-reloc -v` can be used to edit and retry until
 it does.
 
-#### Updates
+#### Package Updates
 
-How do you keep working on your project, now that you are installing through
-OPAM ? This is as simple as :
+How do you keep working on your project as you edit the source code, now that
+you are installing through OPAM? This is as simple as :
 
 ```
 opam upgrade ocp-reloc
 ```
 
-Which will pick up changes and reinstall, if any.
+This will pick up changes from your source repository and reinstall any packages
+that are dependent on `ocp-reloc` as well, if any.
 
-While we were above concerned with the metadata locally used by your OPAM
-installation, you'll probably want to share this among developers even if
-you're not releasing anything yet. Actually, by now you would already have been
-prompted by OPAM to save the `opam` file back to your source directory. Adding
-it to your source will come in handy.
+So far, we've been dealing with the metadata locally used by your OPAM
+installation, but you'll probably want to share this among developers of your
+project even if you're not releasing anything yet. OPAM takes care of this
+by prompting you to save the `opam` file back to your source directory, where
+you can commit it directly into your code repository.
 
+```
+cd src/ocp-reloc
+git add opam
+git commit -m 'Add OPAM metadata'
+git push
+```
 
-### From package to package
+### Publishing your New Package
+
+The above information is sufficient to use OPAM locally to integrate new code
+into an OPAM installation.  Let's look at how other developers can share this
+metadata.
 
 #### Picking up your development package
 
-Now if another developer wants to pick up `ocp-reloc`, they can directly use
-your existing metadata by issuing:
+If another developer wants to pick up `ocp-reloc`, they can directly use
+your existing metadata by cloning a copy of your repository and issuing their
+own pin.
 
 ```
-git clone git@github.com:OCamlPro/ocp-reloc.git
+git clone git://github.com/OCamlPro/ocp-reloc.git
 opam pin add ocp-reloc/
 ```
 
@@ -152,11 +168,12 @@ Even specifying the package name is optional since this is documented in
 amend the opam file too. No need for a repository, no need to share more than a
 versionned `opam` file within your project.
 
-#### Now what about already existing packages ?
+#### Cloning already existing packages
 
-We have been focusing until now on an unreleased package, but these
-functionalities are yet of great help to handle existing packages, wether you
-need to quickly hack into them or are just curious.
+We have been focusing on an unreleased package, but the same 
+functionality is also of great help to handle existing packages, wether you
+need to quickly hack into them or are just curious.  Let's consider how to
+modify the `omd` Markdown library.
 
 ```
 opam source omd --pin
@@ -165,20 +182,26 @@ cd omd.0.9.7
 opam upgrade omd
 ```
 
-This will also take care of recompiling any installed packages dependent on
-`omd` using your patched version, so that you notice any issues right away. Once
-the OPAM repository has been updated with the new field `dev-repo:`, you will
-also be able to directly pin to the upstream with `opam source --dev-repo
---pin`.
+The new `opam source` command will clone the source code of the library you
+specify, and the `--pin` option will also pin it locally to ensure it is used
+in preference to all other versions.  This will also take care of recompiling
+any installed packages that are dependent on `omd` using your patched version
+so that you notice any issues right away.
 
-And if the upstream contains an `opam` file, as above, it will be picked up
-rather than the one from the OPAM repository as soon as you pin : the idea is to
-have one _development_ `opam` file that is versionned along your source, can get
-broken and evolve quickly ; and a _release_ `opam` file that is on the OPAM
-repository, and can be updated independently without making a new release.
+> There's a new OPAM field available in 1.2 called `dev-repo`.  If you specify
+> this in your metadata, you can directly pin to the upstream repository via
+> `opam source --dev-repo --pin`.
 
-How to get from the former to the latter will be the object of another post !
+If the upstream repository contains an `opam` file, it will be picked up
+in preference to the one from the OPAM repository as soon as you pin the package.
+The idea is to have:
 
+* a _development_ `opam` file that is versioned along with your source code
+ (and thus accurately track the latest dependencies for your package).
+* a _release_ `opam` file that is published on the OPAM repository and can
+  be updated independently without making a new release of the source code.
+
+How to get from the former to the latter will be the subject of another post !
 
 [doc-packaging]: https://opam.ocaml.org/doc/1.2/Packaging.html "OPAM 1.2 doc preview, packaging guide"
 [ocp-reloc]: https://github.com/OCamlPro/ocp-reloc "ocp-reloc repo on Github"
