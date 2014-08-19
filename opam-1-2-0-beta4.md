@@ -9,7 +9,7 @@ has helped bring together much of the open-source code in the OCaml community
 under a single umbrella, making it easier to discover, depend on, and maintain
 OCaml applications and libraries.  We have seen steady growth in the number
 of new packages, updates to existing code, and a diverse group of contributors.
-<a href="http://www.cl.cam.ac.uk/~avsm2/packages.png"><img style="float:right; padding: 5px" src="http://www.cl.cam.ac.uk/~avsm2/packages.png" width="350px" /></a>
+<a href="packages.png"><img style="float:right; padding: 5px" src="packages.png" width="350px" /></a>
 
 OPAM has turned out to be more than just another package manager. It is also
 increasingly central to the demanding workflow of industrial OCaml development,
@@ -281,6 +281,6 @@ benefit from the new features.
 [debian-weather]: https://qa.debian.org/dose/debcheck/testing_main/ "Debian Weather Service"
 [ows]: http://ows.irill.org "The OPAM Weather Service"
 [features-pr]: https://github.com/ocaml/opam/pull/1325 "PR for preliminary 'features' feature on Github"
-[opam12-doc]: http://opam.ocaml.org/1.2/doc/Basic_Usage.html "Preview of documentation for OPAM 1.2"
+[opam12-doc]: http://opam.ocaml.org/doc/1.2/ "Preview of documentation for OPAM 1.2"
 [opam-admin-scripts]: https://github.com/ocaml/opam/tree/master/admin-scripts "Opam admin scripts directory on Github"
 [opam200]: https://github.com/ocaml/opam/issues/200
