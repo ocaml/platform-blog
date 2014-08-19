@@ -1,30 +1,35 @@
-title: "OPAM Pin"
+title: "OPAM 1.2: Repository Pinning"
 authors: "Louis Gesbert" {"http://ocamlpro.com"}
 date: "2014-08-19"
 --BODY--
 
 <img style="float:left; padding: 5px" src="camel-pin.jpg" width="200px"></img>
 
-Most package managers do have a _pin_ functionality, that summarises as "ensure
-this package will remain at this given version". OPAM 1.1 already extended this
-by allowing to pin to a _target_, which could be a version, a local path, a
-remote, or a version-controlled repository.
+Most package managers support some _pin_ functionality to ensure that a given
+package remain at a particular version without being upgraded.
+The stable OPAM 1.1 already supports this by allowing any existing package to be
+pinned to a _target_, which could be a specific released version, a local filesystem
+path, or a remote version-controlled repository.
 
-You could still only pin packages that were _already existing_ in your OPAM
+The OPAM 1.1 pinning workflow only let you pin packages that _already exist_ in your OPAM
 repositories though. To declare a new package, you had to go through creating a
-local repository, register it in OPAM, and add your package definition there :
-while clear enough, that workflow required the user to know about the repository
+local repository, register it in OPAM, and add your package definition there.
+While clear enough, that workflow required the user to know about the repository
 format and the configuration of an internal repository in OPAM before getting to
 writing a simple package. Besides, you were on your own for writing the package
 definition, and the edit-test loop wasn't as friendly as it could have.
 
-A natural, simpler workflow emerged from allowing to _pin_ even non
-previously-existing packages : just choose a name for your package, `opam pin
-add`, and it is created on-the-fly and registered locally. What is nice is that
-OPAM can now help you in writing the package definition, and you can test your
-updates with a single command.
+A natural, simpler workflow emerged from allowing users to _pin_ new package
+names that don't yet exist in the repository:
 
-You may also want to check out the new [Packaging tutorial][doc-packaging]
+* choose a name for your new package package
+* `opam pin add` in the development source tree
+* the package is created on-the-fly and registered locally.
+
+To make it even easier, OPAM can now interactively help you in writing the
+package definition, and you can test your updates with a single command.
+This blog post explains this new OPAM 1.2 functionality in more detail,
+and you may also want to check out the new [Packaging tutorial][doc-packaging]
 relying on this workflow.
 
 
