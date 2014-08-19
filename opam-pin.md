@@ -47,7 +47,7 @@ The command `opam pin add <name> <target>` pins package `<name>` to
 name to the project's source directory.
 
 ```
-cd src/ocp-reloc
+cd ocp-reloc
 opam pin add ocp-reloc .
 ```
 
@@ -62,9 +62,10 @@ ocp-reloc is now path-pinned to ~/src/ocp-reloc
 
 > NOTE: if you are using __beta4__, you may get a _version-control_-pin instead,
 > because we added auto-detection of version-controlled repos. This turned out to
-> be confusing, because your changes wouldn't be reflected until you commit, so
+> be confusing ([issue #1582](https://github.com/ocaml/opam/issues/1582)),
+> because your changes wouldn't be reflected until you commit, so
 > this has been reverted in favor of a warning. Add the `--kind path` option to
-> make sure > you get a _path_-pin.
+> make sure that you get a _path_-pin.
 
 
 #### OPAM Package Template
@@ -94,9 +95,9 @@ remove: ["ocamlfind" "remove" "ocp-reloc"]
 depends: "ocamlfind" {build}
 ```
 
-After filling this with some details (most importantly the dependencies and
-build instructions), I can just save and exit.  Much like other system tools like
-`visudo`, it checks for syntax errors immediately:
+After adding some details (most importantly the dependencies and
+build instructions), I can just save and exit.  Much like other system tools
+such as `visudo`, it checks for syntax errors immediately:
 
 ```
 [ERROR] File "/home/lg/.opam/4.01.0/overlay/ocp-reloc/opam", line 13, character 35-36: '.' is not a valid token.
@@ -105,7 +106,7 @@ Errors in /home/lg/.opam/4.01.0/overlay/ocp-reloc/opam, retry editing ? [Y/n]
 
 #### Installation
 
-You probably want to try your brand new package package right away, so
+You probably want to try your brand new package right away, so
 OPAM's default action is to try and install it (unless you specified `-n`):
 
 ```
@@ -140,7 +141,7 @@ by prompting you to save the `opam` file back to your source directory, where
 you can commit it directly into your code repository.
 
 ```
-cd src/ocp-reloc
+cd ocp-reloc
 git add opam
 git commit -m 'Add OPAM metadata'
 git push
