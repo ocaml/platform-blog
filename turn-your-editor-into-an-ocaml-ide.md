@@ -57,6 +57,8 @@ From this code model, it provides a lot of useful features:
 - jumping to definitions;
 - listing uses of identifiers in the current buffer.
 
+![](turn-your-editor-into-an-ocaml-ide-merlin.png)
+
 # Quick start
 
 Assuming opam is already installed on your system, you just need to invoke
