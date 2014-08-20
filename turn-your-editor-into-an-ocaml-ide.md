@@ -6,8 +6,9 @@ date: "2014-08-20"
 This post is short presentation of a couple of tools you can use with your
 editor to have a smoother experience while developing in OCaml.
 
-Right now, your favourite editor has to be *emacs* or *vim*. Using these tools
-from other editors is certainly doable, some porting efforts already exist for
+At the time of writing, an interface to these tools is only available
+for Emacs and Vim.  However, using the tools from other editors is definitely
+possible and some efforts exist for
 [Acme](https://github.com/raphael-proust/merlin-acme) and
 [Sublime Text 3](https://github.com/def-lkb/sublime-text-merlin).
 
