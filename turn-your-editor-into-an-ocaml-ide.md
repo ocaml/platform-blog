@@ -4,9 +4,9 @@ date: "2014-08-20"
 --BODY--
 
 This post is short presentation of a couple of tools you can use with your
-editor to have a smoother experience while developping in OCaml.
+editor to have a smoother experience while developing in OCaml.
 
-Right now, your favorite editor has to be *emacs* or *vim*. Using these tools
+Right now, your favourite editor has to be *emacs* or *vim*. Using these tools
 from other editors is certainly doable, some porting efforts already exist for
 [Acme](https://github.com/raphael-proust/merlin-acme) and
 [Sublime Text 3](https://github.com/def-lkb/sublime-text-merlin).
@@ -14,7 +14,7 @@ from other editors is certainly doable, some porting efforts already exist for
 # Overview
 
 One of these tools, [ocp-indent](http://www.typerex.org/ocp-indent.html),
-handles the task of indenting your OCaml files.  It is an OCaml executable than
+handles the task of indenting your OCaml files.  It is an OCaml executable that
 can be used from the command line or directly from your editor.
 
 The other is [merlin](http://the-lambda-church.github.io/merlin/) and runs some
@@ -23,7 +23,7 @@ browsing, auto-completion and more.
 
 ## Ocp-indent for indentation
 
-Most editors provides some kind of indentation "out of the box".
+Most editors provide some kind of indentation "out of the box".
 However recently a good chunk of the OCaml community has moved to using
 ocp-indent for fine-tuned indentation:
 
@@ -31,10 +31,10 @@ ocp-indent for fine-tuned indentation:
 - it will indent the same even if your co-worker has a different editor,
 - it is more flexible, for instance by enabling project-specific style;
 
-Indeed the indentation behavior of ocp-indent can be configured through several
+Indeed the indentation behaviour of ocp-indent can be configured through several
 options, directing how it will behave when encountering different constructions
 of the OCaml language.  These options can be set in a configuration file or
-direcly as parameters when invoked from the command line.  An example
+directly as parameters when invoked from the command line.  An example
 configuration file is available
 [here](https://github.com/OCamlPro/ocp-indent/blob/master/.ocp-indent).
 
@@ -85,10 +85,10 @@ For more information about merlin setup, you can look at
 **Vim & ocp-indent.**  We recommend using the
 [ocp-indent-vim](https://github.com/def-lkb/ocp-indent-vim) plugin instead of
 the default one. It provides interactive indentation "as you type", while the
-official mode only provide an indenting function to call manually but
+official mode only provides an indenting function to call manually but
 no passive indentation.
 
-This mode does require vim to be compiled with python support, while the
+This mode does require vim to be compiled with Python support, while the
 official one doesn't.
 
 Installing is as simple as cloning
@@ -127,4 +127,4 @@ You can see merlin's .merlin [here](https://github.com/the-lambda-church/merlin/
 
 You have to put it at the root directory of your project, and the .merlin will be loaded next time you open an OCaml file in the editor.
 
-To benefit of code navigation accross files you'll also need to generate "cmt" files. Pass the `-bin-annot` flag to the compiler. 
+To benefit of code navigation across files you'll also need to generate "cmt" files. Pass the `-bin-annot` flag to the compiler. 
