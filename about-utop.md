@@ -4,7 +4,7 @@ date: "2014-08-21"
 --BODY--
 
 OCaml comes with an interactive toplevel. If you type `ocaml` in a
-shell you will get a promt where you can type OCaml code that is
+shell you will get a prompt where you can type OCaml code that is
 compiled and executed on the fly.
 
     $ ocaml
@@ -94,7 +94,7 @@ of the compiler internals to find possible completions on:
 - method names
 
 Instead of the classic way of displaying a list of words when the user
-press TAB, I choosed to dynamically display the different
+press TAB, I chose to dynamically display the different
 possibilities as the user types. This idea comes from the dmenu tool
 from the [dwm](http://dwm.suckless.org/) window manager.
 
@@ -125,7 +125,7 @@ default toplevel can too but UTop is better is these regards:
 2. it behaves like a real shell, i.e. you cannot delete the prompt
 
 They are several Emacs libraries for writing shell-like modes but I
-wrote my own because with all of the one i found it is possible to
+wrote my own because with all of the ones I found it is possible to
 insert or remove characters from the prompt, which really annoyed
 me. Even with the mode used by the Emacs Shell mode it is
 possible. AFAIK at the time I wrote it the UTop mode was the only one
@@ -167,11 +167,11 @@ For the need of UTop I wrote
 an equivalent of ncurses+readline, but written in OCaml. It was
 written because I disliked the ncurses API and I wanted something more
 fancy than readline, especially for completion. In the end I claim
-that it is much fun to write terminal application in OCaml using
+that it is much more fun to write terminal application in OCaml using
 lambda-term than it is using ncurses.
 
-The pure edition part is managed by the
-[zed](https://github.com/diml/zed) library, which is independant from
+The pure editing part is managed by the
+[zed](https://github.com/diml/zed) library, which is independent from
 the user interface.
 
 
@@ -182,4 +182,4 @@ I don't have much time to spend on UTop these days, I'm mostly just
 fixing bugs. Many thanks to Peter Zotov who recently joined the
 project. Contributions are more than welcome and if you are interested
 in enhancing UTop do not hesitate to interact with the UTop developers
-through github.
+through GitHub.
