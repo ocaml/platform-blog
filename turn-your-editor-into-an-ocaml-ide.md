@@ -1,10 +1,13 @@
 title: "Turn your editor into a full fledged OCaml IDE"
-authors: "Frederic Bour" {"https://github.com/def-lkb"}
-date: "2014-08-20"
+authors: [ "Frederic Bour" {"https://github.com/def-lkb"}
+           "Thomas Refis" {"https://github.com/trefis"} ]
+date: "2014-08-21"
 --BODY--
 
 This post is a short presentation of a couple of tools you can use with your
-editor to have a smoother experience while developing in OCaml.
+editor to have a smoother experience while developing in OCaml.  We are working
+towards making these tools work out-of-the-box with OPAM, and hence will be
+blogging about them here along with the OPAM tool itself.
 
 At the time of writing, interfaces to these tools are available for
 Emacs and Vim.  Efforts are underway to add support for other editors,
@@ -42,7 +45,7 @@ OCaml ecosystem and indent them meaningfully, while your editor probably will no
 
 ## Merlin for analysis
 
-Merlin will enhance your experience editing OCaml code by providing interactive
+Merlin enhances your experience editing OCaml code by providing interactive
 feedback about your code.
 
 Under the hood, it maintains a "code model" of the file you are editing.  For
@@ -126,4 +129,7 @@ The [`.merlin` file for the merlin project](https://github.com/the-lambda-church
 
 The `.merlin` file will be loaded the next time you open an OCaml file in the editor.
 
-To benefit from code navigation across files you'll also need to turn on generation of "cmt" files by passing the `-bin-annot` flag to the OCaml compiler.
+To benefit from code navigation across files you'll also need to turn on
+generation of "cmt" files by passing the `-bin-annot` flag to the OCaml
+compiler.  You can do this in `ocamlbuild` by adding the `bin_annot` tag
+into the `_tags` file with OCaml 4.01 and higher.
