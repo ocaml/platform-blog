@@ -1,6 +1,6 @@
 title: "UTop: a much improved interface to the OCaml toplevel"
 authors: "Jérémie Dimino" {"https://github.com/diml"}
-date: "2014-08-22"
+date: "2014-08-26"
 --BODY--
 
 *This is a post about the `utop` toplevel provided in the OPAM
