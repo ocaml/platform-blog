@@ -3,9 +3,8 @@ authors: "Jérémie Dimino" {"https://github.com/diml"}
 date: "2014-08-22"
 --BODY--
 
-*This is a guest post by Jérémie Dimino on some of the history
-and decisions behind the UTop toplevel.*
-
+*This is a post about the `utop` toplevel provided in the OPAM
+repository as an alternative to the standard OCaml one.*
 
 OCaml comes with an interactive toplevel. If you type `ocaml` in a
 shell you will get a prompt where you can type OCaml code that is
@@ -17,10 +16,10 @@ compiled and executed on the fly.
     # 1 + 1;;
     - : int = 2
 
-You can load libraries and your own modules in the toplevel. This is
-great for playing with your code. Though you might quickly notice that
-the user experience is not really good as there is no editing support:
-you cannot conveniently edit what you type and you cannot access the
+You can load libraries and your own modules in the toplevel, and is
+great for playing with your code. You'll quickly notice that
+the user experience is not ideal, as there is no editing support:
+you cannot conveniently chagne what you type nor can you rewind to
 previously typed phrases.
 
 This can be improved by using tools such as
@@ -31,10 +30,10 @@ doesn't provides fancy features such as context sensitive completion.
 
 That's why [UTop](https://github.com/diml/utop) was started. UTop is a
 shiny frontend to the OCaml interactive toplevel, which tries to focus
-on the user experience. It features:
+on the user experience and features:
 
-- line editing
-- real-time completion
+- interactive line editing
+- real-time tab completion of functions and values
 - syntax highlighting
 
 And many other things that makes life easier for users that have been
@@ -51,7 +50,13 @@ The UTop prompt
 ---------------
 
 The utop prompt looks much more 'blinky' than the one of the default
-toplevel. This is typically what you see when you start utop:
+toplevel. Install it using OPAM very simply:
+
+    opam install utop
+    eval `opam config env`  # may not be needed
+    utop
+
+This is typically what you see when you start utop:
 
     ─( 16:36:52 )─< command 0 >───────────────────────{ counter: 0 }─
     utop #
@@ -142,8 +147,8 @@ Other features
 
 This is a non-exhaustive list of features that have been added over
 time to enhance the user experience. Some of them might be
-controversial, I tried to choose what was the most requested most of
-the time:
+controversial, so I tried to choose what was the most requested most of
+the time.
 
 - when using the [lwt](http://ocsigen.org/lwt/) or
   [async](https://github.com/janestreet/async) libraries, UTop will
@@ -158,14 +163,14 @@ the time:
   `-show-reserved`.
 - automatically load `camlp4` when the user requests a syntax
   extension. In the default toplevel one has to type `#camlp4` first.
-- hide verbose messages from the findlib library manager
-- add a `typeof` directive to show the type of modules, values, ...
+- hide verbose messages from the `findlib` library manager.
+- add a `typeof` directive to show the type of modules and values.
 - automatically load files from `$OCAML_TOPLEVEL_PATH/autoload` at
-  startup
-- allow to specify libraries to be loaded on the command line
+  startup.
+- allow to specify libraries to be loaded on the command line.
 
-Libraries that were developed on the side of UTop
--------------------------------------------------
+Libraries developed to support UTop
+-----------------------------------
 
 For the needs of UTop I wrote
 [lambda-term](https://github.com/diml/lambda-term), which is kind of
@@ -183,9 +188,15 @@ the user interface.
 UTop development
 ----------------
 
-I don't have much time to spend on UTop these days, I'm mostly just
-fixing bugs. Many thanks to [Peter Zotov](https://github.com/whitequark)
-who recently joined the
-project. Contributions are more than welcome and if you are interested
-in enhancing UTop please do contact the UTop developers
-through GitHub!
+Utop is fairly feature-complete, and so I don't spend much time on it
+these days. It became the recommended toplevel to use with the 
+[Real World OCaml](https://realworldocaml.org) book, and most users
+are happier with the interactive interface than using the traditional
+toplevel.
+
+Many thanks to [Peter Zotov](https://github.com/whitequark) who recently joined
+the project to keep it up-to-date and add new features such as extension point
+support. Contributions from others (particularly around editor integration) are
+very welcome, so if you are interested on hacking on it get in touch via the
+[GitHub issue tracker](https://github.com/diml/utop) or via the [OCaml Platform
+mailing list](http://lists.ocaml.org/listinfo/platform).
