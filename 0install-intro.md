@@ -54,7 +54,7 @@ You can see where it put OPAM with the "show" command:
         Version: 7.32.0-10.20
         Path: (package:rpm:curl:7.32.0-10.20:x86_64)
 
-OPAM depends on two other programs: `aspcud` provides a better solver than the internal one and `curl` is used to download OPAM packages.
+OPAM depends on two other programs: `aspcud` provides a better solver than the internal one and `curl` is used to download OPAM packages (it also generally needs `gcc`, `m4` and `patch`, but I started with just the ones people are likely to be missing).
 In this case, 0install has satisfied the curl dependency using an official Fedora package, but needed to install aspcud using 0install. On Arch Linux, it can use distribution packages for both.
 
 You can upgrade (or downgrade) the package by adding a version constraint.
