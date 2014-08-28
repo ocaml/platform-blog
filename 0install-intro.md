@@ -236,7 +236,7 @@ Rename `opam.xml` to `opam.xml.template` and change the `<implementation>` to:
 
     <implementation arch="{arch}" version="{version}">
       <manifest-digest/>
-      <archive href="http://test.roscidus.com/archives/opam-{arch}-{version}.tgz"/>
+      <archive href="http://example.com/archives/opam-{arch}-{version}.tgz"/>
     </implementation>
 
 If the archive is already published somewhere, you can use the full URL in the `<archive>`.
@@ -266,7 +266,7 @@ This generates:
                       released="2014-08-26"
                       version="1.1.1">
         <manifest-digest sha256new="RUOX6PWGDCHH5TDNEDRHQJ54YZZ4TSAGBB5AEBRNOKSHM3N7XORA"/>
-        <archive href="http://test.roscidus.com/archives/opam-Linux-x86_64-1.1.1.tgz" size="1476315"/>
+        <archive href="http://example.com/archives/opam-Linux-x86_64-1.1.1.tgz" size="1476315"/>
       </implementation>
     </group>
 
