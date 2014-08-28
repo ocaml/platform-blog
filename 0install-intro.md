@@ -74,7 +74,7 @@ By default, 0install prefers the "stable" version of a program:
 
 You could do as it suggests and tell it to prefer testing versions globally, or you can add a version constraint if you just want to affect this one program:
 
-    $ 0install update opam-test --not-before=1.2.0-pre4
+    $ 0install update opam --not-before=1.2.0-pre4
     http://tools.ocaml.org/opam.xml: 1.1.1 -> 1.2.0-pre4
     
 You can also specify an upper bound (`--before`) or a fixed version (`--version`) if you prefer.
