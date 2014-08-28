@@ -7,7 +7,7 @@ date: "2014-08-28"
 
 The traditional way to distribute binaries is to make separate packages for recent versions of the more popular Linux distributions (RPMs, Debs, PKGBUILDs, etc), a `.pkg` for OS X, a `setup.exe` Windows, etc, plus some generic binaries for users of other systems or who lack root privileges.
 This requires a considerable amount of work, and expertise with many different package formats.
-0install provides a single format that supports all platforms, meaning that you only need to do the packaging work once.
+0install provides a single format that supports all platforms, meaning that you only need to do the packaging work once (though you should still *test* on multiple platforms).
 
 # Example: OPAM binaries
 
@@ -23,11 +23,16 @@ You can install a binary release of OPAM on most systems by first installing the
 
     For OS X: [ZeroInstall.pkg](http://downloads.sourceforge.net/project/zero-install/0install/2.7/ZeroInstall.pkg)
 
+    0install also has [Windows support][0install-windows], but there is currently no Windows binary of OPAM so I didn't publish one with 0install either.
+
 2. Install OPAM:
 
         $ 0install add opam http://tools.ocaml.org/opam.xml
         $ opam --version
         1.1.1
+
+	If you already have an `opam` command but want to try the 0install version anyway,
+	just give it a different name (e.g. `0install add 0opam http://tools.ocaml.org/opam.xml` to create a `0opam` command).
 
 `0install add` will open a window if a display is available, or show progress on the console if not:
 
@@ -56,6 +61,7 @@ You can see where it put OPAM with the "show" command:
 
 OPAM depends on two other programs: `aspcud` provides a better solver than the internal one and `curl` is used to download OPAM packages (it also generally needs `gcc`, `m4` and `patch`, but I started with just the ones people are likely to be missing).
 In this case, 0install has satisfied the curl dependency using an official Fedora package, but needed to install aspcud using 0install. On Arch Linux, it can use distribution packages for both.
+0install will install any required distribution packages using PackageKit, which will prompt the user for permission according to its policy.
 
 You can upgrade (or downgrade) the package by adding a version constraint.
 By default, 0install prefers the "stable" version of a program:
@@ -184,7 +190,7 @@ Filling in the blanks, we get:
         package constraints, and a Git-friendly development workflow.
       </description>
 
-      <homepage>http://opam.ocamlpro.com/</homepage>
+      <homepage>https://opam.ocaml.org/</homepage>
 
       <feed-for interface="http://tools.ocaml.org/opam.xml"/>
 
@@ -317,6 +323,7 @@ We hope that 0install will make it easier for you to distribute binaries of your
 
 [0install]: http://0install.net/
 [0install-downloads]: http://0install.net/injector.html
+[0install-windows]: https://0install.de/downloads/
 [0install-distro-int]: http://0install.net/distribution-integration.html
 [0install-feed-spec]: http://0install.net/interface-spec.html
 [0install-from-python]: http://roscidus.com/blog/blog/2014/06/06/python-to-ocaml-retrospective/
