@@ -1,6 +1,6 @@
 title: "Binary distribution with 0install"
 authors: [ "Thomas Leonard" {"http://roscidus.com/blog/"} ]
-date: "2014-08-28"
+date: "2014-10-06"
 --BODY--
 
 [0install][] provides an easy way to distribute binaries to users, complementing OPAM's support for source distribution.
@@ -320,6 +320,7 @@ There are some extra services (such as the [default mirror service][0mirror], th
 Using 0install to get OPAM means that all platforms can be supported without the need to package separately for each one, and users who don't wish to install as root still get signature checking, dependency handling and automatic updates.
 We hope that 0install will make it easier for you to distribute binaries of your own applications.
 
+My talk at OCaml 2014 ([video][ocaml2014-video], [slides][ocaml2014-slides]) gives more information about 0install and its conversion to OCaml.
 
 [0install]: http://0install.net/
 [0install-downloads]: http://0install.net/injector.html
@@ -335,3 +336,5 @@ We hope that 0install will make it easier for you to distribute binaries of your
 [0mirror]: http://roscidus.com/0mirror/
 [opam-quick-install]: http://opam.ocaml.org/doc/Quick_Install.html
 [mirage]: http://openmirage.org/
+[ocaml2014-slides]: https://ocaml.org/meetings/ocaml/2014/0install-slides.pdf
+[ocaml2014-video]: https://www.youtube.com/watch?v=dYRT6z0NGII&list=UUP9g4dLR7xt6KzCYntNqYcw
