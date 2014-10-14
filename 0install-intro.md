@@ -1,6 +1,6 @@
 title: "Binary distribution with 0install"
 authors: [ "Thomas Leonard" {"http://roscidus.com/blog/"} ]
-date: "2014-10-06"
+date: "2014-10-14"
 --BODY--
 
 [0install][] provides an easy way to distribute binaries to users, complementing OPAM's support for source distribution.
