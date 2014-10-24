@@ -22,17 +22,18 @@ your distribution, binary, source, etc.) as documented on the
 Lot of work has been put into providing a cleaner interface, with helpful
 behaviour and messages in case of errors.
 
-The [documantation pages](https://opam.ocaml.org/doc/) also have been largely
-rewritten to reflect for consistency and clarity.
+The [documentation pages](https://opam.ocaml.org/doc/) also have been largely
+rewritten for consistency and clarity.
 
 ### New features
 
 This is just the top of the list:
-* [Simplified packaging workflow](opam-1-2-pin.html)
+* A extended and versatile `opam pin` command. See the
+  [Simplified packaging workflow](opam-1-2-pin.html)
 * More expressive queries, see for example `opam source`
 * New metadata fields, including source repositories, bug-trackers, and finer
   control of package behaviour
-* An `opam lint` command to assert the quality of packages
+* An `opam lint` command to check the quality of packages
 
 For more detail, see [the announcement for the beta](opam-1-2-0-beta4.html),
 [the full changelog](https://raw.githubusercontent.com/ocaml/opam/1.2.0/CHANGES),
