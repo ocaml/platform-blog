@@ -1,5 +1,5 @@
 title: "OPAM 1.2.0 Released"
-authors: "Louis Gesbert" {"louis.gesbert@ocamlpro.com"}
+authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2014-10-23"
 --BODY--
 
@@ -29,13 +29,13 @@ rewritten for consistency and clarity.
 
 This is just the top of the list:
 * A extended and versatile `opam pin` command. See the
-  [Simplified packaging workflow](opam-1-2-pin.html)
+  [Simplified packaging workflow](../opam-1-2-pin)
 * More expressive queries, see for example `opam source`
 * New metadata fields, including source repositories, bug-trackers, and finer
   control of package behaviour
 * An `opam lint` command to check the quality of packages
 
-For more detail, see [the announcement for the beta](opam-1-2-0-beta4.html),
+For more detail, see [the announcement for the beta](../opam-1-2-0-beta4),
 [the full changelog](https://raw.githubusercontent.com/ocaml/opam/1.2.0/CHANGES),
 and [the bug-tracker](https://github.com/ocaml/opam/issues?q=label%3A%22Feature+Wish%22+milestone%3A1.2+is%3Aclosed).
 
