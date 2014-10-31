@@ -19,8 +19,8 @@ $ opam pin add <my-project-name> .
 [... follow the instructions ...]
 ```
 
-Once this is done, you can continue to edit the new `opam` and check
-that is is consistent using `opam lint`.
+Once this is done, you can continue to edit the newly created `opam`
+file and check that is is consistent with the `opam lint` command.
 
 If you want to run tests, do not forget to add `{test}` dependencies
 and a `build-test` field. For instance, if you use `oasis` and
@@ -35,12 +35,13 @@ build-test: [make "test"]
 depends: [
   ...
   "ounit" {test}
+  ...
 ]
 ```
 
 Without the `build-test` field, the continuous integration scripts
 will just test the compilation of your project for various OCaml
-compilers (which is already quite a good thing).
+compilers.
 
 ## Installing the Travis CI scripts
 
