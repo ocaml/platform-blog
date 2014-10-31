@@ -55,7 +55,8 @@ https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
   [.travis.yml](https://github.com/samoht/ocaml-travisci-skeleton/blob/master/.travis.yml)
   at the root of your project. You can tweak this file to test your
   project with different versions of OCaml. By default, it will use
-  the latest stable version (today: 4.02.1). Add a line:
+  the latest stable version (today: 4.02.1, but it will be updated for
+  each new compiler release). Add a line:
 
     ````
   - OCAML_VERSION=<VERSION>
@@ -63,7 +64,7 @@ https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
 
   at the end of the file for every OCaml version that you want to
   test. The supported values for `<VERSION>` are `3.12`, `4.00`,
-  `4.01` and `4.02.
+  `4.01` and `4.02`.
 
 - signing in at https://travis-ci.org/ using your Github account and
   enabling the tests for your project (click on the '+' button on the
