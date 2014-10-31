@@ -22,6 +22,26 @@ $ opam pin add <my-project-name> .
 Once this is done, you can continue to edit the new `opam` and check
 that is is consistent using `opam lint`.
 
+If you want to run tests, do not forget to add `{test}` dependencies
+and a `build-test` field. For instance, if you use `oasis` and
+`ounit`, you can use something like that:
+
+```
+build: [
+  ["./configure" "--prefix=%{prefix}%" "--%{ounit:enable}%-tests"]
+  [make]
+]
+build-test: [make "test"]
+depends: [
+  ...
+  "ounit" {test}
+]
+```
+
+Without the `build-test` field, the continuous integration scripts
+will just test the compilation of your project for various OCaml
+compilers (which is already quite a good thing).
+
 ## Installing the Travis CI scripts
 
 Travis CI is a free service to enable continuous testing on your
@@ -34,13 +54,16 @@ https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
 - adding
   [.travis.yml](https://github.com/samoht/ocaml-travisci-skeleton/blob/master/.travis.yml)
   at the root of your project. You can tweak this file to test your
-  project with different versions of OCaml. By default, it will use 4.02.1.
+  project with different versions of OCaml. By default, it will use
+  the latest stable version (today: 4.02.1). Add a line:
 
-- adding
-  [.travis-ci.sh](https://github.com/samoht/ocaml-travisci-skeleton/blob/master/.travis-ci.sh)
-  at the root of your project. This file assumes that your are using
-  the usual `./configure`, `make` and `make test` commands for your project.
-  If it is not the case you might need to edit that file to tweak the build instructions.
+    ````
+  - OCAML_VERSION=<VERSION>
+    ````
+
+  at the end of the file for every OCaml version that you want to
+  test. The supported values for `<VERSION>` are `3.12`, `4.00`,
+  `4.01` and `4.02.
 
 - signing in at https://travis-ci.org/ using your Github account and
   enabling the tests for your project (click on the '+' button on the
