@@ -34,15 +34,15 @@ https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
 - adding
   [.travis.yml](https://github.com/samoht/ocaml-travisci-skeleton/blob/master/.travis.yml)
   at the root of your project. You can tweak this file to test your
-  project with different versions of OCaml (by default, it uses 4.02.1)
+  project with different versions of OCaml. By default, it will use 4.02.1.
 
 - adding
   [.travis-ci.sh](https://github.com/samoht/ocaml-travisci-skeleton/blob/master/.travis-ci.sh)
-  at the root of your project. This file assume that your are using
-  the usual `./configure`, `make` and `make test` commands. If it
-  is not the case you might need to tweak the build instructions.
+  at the root of your project. This file assumes that your are using
+  the usual `./configure`, `make` and `make test` commands for your project.
+  If it is not the case you might need to edit that file to tweak the build instructions.
 
-- signing in at https://travis-ci.org/ (using your Github account) and
+- signing in at https://travis-ci.org/ using your Github account and
   enabling the tests for your project (click on the '+' button on the
   left pane).
 
