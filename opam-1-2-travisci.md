@@ -3,9 +3,10 @@ authors: "Thomas Gazagnaire" {"http://gazagnaire.org"}
 date: "2014-10-31"
 --BODY--
 
-The [new pinning feature][pin] in OPAM 1.2 enables new interesting
-workflows for OCaml projects. I will briefly describe one of them
-here: simplifying continuous testing with Travis CI.
+The [new pinning feature][pin] of OPAM 1.2 enables new interesting
+workflows for your OCaml projects. I will briefly describe one of them
+here: simplifying continuous testing with [Travis CI][travis] and
+[Github][github].
 
 ## Creating an opam file
 
@@ -49,3 +50,5 @@ And that's it, your project now has continuous integration, using OPAM 1.2
 pinning feature and Travis CI scripts.
 
 [pin]: https://opam.ocaml.org/blog/opam-1-2-pin/
+[travis]: https://travis-ci.org/
+[github]: https://github.com/
