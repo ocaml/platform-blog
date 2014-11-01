@@ -15,12 +15,14 @@ root of your project is now a very good idea. It's very easy with OPAM
 1.2:
 
 ```
-$ opam pin add <my-project-name> .
+$ opam pin add <my-project-name> . --edit
 [... follow the instructions ...]
 ```
 
-Once this is done, you can continue to edit the newly created `opam`
-file and check that is is consistent with the `opam lint` command.
+That command should create a fresh `opam` file; if not, your might
+need to fix the warnings in the file by re-running the command. Once
+the file is created, you can edit it directly and use `opam lint` to
+check that is is well-formed.
 
 If you want to run tests, do not forget to add `{test}` dependencies
 and a `build-test` field. For instance, if you use `oasis` and
