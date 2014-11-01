@@ -29,6 +29,10 @@ Preliminary support for Sublime Text is also available, see
 [Sublime-text-merlin](https://github.com/def-lkb/sublime-text-merlin).
 Help is welcome to improve and extend supported editing environments.
 
+Windows support also received some fixes.  Merlin is now distributed in
+[WODI](http://wodi.forge.ocamlcore.org/).  Integration in
+[OCaml-on-windows](http://protz.github.io/ocaml-installer/) is planned.
+
 ### Installation
 
 This new version of merlin is already available on opam with `opam install
