@@ -4,8 +4,9 @@ authors: [ "Frederic Bour" {"https://github.com/def-lkb"}
 date: "2014-11-01"
 --BODY--
 
-After months of development, we are pleased to announce the stable release of
-Merlin 2.0. Supported OCaml versions range from 4.00 to 4.02.1.
+After a few months of development, we are pleased to announce the stable release of
+Merlin 2.0.  
+Supported OCaml versions range from 4.00 to 4.02.1.
 
 ### Overview
 
@@ -16,11 +17,13 @@ such as:
 * jumping to the definition of any identifier,
 * quickly reporting errors in the editor.
 
+**TODO** mention that it is editor-agnostic and that Vim and Emacs are both supported (you can leave Sublime Text support out for more suspense in the next section).
+
 ### What's new
 
 This release provides great improvements in robustness and quality of analysis.
 Files that changed on disk are now automatically reloaded. 
-Parsing process is finer grained to provide more accurate recovery and error
+The parsing process is finer grained to provide more accurate recovery and error
 messages.
 Integration with Jane Street Core and js\_of\_ocaml has also improved.
 
@@ -29,13 +32,15 @@ Preliminary support for Sublime Text is also available, see
 [Sublime-text-merlin](https://github.com/def-lkb/sublime-text-merlin).
 Help is welcome to improve and extend supported editing environments.
 
+**Remark** maybe you could explicitly mention above the developer(s) that started the sublime-text work?
+
 Windows support also received some fixes.  Merlin is now distributed in
 [WODI](http://wodi.forge.ocamlcore.org/).  Integration in
 [OCaml-on-windows](http://protz.github.io/ocaml-installer/) is planned.
 
 ### Installation
 
-This new version of merlin is already available on opam with `opam install
+This new version of merlin is already available with opam using `opam install
 merlin`, and can also be built from the source which are available at
 [the-lambda-church/merlin](http://github.com/the-lambda-church/merlin).
 
