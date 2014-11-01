@@ -17,7 +17,8 @@ such as:
 * jumping to the definition of any identifier,
 * quickly reporting errors in the editor.
 
-**TODO** mention that it is editor-agnostic and that Vim and Emacs are both supported (you can leave Sublime Text support out for more suspense in the next section).
+We provide integration into Vim and Emacs.  An external plugin is also
+available for Sublime Text.
 
 ### What's new
 
@@ -28,11 +29,10 @@ messages.
 Integration with Jane Street Core and js\_of\_ocaml has also improved.
 
 Vim & Emacs are still the main targeted editors. 
-Preliminary support for Sublime Text is also available, see
+Thanks to [Luc Rocher](https://github.com/Cynddl), preliminary support for
+Sublime Text is also available, see
 [Sublime-text-merlin](https://github.com/def-lkb/sublime-text-merlin).
 Help is welcome to improve and extend supported editing environments.
-
-**Remark** maybe you could explicitly mention above the developer(s) that started the sublime-text work?
 
 Windows support also received some fixes.  Merlin is now distributed in
 [WODI](http://wodi.forge.ocamlcore.org/).  Integration in
