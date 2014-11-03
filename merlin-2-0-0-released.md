@@ -6,19 +6,19 @@ date: "2014-11-01"
 
 After a few months of development, we are pleased to announce the stable release of
 Merlin 2.0.  
-Supported OCaml versions range from 4.00 to 4.02.1.
+Supported OCaml versions range from 4.00.1 to 4.02.1.
 
 ### Overview
 
-Merlin is a tool focused on helping you code in OCaml, by providing features
+Merlin is a tool focused on helping you code in OCaml by providing features
 such as:
-* automatic completion of identifiers, using scope and type informations,
+* automatic completion of identifiers, using scope and type information,
 * interactively typing definitions and expressions during edition,
 * jumping to the definition of any identifier,
 * quickly reporting errors in the editor.
 
 We provide integration into Vim and Emacs.  An external plugin is also
-available for Sublime Text.
+available for [Sublime Text](https://github.com/def-lkb/sublime-text-merlin).
 
 ### What's new
 
@@ -40,7 +40,7 @@ Windows support also received some fixes.  Merlin is now distributed in
 
 ### Installation
 
-This new version of merlin is already available with opam using `opam install
+This new version of Merlin is already available with opam using `opam install
 merlin`, and can also be built from the source which are available at
 [the-lambda-church/merlin](http://github.com/the-lambda-church/merlin).
 
@@ -55,7 +55,7 @@ give, but here are some key points (from an user perspective):
 * more user-friendly messages for syntax errors
 * locate now works on MLI files
 * automatic reloading of .merlin files (when they are update or created), it
-  is no longer necessary to restart merlin
+  is no longer necessary to restart Merlin
 * introduced a small refactoring command: rename, who renames all occurences
   of an identifier. See [here](http://yawdp.com/~host/merlin_rename.webm).
 
