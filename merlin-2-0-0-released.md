@@ -1,11 +1,12 @@
 title: "Merlin 2.0 release"
 authors: [ "Frederic Bour" {"https://github.com/def-lkb"}
            "Thomas Refis" {"https://github.com/trefis"} ]
-date: "2014-11-01"
+date: "2014-11-03"
 --BODY--
 
-After a few months of development, we are pleased to announce the stable release of
-Merlin 2.0.  
+After a few months of development, we are pleased to announce the
+[stable release](https://github.com/the-lambda-church/merlin/blob/master/CHANGELOG) of
+[Merlin 2.0](https://github.com/the-lambda-church/merlin).  
 Supported OCaml versions range from 4.00.1 to 4.02.1.
 
 ### Overview
@@ -41,7 +42,7 @@ Windows support also received some fixes.  Merlin is now distributed in
 ### Installation
 
 This new version of Merlin is already available with opam using `opam install
-merlin`, and can also be built from the source which are available at
+merlin`, and can also be built from the sources which are available at
 [the-lambda-church/merlin](http://github.com/the-lambda-church/merlin).
 
 ### Changelog
