@@ -1,12 +1,17 @@
 title: "OPAM 1.2 and Travis CI"
 authors: "Thomas Gazagnaire" {"http://gazagnaire.org"}
-date: "2014-10-31"
+date: "2014-12-16"
 --BODY--
 
 The [new pinning feature][pin] of OPAM 1.2 enables new interesting
 workflows for your OCaml projects. I will briefly describe one of them
 here: simplifying continuous testing with [Travis CI][travis] and
 [GitHub][github].
+
+<img style="float:left; padding: 5px"
+     src="https://travis-ci.com/img/travis-mascot-200px.png"
+     width="200px">
+</img>
 
 ## Creating an `opam` file
 
