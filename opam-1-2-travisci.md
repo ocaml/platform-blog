@@ -6,9 +6,9 @@ date: "2014-10-31"
 The [new pinning feature][pin] of OPAM 1.2 enables new interesting
 workflows for your OCaml projects. I will briefly describe one of them
 here: simplifying continuous testing with [Travis CI][travis] and
-[Github][github].
+[GitHub][github].
 
-## Creating an opam file
+## Creating an `opam` file
 
 As explained in the [previous post][pin], adding an `opam` file at the
 root of your project is now a very good idea. It's very easy with OPAM
@@ -19,14 +19,14 @@ $ opam pin add <my-project-name> . --edit
 [... follow the instructions ...]
 ```
 
-That command should create a fresh `opam` file; if not, your might
+That command should create a fresh `opam` file; if not, you might
 need to fix the warnings in the file by re-running the command. Once
 the file is created, you can edit it directly and use `opam lint` to
 check that is is well-formed.
 
 If you want to run tests, do not forget to add `{test}` dependencies
 and a `build-test` field. For instance, if you use `oasis` and
-`ounit`, you can use something like that:
+`ounit`, you can use something like:
 
 ```
 build: [
@@ -47,9 +47,9 @@ compilers.
 
 ## Installing the Travis CI scripts
 
-Travis CI is a free service to enable continuous testing on your
-Github projects. It uses Ubuntu containers and run (sometimes slowly)
-the tests for at most 50 minutes.
+[Travis CI][travis] is a free service to enable continuous testing on your
+GitHub projects. It uses Ubuntu containers and run (sometimes slowly)
+the tests for at most 50 minutes per test run.
 
 To use Travis CI with your OCaml project, you can follow the instructions on
 https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
@@ -69,7 +69,7 @@ https://github.com/samoht/ocaml-travisci-skeleton. Basically, this involves:
   test. The supported values for `<VERSION>` are `3.12`, `4.00`,
   `4.01` and `4.02`.
 
-- signing in at https://travis-ci.org/ using your Github account and
+- signing in at https://travis-ci.org/ using your GitHub account and
   enabling the tests for your project (click on the '+' button on the
   left pane).
 
