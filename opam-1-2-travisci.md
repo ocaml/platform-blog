@@ -51,7 +51,7 @@ environment variable in your local setup.
 
 ## Installing the Travis CI scripts
 
-<img style="float:left; padding: 5px"
+<img style="float:right; padding: 5px"
      src="https://travis-ci.com/img/travis-mascot-200px.png"
      width="200px">
 </img>
@@ -69,10 +69,11 @@ To use Travis CI with your OCaml project, you can follow the instructions on
   project with different versions of OCaml. By default, it will use
   the latest stable version (today: 4.02.1, but it will be updated for
   each new compiler release). Add a line:
-  ```
-  env:
+
+    ```
+    env:
       - OCAML_VERSION=<VERSION>
-  ```
+    ```
 
   at the end of the file for every OCaml version that you want to
   test. The supported values for `<VERSION>` are `3.12`, `4.00`,
