@@ -68,16 +68,15 @@ To use Travis CI with your OCaml project, you can follow the instructions on
   at the root of your project. You can tweak this file to test your
   project with different versions of OCaml. By default, it will use
   the latest stable version (today: 4.02.1, but it will be updated for
-  each new compiler release). Add a line:
+  each new compiler release).  For every OCaml version that you want to
+  test (supported values for `<VERSION>` are `3.12`, `4.00`,
+  `4.01` and `4.02`) add the line:
 
-    ```
-    env:
-      - OCAML_VERSION=<VERSION>
-    ```
+```
+env:
+ - OCAML_VERSION=<VERSION>
+```
 
-  at the end of the file for every OCaml version that you want to
-  test. The supported values for `<VERSION>` are `3.12`, `4.00`,
-  `4.01` and `4.02`.
 
 - signing in at [TravisCI](https://travis-ci.org/) using your GitHub account and
   enabling the tests for your project (click on the `+` button on the
