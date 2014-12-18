@@ -78,7 +78,7 @@ To use Travis CI with your OCaml project, you can follow the instructions on
   test. The supported values for `<VERSION>` are `3.12`, `4.00`,
   `4.01` and `4.02`.
 
-- signing in at [travisci](https://travis-ci.org/) using your GitHub account and
+- signing in at [TravisCI](https://travis-ci.org/) using your GitHub account and
   enabling the tests for your project (click on the `+` button on the
   left pane).
 
