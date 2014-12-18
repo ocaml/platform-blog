@@ -51,7 +51,7 @@ environment variable in your local setup.
 
 ## Installing the Travis CI scripts
 
-<img style="float:left; padding: 5px"
+<img style="float:right; padding: 5px"
      src="https://travis-ci.com/img/travis-mascot-200px.png"
      width="200px">
 </img>
