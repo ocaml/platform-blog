@@ -4,8 +4,9 @@ date: "2014-12-16"
 --BODY--
 
 The [new pinning feature][pin] of OPAM 1.2 enables new interesting
-workflows for your OCaml projects. I will briefly describe one of them
-here: simplifying continuous testing with [Travis CI][travis] and
+workflows for your day-to-day development in OCaml projects. I will
+briefly describe one of them here: simplifying continuous testing with
+[Travis CI][travis] and
 [GitHub][github].
 
 <img style="float:left; padding: 5px"
@@ -16,8 +17,8 @@ here: simplifying continuous testing with [Travis CI][travis] and
 ## Creating an `opam` file
 
 As explained in the [previous post][pin], adding an `opam` file at the
-root of your project is now a very good idea. It's very easy with OPAM
-1.2:
+root of your project now lets you pin development versions of your
+project directly. It's very easy to create a default template with OPAM 1.2:
 
 ```
 $ opam pin add <my-project-name> . --edit
@@ -29,9 +30,9 @@ need to fix the warnings in the file by re-running the command. Once
 the file is created, you can edit it directly and use `opam lint` to
 check that is is well-formed.
 
-If you want to run tests, do not forget to add `{test}` dependencies
-and a `build-test` field. For instance, if you use `oasis` and
-`ounit`, you can use something like:
+If you want to run tests, you can also mark test-only dependencies with the
+`{test}` constraint, and add a `build-test` field. For instance, if you use
+`oasis` and `ounit`, you can use something like:
 
 ```
 build: [
@@ -49,15 +50,18 @@ depends: [
 Without the `build-test` field, the continuous integration scripts
 will just test the compilation of your project for various OCaml
 compilers.
+OPAM doesn't run tests by default, but you can make it do so by
+using `opam install -t` or setting the `OPAMBUILDTEST`
+environment variable in your local setup.
 
 ## Installing the Travis CI scripts
 
-[Travis CI][travis] is a free service to enable continuous testing on your
-GitHub projects. It uses Ubuntu containers and run (sometimes slowly)
-the tests for at most 50 minutes per test run.
+[Travis CI][travis] is a free service that enables continuous testing on your
+GitHub projects. It uses Ubuntu containers and runs the tests for at most 50
+minutes per test run.
 
 To use Travis CI with your OCaml project, you can follow the instructions on
-https://github.com/ocaml/ocaml-travisci-skeleton. Basically, this involves:
+<https://github.com/ocaml/ocaml-travisci-skeleton>. Basically, this involves:
 
 - adding
   [.travis.yml](https://github.com/ocaml/ocaml-travisci-skeleton/blob/master/.travis.yml)
@@ -79,7 +83,7 @@ env:
   enabling the tests for your project (click on the '+' button on the
   left pane).
 
-And that's it, your project now has continuous integration, using OPAM 1.2
+And that's it, your project now has continuous integration, using the OPAM 1.2
 pinning feature and Travis CI scripts.
 
 ## Testing Optional Dependencies
@@ -99,7 +103,7 @@ env:
    - OCAML_VERSION=4.01   DEPOPTS="lwt async"
 ```
 
-As usual, your contributions and feedback are [gladly welcome][issues].
+As usual, your contributions and feedback on this new feature are [gladly welcome][issues].
 
 [pin]: https://opam.ocaml.org/blog/opam-1-2-pin/
 [travis]: https://travis-ci.org/
