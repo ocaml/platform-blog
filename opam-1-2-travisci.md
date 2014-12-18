@@ -9,11 +9,6 @@ briefly describe one of them here: simplifying continuous testing with
 [Travis CI][travis] and
 [GitHub][github].
 
-<img style="float:left; padding: 5px"
-     src="https://travis-ci.com/img/travis-mascot-200px.png"
-     width="200px">
-</img>
-
 ## Creating an `opam` file
 
 As explained in the [previous post][pin], adding an `opam` file at the
@@ -56,6 +51,11 @@ environment variable in your local setup.
 
 ## Installing the Travis CI scripts
 
+<img style="float:left; padding: 5px"
+     src="https://travis-ci.com/img/travis-mascot-200px.png"
+     width="200px">
+</img>
+
 [Travis CI][travis] is a free service that enables continuous testing on your
 GitHub projects. It uses Ubuntu containers and runs the tests for at most 50
 minutes per test run.
@@ -70,10 +70,10 @@ To use Travis CI with your OCaml project, you can follow the instructions on
   the latest stable version (today: 4.02.1, but it will be updated for
   each new compiler release). Add a line:
 
-    ````
+    ```
 env:
   - OCAML_VERSION=<VERSION>
-    ````
+    ```
 
   at the end of the file for every OCaml version that you want to
   test. The supported values for `<VERSION>` are `3.12`, `4.00`,
