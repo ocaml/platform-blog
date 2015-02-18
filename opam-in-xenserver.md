@@ -1,7 +1,10 @@
-title: "Why we use opam for XenServer development"
+title: "Why we use OPAM for XenServer development"
 authors: "Dave Scott" {"http://dave.recoil.org/"}
-date: "2015-02-16"
+date: "2015-02-18"
 --BODY--
+
+*This is a guest post from an OPAM user about how they use it.  If you would like to post
+ about your own use, [please let us know](https://github.com/ocaml/platform-blog/issues).*
 
 [XenServer](http://www.xenserver.org/) uses the
 [Xen project's](http://www.xenproject.org/)
@@ -37,12 +40,12 @@ build environment?
 Exactly which libraries do we need? How do we apply updates?
 If we change one of these libraries (e.g. to make a bugfix), exactly which
 bits should we rebuild?
-This is where [opam](https://opam.ocaml.org),
+This is where [OPAM](https://opam.ocaml.org),
 the source package manager, makes everything easy.
 
-Installing a build environment with opam is particularly easy. 
+Installing a build environment with OPAM is particularly easy. 
 For example in a CentOS 6.5 VM,
-first [install opam](https://opam.ocaml.org/doc/Install.html):
+first [install OPAM](https://opam.ocaml.org/doc/Install.html):
 
 and then:
 ```
@@ -118,13 +121,13 @@ Do you want to continue ? [Y/n] y
 
 Obviously it's extremely tedious to do all that by hand!
 
-Opam also makes iterative development very easy.
-Consider a schenario where a
+OPAM also makes iterative development very easy.
+Consider a scenario where a
 [common interface](https://github.com/xapi-project/xcp-idl) has to be changed.
-Without opam we have to figure out which components to rebuild manually--
+Without OPAM we have to figure out which components to rebuild manually--
 this is both time-consuming and error-prone. When we want to make some
-local changes we simply clone the repo and tell opam to "pin" the package
-to the local checkout. Opam will take care of rebuilding only the
+local changes we simply clone the repo and tell OPAM to "pin" the package
+to the local checkout. OPAM will take care of rebuilding only the
 dependent packages:
 
 ```
@@ -153,7 +156,7 @@ $ opam pin add xapi-idl git://github.com/xapi-project/xcp-idl
 ```
 
 It's important to be able to iterate quickly when testing a bugfix--
-opam makes this easy too. After making a change to a "pinned" repository
+OPAM makes this easy too. After making a change to a "pinned" repository
 the user just has to type
 
 ```
@@ -162,7 +165,7 @@ $ opam update -u
 
 and only the affected components will be rebuilt.
 
-Opam allows us to create our own 'development remotes' containing the
+OPAM allows us to create our own 'development remotes' containing the
 latest, bleeding-edge versions of our libraries. To install these unstable
 versions we only need to type:
 
@@ -208,7 +211,7 @@ versioned and released, many of them shared with other projects
 (such as [Mirage](http://www.openmirage.org/)). The libraries are
 easy to build and test separately, but the sheer number of dependencies
 makes it difficult to build the whole project -- this is where opam
-really shines. Opam simplifies our day-to-day lives by
+really shines. OPAM simplifies our day-to-day lives by
 
 - automatically rebuilding dependent software when dependencies change
 - allowing us to share 'development remotes' containing bleeding-edge software
@@ -216,4 +219,4 @@ really shines. Opam simplifies our day-to-day lives by
 - allowing us to 'release' a co-ordinated set of versions with a `git push`
   and then trigger integration tests via [travis](https://travis-ci.org/)
 
-If you have a lot of OCaml code to build, try opam!
+If you have a lot of OCaml code to build, try OPAM!
