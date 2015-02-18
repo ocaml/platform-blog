@@ -122,12 +122,14 @@ Opam also makes iterative development very easy.
 Consider a schenario where a
 [common interface](https://github.com/xapi-project/xcp-idl) has to be changed.
 Without opam we have to figure out which components to rebuild manually--
-this is both time-consuming and error-prone. Opam allows a package
-to be "pinned" to a particular version (e.g. a local checkout) and will
-take care of rebuilding only the dependent packages:
+this is both time-consuming and error-prone. When we want to make some
+local changes we simply clone the repo and tell opam to "pin" the package
+to the local checkout. Opam will take care of rebuilding only the
+dependent packages:
 
 ```
 $ git clone git://github.com/xapi-project/xcp-idl
+... make some local changes ...
 $ opam pin add xapi-idl ./xcp-idl
 $ opam install xapi
 ...
@@ -143,6 +145,11 @@ The following actions will be performed:
   ↻  recompile xapi                   1.9.56   [uses xapi-idl]
 ===== ↻  8 =====
 Do you want to continue ? [Y/n] 
+```
+
+It's even easier if you just want to pin to a branch, such as master:
+```
+$ opam pin add xapi-idl git://github.com/xapi-project/xcp-idl
 ```
 
 It's important to be able to iterate quickly when testing a bugfix--
