@@ -26,7 +26,7 @@ a suite of tools written mostly in OCaml which
 
 The Xapi toolstack is built from a large set of libraries and components
 which are
-developed independenly and versioned separately. It's easy for us to
+developed independently and versioned separately. It's easy for us to
 share code with other open-source projects like
 [Mirage](http://www.openmirage.org/), however
 this flexibility comes 
