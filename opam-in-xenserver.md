@@ -32,11 +32,11 @@ share code with other open-source projects like
 this flexibility comes 
 with a cost: when one binary such as "xapi" (the cluster manager)
 depends on 45 separate libraries,
-how do I quickly set up a
+how do we quickly set up a
 build environment?
-Exactly which libraries do I need? How do I apply updates?
-If I change one of these libraries (e.g. to make a bugfix), exactly which
-bits should I rebuild?
+Exactly which libraries do we need? How do we apply updates?
+If we change one of these libraries (e.g. to make a bugfix), exactly which
+bits should we rebuild?
 This is where [opam](https://opam.ocaml.org),
 the source package manager, makes everything easy.
 
