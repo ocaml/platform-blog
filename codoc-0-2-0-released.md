@@ -1,21 +1,35 @@
-Last week, we [published](http://lists.ocaml.org/pipermail/platform/2015-February/000539.html) an alpha version of a new OCaml documentation generator, [codoc 0.2.0](https://github.com/dsheets/codoc). To try it out, simply follow the directions in the README on that repository, or [browse some samples](http://dsheets.github.io/codoc) of the current, default output of the tool.
-Please do bear in mind codoc and its constituent libraries are still under heavy development and are *not* feature complete.
+title: "Improving the OCaml documentation toolchain"
+authors: "OCaml Platform Team" {"https://opam.ocaml.org"}
+date: "2015-02-20"
+--BODY--
 
-codoc's aim is to provide a widely useful set of tools for generating OCaml documentation. In particular, we've striven to:
+Last week, we
+[published](http://lists.ocaml.org/pipermail/platform/2015-February/000539.html)
+an *alpha* version of a new OCaml documentation generator,
+[codoc 0.2.0](https://github.com/dsheets/codoc). To try it out, simply follow the directions in the README on that repository, or
+[browse some samples](http://dsheets.github.io/codoc) of the current, default
+output of the tool. Please do bear in mind codoc and its constituent libraries
+are still under heavy development and are *not* feature complete.
+
+`codoc`'s aim is to provide a widely useful set of tools for generating OCaml
+documentation. In particular, we are striving to:
 
 1. Cover all of OCaml's language features
 2. Provide accurate name resolution and linking
 3. Support cross-linking between different packages
-4. Expose interfaces to the components we've used to build codoc
+4. Expose interfaces to the components we've used to build `codoc`
 5. Provide a magic-free command-line interface to the tool itself
 6. Reduce external dependencies and default integration with other tools
 
-We haven't yet achieved all of these at all levels of our tool stack but are getting close. codoc 0.2.0 is usable today (if a little rough in some areas like default CSS).  This post outlines the architecture of the new system to make it easier to understand the design decisions that went into it.
+We haven't yet achieved all of these at all levels of our tool stack but are
+getting close. `codoc` 0.2.0 is usable today (if a little rough in some areas
+like default CSS).  This post outlines the architecture of the new system to
+make it easier to understand the design decisions that went into it.
 
 ## The five stages of documentation
 
 There are five stages in generating documentation from OCaml source
-code. Here we describe how each is handled in the *past* (using
+code. Here we describe how each was handled in the *past* (using
 OCamldoc), the *present* (using our current prototype), and the *future*
 (using the final version of the tools we are developing).
 
@@ -27,13 +41,13 @@ an `.ml` or `.mli` file with the definitions that they correspond to.
 #### Past
 
 Associating comments with definitions is handled by the OCamldoc
-tool, which does this in two steps. First it parses the file using
-the regular OCaml parser or [camlp4](https://github.com/ocaml/camlp4), just as in
-normal compilation. It uses the syntax tree from the first step and then re-parses
-the file looking for comments. This second parse is guided by the location information in the
-syntax tree; for example if there is a definition which ends on line
-5 then OCamldoc will look for comments to attach to that definition
-starting at line 6.
+tool, which does this in two steps. First it parses the file using the regular
+OCaml parser or [camlp4](https://github.com/ocaml/camlp4), just as in
+normal compilation. It uses the syntax tree from the first step and then
+re-parses the file looking for comments. This second parse is guided by the
+location information in the syntax tree; for example if there is a definition
+which ends on line 5 then OCamldoc will look for comments to attach to that
+definition starting at line 6.
 
 The rules used for attaching comments are quite intricate and whitespace
 dependent. This makes it difficult to parse the file and attach comments
@@ -49,8 +63,8 @@ case.
 #### Present
 
 Our current prototype associates comments with definitions within the
-compiler itself. This relies on a patch to the OCaml compiler ([pull
-request #51 on GitHub](https://github.com/ocaml/ocaml/pull/51)).
+compiler itself. This relies on a patch to the OCaml compiler
+([pull request #51 on GitHub](https://github.com/ocaml/ocaml/pull/51)).
 Comment association is activated by the `-doc` command-line flag. It
 uses (a rewritten version of) the same two-step algorithm currently
 used by OCamldoc. The comments are then attached to the appropriate node
@@ -219,13 +233,25 @@ which allow users to add support for additional formats.
 
 #### Present
 
-Codoc only supports HTML and XML output at present, although extra output formats such as JSON should be very easy to add once the interfaces settle down.  Codoc defines a documentation index XML format for tracking package hierarchies, documentation issues, and hierarchically localized configuration.
+`codoc` only supports HTML and XML output at present, although extra output
+formats such as JSON should be very easy to add once the interfaces settle
+down.  `codoc` defines a documentation index XML format for tracking package
+hierarchies, documentation issues, and hierarchically localized configuration.
 
-Codoc also defines a scriptable command-line interface giving users access to its internal documentation phases: extraction, linking, and rendering. The latest instructions on how to use the CLI can be found in the [README](https://github.com/dsheets/codoc).  We provide an OPAM remote with all the working versions of the new libraries and compiler patches required to drive the new documentation engine.
+`codoc` also defines a scriptable command-line interface giving users access
+to its internal documentation phases: extraction, linking, and rendering. The
+latest instructions on how to use the CLI can be found in the
+[README](https://github.com/dsheets/codoc).  We provide an OPAM remote with
+all the working versions of the new libraries and compiler patches required to
+drive the new documentation engine.
 
 #### Future
 
-As previously mentioned, [codoc](https://github.com/dsheets/codoc) and its constituent libraries [doc-ock-lib](https://github.com/lpw25/doc-ock-lib) and [doc-ock-xml](https://github.com/dsheets/doc-ock-xml) are still under heavy development and are not yet feature complete. Notably, there are some important outstanding issues:
+As previously mentioned, [codoc](https://github.com/dsheets/codoc) and its
+constituent libraries [doc-ock-lib](https://github.com/lpw25/doc-ock-lib)
+and [doc-ock-xml](https://github.com/dsheets/doc-ock-xml) are still under
+heavy development and are not yet feature complete. Notably, there are some
+important outstanding issues:
 
 1. Class and class type documentation has no generated HTML. ([issue codoc#9](https://github.com/dsheets/codoc/issues/9))
 2. CSS is subpar. ([issue codoc#27](https://github.com/dsheets/codoc/issues/22))
@@ -236,5 +262,9 @@ As previously mentioned, [codoc](https://github.com/dsheets/codoc) and its const
 7. -pack and cmt extraction are not supported ([issue doc-ock-lib#35](https://github.com/lpw25/doc-ock-lib/issues/35) and [issue doc-ock-lib#3](https://github.com/lpw25/doc-ock-lib/issues/3))
 8. Inclusion/substitution is not supported ([issue doc-ock-lib#2](https://github.com/lpw25/doc-ock-lib/issues/2))
 
-We are very happy to take bug reports and patches at <https://github.com/dsheets/codoc/issues>. For wider suggestions, comments, complaints and discussions, please join us on the [Platform mailing list](http://lists.ocaml.org/listinfo/platform).
-We do hope that you'll let us know what you think and help us build a next generation documentation tool which will serve our community admirably.
+We are very happy to take bug reports and patches at
+<https://github.com/dsheets/codoc/issues>. For wider suggestions, comments,
+complaints and discussions, please join us on the
+[Platform mailing list](http://lists.ocaml.org/listinfo/platform).
+We do hope that you'll let us know what you think and help us build a next
+generation documentation tool which will serve our community admirably.
