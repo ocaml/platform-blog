@@ -6,10 +6,17 @@ date: "2015-02-20"
 Last week, we
 [published](http://lists.ocaml.org/pipermail/platform/2015-February/000539.html)
 an *alpha* version of a new OCaml documentation generator,
-[codoc 0.2.0](https://github.com/dsheets/codoc). To try it out, simply follow the directions in the README on that repository, or
-[browse some samples](http://dsheets.github.io/codoc) of the current, default
-output of the tool. Please do bear in mind codoc and its constituent libraries
-are still under heavy development and are *not* feature complete.
+[codoc 0.2.0](https://github.com/dsheets/codoc).
+In the 2014 OCaml workshop presentation ([abstract][], [slides][], [video][]),
+we mentioned the 'module wall' for documentation and this attempts to fix it.
+To try it out, simply follow the directions in the README on that repository,
+or [browse some samples](http://dsheets.github.io/codoc) of the current,
+default output of the tool. Please do bear in mind codoc and its constituent
+libraries are still under heavy development and are *not* feature complete.
+
+[abstract]: http://ocaml.org/meetings/ocaml/2014/ocaml2014_7.pdf
+[slides]: http://ocaml.org/meetings/ocaml/2014/ocl-platform-2014-slides.pdf
+[video]: https://www.youtube.com/watch?v=jxhtpQ5nJHg&list=UUP9g4dLR7xt6KzCYntNqYcw
 
 `codoc`'s aim is to provide a widely useful set of tools for generating OCaml
 documentation. In particular, we are striving to:
