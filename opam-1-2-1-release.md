@@ -13,15 +13,8 @@ over 1.2.0, without breaking compatibility.
 See the normal
 [installation instructions](https://opam.ocaml.org/doc/Install.html): you should
 generally pick up the packages from the same origin as you did for the last
-version.
-
-If you're upgrading from 1.2.0, there is also a newly available `opam-update`
-package available on the OPAM repository that will compile the new version
-within your current OPAM installation and install it locally to `~/.opam`:
-
-```
-opam install opam-update.1.2.1
-```
+version -- possibly switching from the official repository packages to the ones
+we provide for your distribution, in case the former are lagging behind.
 
 
 ### What's new
