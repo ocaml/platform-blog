@@ -4,9 +4,9 @@ date: "2015-05-07"
 --BODY--
 
 [OPAM 1.2.2](https://github.com/ocaml/opam/releases/tag/1.2.2) has just been
-released. This fixes a few issues over 1.2.1 and brings a couple improvements,
+released. This fixes a few issues over 1.2.1 and brings a couple of improvements,
 in particular better use of the solver to keep the installation as up-to-date as
-possible.
+possible even when the latest version of a package can not be installed.
 
 
 ### Upgrade from 1.2.1 (or earlier)
