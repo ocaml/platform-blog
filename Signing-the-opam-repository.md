@@ -6,7 +6,7 @@ date: "2015-06-05 15:41 UTC+0900"
 
 > This is an initial proposal on signing the OPAM repository. Comments and
 > discussion are expected on the
-> [platform mailing-list](https://lists.cam.ac.uk/mailman/listinfo/cl-ocamllabs-platform).
+> [platform mailing-list](http://lists.ocaml.org/listinfo/platform).
 
 The purpose of this proposal is to enable a secure distribution of
 OCaml packages. The package repository does not have to be trusted if
