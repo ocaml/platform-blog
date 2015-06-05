@@ -108,7 +108,7 @@ to not realize there is anything wrong.
   from good mirrors.
 
 - Wrong author attack: an attacker should not be able to upload a new
-  version of a package for which he is not the real maintainer.
+  version of a package for which they are not the real maintainer.
 
 ## Trust
 
