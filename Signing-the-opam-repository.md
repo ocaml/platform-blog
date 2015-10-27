@@ -31,7 +31,7 @@ There are several differences between the goal of TUF and opam, namely
 TUF distributes a directory structure containing the code archive,
 whereas opam distributes metadata about OCaml packages. Opam uses git
 (and GitHub at the moment) as a first class citizen: new packages are
-submitted as pull requests by maintainers who already have a GitHub
+submitted as pull requests by developers who already have a GitHub
 account.
 
 Note that TUF specifies the signing hierarchy and the format to deliver and
@@ -41,7 +41,7 @@ individually signed by developers. Or indeed allow both, depending on the
 package.
 
 Below, we tried to explain the specifics of our implementation, and mostly the
-user and maintainer-visible changes. It should be understandable without prior
+user and developer-visible changes. It should be understandable without prior
 knowledge of TUF.
 
 We are inspired by [Haskell's adjustments][haskell-tuf-git] (and
@@ -107,8 +107,8 @@ to not realize there is anything wrong.
 - Malicious repository mirrors: should not be able to prevent updates
   from good mirrors.
 
-- Wrong author attack: an attacker should not be able to upload a new
-  version of a package for which they are not the real maintainer.
+- Wrong developer attack: an attacker should not be able to upload a new
+  version of a package for which they are not the real developer.
 
 ## Trust
 
@@ -155,16 +155,16 @@ For other repositories, there will be three options:
 ### End-to-end signing
 
 This requires the end-user to be able to validate a signature made by the
-original packager. There are two trust paths for the chain of trust (where
+original developer. There are two trust paths for the chain of trust (where
 "&rarr;" stands for "signs for"):
 
 - (_high_) root keys &rarr;
   repository maintainer keys &rarr; (signs individually)
-  package delegation + package maintainer key &rarr;
+  package delegation + developer key &rarr;
   package files
 - (_low_) root keys &rarr;
   snapshot key &rarr; (signs as part of snapshot)
-  package delegation + package maintainer key &rarr;
+  package delegation + developer key &rarr;
   package files
 
 It is intended that packages may initially follow the _low_ trust path, adding
@@ -213,7 +213,7 @@ directly to inject malicious code or metadata in any existing package.
 
 #### Delegate developer keys
 
-These keys are used by the package maintainers for end-to-end signing. They can
+These keys are used by the package developers for end-to-end signing. They can
 be generated locally as needed by new packagers (_e.g._ by the `opam-publish`
 tool), and should be stored password-encrypted. They can be added to the
 repository through pull-requests, waiting to be signed (i) as part of snapshots
@@ -295,12 +295,12 @@ Here is an example:
 repository root /
 |--packages/
 |  |--pkgname/
-|  |  |--delegation                    - signed by author, repo maintainer
+|  |  |--delegation                    - signed by developer, repo maintainer
 |  |  |--pkgname.version1/
 |  |  |  |--opam
 |  |  |  |--descr
 |  |  |  |--url
-|  |  |  `--signature                  - signed by author1
+|  |  |  `--signature                  - signed by developer1
 |  |  `--pkgname.version2/ ...
 |  `--pkgname2/ ...
 |--compilers/
@@ -316,8 +316,8 @@ repository root /
 `--keys/
    |--root
    `--dev/
-      |--author1-email                 - signed by autor1,
-      `--author2-email ...               and repo maint. once verified
+      |--developer1-email              - signed by developer1,
+      `--developer2-email ...            and repo maint. once verified
 ```
 
 Keys are provided in different files as string triplets
@@ -351,12 +351,12 @@ delegates: [
 ]
 ```
 The file is signed:
-- by the original author submitting it
-- or by an author previously having delegation for all versions, for changes
+- by the original developer submitting it
+- or by a developer previously having delegation for all versions, for changes
 - or directly by repository maintainers, validating the delegation, and
   increasing the level of trust
 
-Every key a maintainer delegates trust to must also be signed by the maintainer.
+Every key a developer delegates trust to must also be signed by the developer.
 
 `compilers/patch.delegate` files follow a similar format (we are considering
 changing the hierarchy of compilers to match that of packages, to make things
@@ -393,7 +393,7 @@ archive: [ 908460 [ sha1 "ec5642fd2faf3ebd9a28f9de85acce0743e53cc2" ] ]
 
 This file is signed either:
 - by the `initial-bootstrap` key, only initially
-- by a delegate key (_i.e._ by a delegated-to package maintainer)
+- by a delegate key (_i.e._ by a delegated-to developer)
 - by a quorum of repository maintainers
 
 The latter is needed to hot-fix packages on the repository: repository
@@ -523,7 +523,7 @@ Handle the new formats for checksums and non-repackaged archives.
 
 Allow a per-repository security threshold (_e.g._ allow all, allow only signed
 packages, allow only packages signed by a verified key, allow only packages
-signed by their verified maintainer). It should be easy but explicit to add a
+signed by their verified developer). It should be easy but explicit to add a
 local network, unsigned repository. Backends other than git won't be signed
 anyway (local, rsync...).
 
@@ -532,7 +532,7 @@ anyway (local, rsync...).
 Generate keys, handle locally stored keys, generate `signature` files, handle
 signing, submit signatures, check delegation, submit new delegation, request
 delegation change (might require repository maintainer intervention if an RM
-signed the delegation), delete maintainer, delete package.
+signed the delegation), delete developer, delete package.
 
 Manage local keys. Probably including re-generating, and asking for revocation.
 
@@ -613,10 +613,10 @@ otherwise).
   pull-request, self-signed.
 * If there is no delegation for the package, the `/packages/pkgname/delegation`
   file is added, delegating to the developer key and signed by it.
-* If there is an existing delegation that doesn't include the developer's key,
+* If there is an existing delegation that doesn't include the auhor's key,
   this will require manual intervention from the repository managers. We may yet
   submit a pull-request adding the new key as delegate for this package, and ask
-  the repository maintainers -- or former package maintainers -- to sign it.
+  the repository maintainers -- or former developers -- to sign it.
 
 ## Security analysis
 
@@ -657,7 +657,7 @@ We claim that the above measures give protection against:
 
 - Malicious repository mirrors: if the signature does not match, reject.
 
-- Wrong author attack: if the maintainer is not in the delegation, reject.
+- Wrong developer attack: if the developer is not in the delegation, reject.
 
 ### GitHub repository
 
@@ -687,7 +687,7 @@ the client, or a compromise of the opam repository: in the latter case, since
 the linearity check is reproduces even from the clients:
 
 - any tamper could be detected very quickly, and measures taken.
-- a freeze would be detected as soon as a package maintainer checks that his
+- a freeze would be detected as soon as a developer checks that his
   package is really online. That currently happens
   [several times a day][opam-repo-pulse].
 
@@ -696,7 +696,7 @@ makes as easy as it can get, and the holders of the root keys would sign a new
 `/auth/root`, revoking the compromised snapshot key and introducing a new one.
 
 In the time before the signing bot can be put back online with the new snapshot
-key -- _i.e._ the breach has been found and fixed -- a maintainer could manually
+key -- _i.e._ the breach has been found and fixed -- a developer could manually
 sign time-stamped tags before they expire (_e.g._ once a day) so as not to hold
 back updates.
 
@@ -706,7 +706,7 @@ Repository maintainers are powerful, they can modify existing opam files and
 sign them (as hotfix), introduce new delegations for packages, etc.).
 
 However, by requiring a quorum for sensitive operations, we limit the scope of a
-single RM key compromise to the validation of new maintainer keys or delegations
+single RM key compromise to the validation of new developer keys or delegations
 (which should be the most common operation done by RMs): this enables to raise
 the level of security of the new, malicious packages but otherwise doesn't
 change much from what can be done with just access to the git repository.
@@ -727,11 +727,11 @@ malicious commit.
 - We split in lots more files, and per-package ones, to fit with and nicely
   extend the git-based workflow that made the success of opam. The original TUF
   would have big json files signing for a lot of files, and likely to conflict.
-  Both packagers and repository maintainers should be able to safely work
+  Both developers and repository maintainers should be able to safely work
   concurrently without issue. Signing bundles in TUF gives the additional
   guarantee that no file is removed without proper signature, but this is
   handled by git and signed tags.
-- instead of a single file with all signed packages by a specific maintainer,
+- instead of a single file with all signed packages by a specific developer,
   one file per package
 
 ### Differences to Haskell:
