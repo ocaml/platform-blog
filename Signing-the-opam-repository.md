@@ -687,7 +687,7 @@ the client, or a compromise of the opam repository: in the latter case, since
 the linearity check is reproduces even from the clients:
 
 - any tamper could be detected very quickly, and measures taken.
-- a freeze would be detected as soon as a developer checks that his
+- a freeze would be detected as soon as a developer checks that their
   package is really online. That currently happens
   [several times a day][opam-repo-pulse].
 
