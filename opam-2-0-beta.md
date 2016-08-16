@@ -1,45 +1,48 @@
-title: "Opam 2.0~beta is out"
+title: "OPAM 2.0~alpha is out"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2016-08-11"
 --BODY--
 
-With over 600 patches since 1.2.2, the release of opam 2.0 is drawing near, and
-a first beta has just been released.
-
+We are pleased to announce the OPAM 2.0alpha1 release, with over 600 patches
+since [1.2.2](https://opam.ocaml.org/blog/opam-1-2-2-release/).
 This version brings many new features and changes, the most notable one being
-the disparition of the `.comp` compiler description files -- replaced by
-standard package definition files, using their new extensions. This in turn
-means more flexibility in how switches are setup and managed.
+that OCaml compiler packages are no longer special entities, and are replaced
+by standard package definition files. This in turn means that OPAM users have
+more flexibility in how switches are managed, including for managing non-OCaml
+environments such as [Coq](http://coq.io/opam/) using the same familiar tools.
 
 ## A few highlights
 
 This is just a sample, see the full
 [changelog](https://github.com/ocaml/opam/blob/2.0-beta/CHANGES) for more:
 
-- opam now tracks files installed by packages, and is able to cleanly remove
-  them when no existing files where modified, in which case the `remove:` field
-  isn't needed and should be skipped;
+- **Automatic file tracking:**: OPAM now tracks the files installed by packages
+  and is able to cleanly remove them when no existing files were modified.
+  The `remove:` field is now optional as a result.
 
-- package command wrappers can be configured to, for example, restrict
-  permissions of the build and install processes using Linux namespaces;
+- **Sandboxed builds:** Command wrappers can be configured to, for example,
+  restrict permissions of the build and install processes using Linux namespaces;
 
-- better error mitigation in general; in particular, through clever ordering of
-  the actions and separation of `build` and `install`, most build failures are
-  now without consequence on the installation;
+- **Better error mitigation:** Through clever ordering of the shell actions and
+  separation of `build` and `install`, most build failures do not affect the
+  installation of unrelated packages.
 
-- opam now stores its metadata in a single subdirectory `.opam-switch` at the
-  switch prefix;
+- **Local switches:** OPAM now stores its metadata in a single `.opam-switch`
+  subdirectory at the switch prefix.
 
-- a configuration file can be used to direct choices at `opam init` (specific
-  repositories, wrappers, variables, fetch commands, solver...). This can
-  be used to override all of opam OCaml-bound settings;
+- **Configuration file:** This can be used to direct choices at `opam init`
+  automatically (e.g. specific repositories, wrappers, variables, fetch commands,
+  or the external solver). This can be used to override all of the OPAM OCaml-bound
+  settings.
 
-- the API is completely rewritten and should make it much easier to write
-  external tools and plugins. Existing tools will, however, need to be ported;
+- **Simpler library:** the OCaml API is completely rewritten and should make it
+  much easier to write external tools and plugins. Existing tools will need to be
+  ported.
 
-- having compilers as packages has many advantages, among which the possibility
-  to upgrade the compiler in a given switch, better tooling for compilers, the
-  possibility to define `coq` as compiler...
+- **Compilers as packages:** This brings many advantages for OPAM workflows,
+  such as being able to upgrade the compiler in a given switch, better tooling for
+  local compilers, and the possibility to define `coq` as a compiler or even
+  use OPAM as a generic shell scripting engine with dependency tracking.
 
 ## Roll out
 
