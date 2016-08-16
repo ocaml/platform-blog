@@ -17,7 +17,7 @@ This is just a sample, see the full
 [changelog](https://github.com/ocaml/opam/blob/2.0-beta/CHANGES) for more:
 
 - opam now tracks files installed by packages, and is able to cleanly remove
-  them when no existing files where modified, in which case the `remove:` field
+  them when no existing files were modified, in which case the `remove:` field
   isn't needed and should be skipped;
 
 - package command wrappers can be configured to, for example, restrict
@@ -32,7 +32,7 @@ This is just a sample, see the full
 
 - a configuration file can be used to direct choices at `opam init` (specific
   repositories, wrappers, variables, fetch commands, solver...). This can
-  be used to override all of opam OCaml-bound settings;
+  be used to override all of opam's OCaml-related settings;
 
 - the API is completely rewritten and should make it much easier to write
   external tools and plugins. Existing tools will, however, need to be ported;
@@ -57,7 +57,7 @@ of doubt, don't hesitate to ask questions directly during the beta period.
 ## Interface changes
 
 Commands `opam switch` and `opam list` have been rehauled for more consistency
-and flexibility: the former won't implicitely create new switches unless called
+and flexibility: the former won't implicitly create new switches unless called
 with the `create` subcommand, and `opam list` now allows to combine filters and
 finely specify the output format. They may not be backwards-compatible, so
 please check your scripts.
@@ -92,7 +92,7 @@ that depends on one of `ocaml-base-compiler`, `ocaml-system` or
 
 ## Package format changes
 
-The opam package definition format is much similar to before, but there are
+The opam package definition format is very similar to before, but there are
 quite a few extensions and some changes:
 
 - it is now mandatory to separate the `build:` and `install:` steps (this allows
@@ -121,19 +121,20 @@ Install as usual:
 
     wget https://raw.github.com/ocaml/opam/2.0-beta/shell/opam_installer.sh -O - | sh -s /usr/local/bin
 
-  You can also
-  [pick your version](https://github.com/ocaml/opam/releases/latest) and download it
-  to your PATH;
+  Equivalently,
+  [pick your version](https://github.com/ocaml/opam/releases/latest) and
+  download it to your PATH;
 
 - Using the development packages with your package manager, as they become
-  available: see [https://opam.ocaml.org/2.0/Install.md] for up-to-date information;
+  available: see [https://opam.ocaml.org/2.0/Install.md] for up-to-date
+  information;
 
 - Building from our inclusive source tarball:
   [download here](https://github.com/ocaml/opam/releases/download/2.0-beta/opam-full-2.0-beta.tar.gz)
-  and build using `./configure; make lib-ext; make; make install` if you have
-  OCaml >= 4.01 already available, `make cold; make install` otherwise;
+  and build using `./configure && make lib-ext && make && make install` if you
+  have OCaml >= 4.01 already available, `make cold && make install` otherwise;
 
-- From an existing opam installation, you can also do e.g. `opam install
-  opam-devel.2.0~beta && sudo cp $(opam config var bin)/opam-devel
-  /usr/local/bin/opam`.
+- From an existing opam installation, you can also use the packaged version
+  `opam-devel` with _e.g._:
 
+    opam install opam-devel.2.0~beta && sudo cp $(opam config var opam-devel:lib)/* /usr/local/bin/opam`.
