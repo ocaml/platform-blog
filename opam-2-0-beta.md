@@ -44,6 +44,10 @@ This is just a sample, see the full
   local compilers, and the possibility to define `coq` as a compiler or even
   use OPAM as a generic shell scripting engine with dependency tracking.
 
+- **Local switches:** Create switches within your projects for easier management.
+
+- **Inplace build:** Use opam to build directly from your source directory.
+
 ## Roll out
 
 You are very welcome to try out the Alpha, and report any issues. The repository
@@ -62,13 +66,13 @@ of doubt, don't hesitate to ask questions directly during the alpha period.
 Commands `opam switch` and `opam list` have been rehauled for more consistency
 and flexibility: the former won't implicitly create new switches unless called
 with the `create` subcommand, and `opam list` now allows to combine filters and
-finely specify the output format. They may not be backwards-compatible, so
+finely specify the output format. They may not be fully backwards compatible, so
 please check your scripts.
 
 Most other commands have also seen fixes or improvements. For example, opam
 doesn't forget about your set of installed packages on the first error, and the
-new `opam install --restore` can be used to reinstall your selection after
-_e.g._ a failed upgrade.
+new `opam install --restore` can be used to reinstall your selection after a
+failed upgrade.
 
 ## Repository changes
 
@@ -87,7 +91,8 @@ To make the transition easier,
 - upgrade of a custom repository is simply a matter of running `opam-admin
   upgrade-format` at its root;
 - the official repository at `opam.ocaml.org` already has a 2.0 mirror, to which
-  you will be automatically redirected.
+  you will be automatically redirected;
+- packages definition are automatically converted when you pin a package.
 
 Note that the `ocaml` package on the official repository is actually a wrapper,
 that depends on one of `ocaml-base-compiler`, `ocaml-system` or
@@ -112,7 +117,8 @@ quite a few extensions and some changes:
 - allow `"""` delimiters around unescaped strings
 - `&` is now parsed with higher priority than `|`
 - field `ocaml-version:` can no longer be used
-- the `remove:` field should not be used anymore for simple cases
+- the `remove:` field should not be used anymore for simple cases (just removing
+  files)
 
 ## Let's go then -- how to try it ?
 
