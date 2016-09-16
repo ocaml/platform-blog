@@ -1,6 +1,6 @@
 title: "opam 2.0 preview release!"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2016-09-16"
+date: "2016-08-16"
 --BODY--
 
 <style type="text/css"><!--
