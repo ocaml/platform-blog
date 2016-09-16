@@ -23,25 +23,8 @@ environments such as [Coq](http://coq.io/opam/) using the same familiar tools.
 This is just a sample, see the full
 [changelog](https://github.com/ocaml/opam/blob/2.0-alpha4/CHANGES) for more:
 
-- **Automatic file tracking:**: <span class="opam">opam</span> now tracks the files installed by packages
-  and is able to cleanly remove them when no existing files were modified.
-  The `remove:` field is now optional as a result.
-
 - **Sandboxed builds:** Command wrappers can be configured to, for example,
   restrict permissions of the build and install processes using Linux namespaces.
-
-- **Better error mitigation:** Through clever ordering of the shell actions and
-  separation of `build` and `install`, most build failures do not affect the
-  current installation.
-
-- **Configuration file:** This can be used to direct choices at `opam init`
-  automatically (e.g. specific repositories, wrappers, variables, fetch
-  commands, or the external solver). This can be used to override all of <span class="opam">opam</span>'s
-  OCaml-related settings.
-
-- **Simpler library:** the OCaml API is completely rewritten and should make it
-  much easier to write external tools and plugins. Existing tools will need to be
-  ported.
 
 - **Compilers as packages:** This brings many advantages for <span class="opam">opam</span> workflows,
   such as being able to upgrade the compiler in a given switch, better tooling for
@@ -55,6 +38,23 @@ This is just a sample, see the full
 - **Inplace build:** Use <span class="opam">opam</span> to build directly from
   your source directory. Ensure the package is pinned locally then run `opam
   install --inplace-build`.
+
+- **Automatic file tracking:**: <span class="opam">opam</span> now tracks the files installed by packages
+  and is able to cleanly remove them when no existing files were modified.
+  The `remove:` field is now optional as a result.
+
+- **Configuration file:** This can be used to direct choices at `opam init`
+  automatically (e.g. specific repositories, wrappers, variables, fetch
+  commands, or the external solver). This can be used to override all of <span class="opam">opam</span>'s
+  OCaml-related settings.
+
+- **Simpler library:** the OCaml API is completely rewritten and should make it
+  much easier to write external tools and plugins. Existing tools will need to be
+  ported.
+
+- **Better error mitigation:** Through clever ordering of the shell actions and
+  separation of `build` and `install`, most build failures can keep your current
+  installation intact, not resulting in removed packages anymore.
 
 ## Roll out
 
