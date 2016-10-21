@@ -4,6 +4,10 @@ authors: [ "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2015-06-05 15:41 UTC+0900"
 --BODY--
 
+> NOTE (September 2016): updated proposal from OCaml 2016 workshop is
+> [available](https://github.com/hannesm/conex-paper/blob/master/paper.pdf),
+> including links to prototype implementation.
+
 > This is an initial proposal on signing the OPAM repository. Comments and
 > discussion are expected on the
 > [platform mailing-list](http://lists.ocaml.org/listinfo/platform).
