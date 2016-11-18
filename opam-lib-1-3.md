@@ -28,6 +28,9 @@ stuck on e.g. an old version of ocamlgraph.
 Therefore, I encourage all maintainers of tools based on opam-lib to migrate to
 1.3. If you're not in a hurry, you can also choose to migrate to 2.0 directly.
 
+The respective APIs are available in html for
+[1.2](https://opam.ocaml.org/doc/1.2/api) and [1.3](https://opam.ocaml.org/doc/1.3/api).
+
 ### Architectural changes
 
 If you need to migrate from 1.2 to 1.3, these tips may help:
@@ -82,5 +85,5 @@ The provided packages are:
   development version of the opam tool itself, for bootstrapping. You can
   install it safely as it doesn't install the new `opam` in the PATH.
 
-The new API can be browsed at https://opam.ocaml.org/doc/2.0/api/index.html ;
+The new API can be browsed at https://opam.ocaml.org/doc/2.0/api ;
 please get in touch if you have trouble migrating.
