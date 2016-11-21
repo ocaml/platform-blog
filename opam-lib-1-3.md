@@ -1,6 +1,6 @@
 title: "opam-lib 1.3 available"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2016-11-18"
+date: "2016-11-21"
 --BODY--
 
 <style type="text/css"><!--
@@ -20,16 +20,20 @@ The purpose of this release is twofold:
   has an enhanced `lint` function
 - **be a step towards migration to opam-lib 2.0.**
 
-This, while being compatible with the version of opam in production, which means
-it can be used on currently used or readily usable tools. The versions of the
-dependencies have also been updated, which can help if you don't want to be
-stuck on e.g. an old version of ocamlgraph.
+**This version is compatible with the current stable release of opam (1.2.2)**,
+but dependencies have been updated so that you are not (e.g.) stuck on an old
+version of ocamlgraph.
 
 Therefore, I encourage all maintainers of tools based on opam-lib to migrate to
-1.3. If you're not in a hurry, you can also choose to migrate to 2.0 directly.
+1.3.
 
 The respective APIs are available in html for
 [1.2](https://opam.ocaml.org/doc/1.2/api) and [1.3](https://opam.ocaml.org/doc/1.3/api).
+
+> **A note on plugins**: when you write opam-related tools, remember that by
+> setting `flags: plugin` in their definition and installing a binary named
+> `opam-toolname`, you will enable the users to install package `toolname` and
+> run your tool with a single `opam toolname` command.
 
 ### Architectural changes
 
