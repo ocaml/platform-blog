@@ -90,5 +90,5 @@ The provided packages are:
   development version of the opam tool itself, for bootstrapping. You can
   install it safely as it doesn't install the new `opam` in the PATH.
 
-The new API can be browsed at https://opam.ocaml.org/doc/2.0/api ;
+The new API can be also be [browsed](https://opam.ocaml.org/doc/2.0/api) ;
 please get in touch if you have trouble migrating.
