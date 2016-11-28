@@ -10,9 +10,10 @@ date: "2016-11-21"
 ## opam-lib 1.3
 
 The package for opam-lib version 1.3 has just been released in the official
-<span class="opam">opam</span> repository. There is no release of <span
-class="opam">opam</span> with version 1.3, but this is an intermediate version
-of the library that retains compatibility of the file formats with 1.2.2.
+<span class="opam">opam</span> repository. There is no release of
+<span class="opam">opam</span> with version 1.3, but this is an intermediate
+version of the library that retains compatibility of the file formats with
+1.2.2.
 
 The purpose of this release is twofold:
 
