@@ -11,8 +11,8 @@ opam update; opam install opam-devel
 ```
 
 With about a thousand patches since the last stable release, we took the time to
-gather feedback after [our last announcement](opam-2-0-preview) and implemented
-a couple of additional, most-wanted features:
+gather feedback after [our last announcement](../opam-2-0-preview) and
+implemented a couple of additional, most-wanted features:
 
 - An `opam build` command that, from the root of a source tree containing one
   or more package definitions, can automatically handle initialisation and
@@ -27,7 +27,7 @@ commands, a new archive caching system, etc., but we'll let you check the full
 [changelog](https://github.com/ocaml/opam/blob/2.0.0-beta/CHANGES).
 
 We also improved still on the
-[already announced features](opam-2-0-preview/#Afewhighlights), including
+[already announced features](../opam-2-0-preview/#Afewhighlights), including
 compilers as packages, local switches, per-switch repository configuration,
 package file tracking, etc.
 
