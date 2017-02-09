@@ -1,6 +1,6 @@
-title: "opam 2.0 BETA is out!"
+title: "opam 2.0 Beta is out!"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-02-08"
+date: "2017-02-09"
 --BODY--
 
 We are pleased to announce that the beta release of opam 2.0 is now live! You
