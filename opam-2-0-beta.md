@@ -3,6 +3,12 @@ authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2017-02-09"
 --BODY--
 
+> UPDATE (2017-02-14): A beta2 is online, which fixes issues and performance of
+> the `opam build` command. Get the new
+> [binaries](https://github.com/ocaml/opam/releases/tag/2.0.0-beta2), or
+> recompile the [opam-devel](http://opam.ocaml.org/packages/opam-devel/) package
+> and replace the previous binary.
+
 We are pleased to announce that the beta release of opam 2.0 is now live! You
 can try it already, bootstrapping from a working 1.2 opam installation, with:
 
