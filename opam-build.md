@@ -40,18 +40,19 @@ eval $(opam config env)
 ./configure; make; etc.
 ```
 
-Note that you don't have to give up the classic workflow to use `opam build` to
-handle project-local opam files, it also works on existing switches: just
-specify `--no-autoinit`, `--switch` or make sure the `OPAMSWITCH` variable is
-set.
+Note that if you just want to handle project-local opam files, `opam build` can
+also be used in your existing switches: just specify `--no-autoinit`, `--switch`
+or make sure the `OPAMSWITCH` variable is set. _E.g._ `opam build --no-autoinit
+--deps-only` is a convenient way to get the dependencies for the local project
+ready in your current switch.
 
 ### Additional functions
 
 #### Installation
 
-The build results are normally put within the switch directory, as is the case
-in the classic workflow. But it is possible, with `--install-prefix`, to further
-install the package to the system:
+The installation of the packages happens as usual to the prefix corresponding to
+the switch used (`<project-root>/_opam/` for a local switch). But it is
+possible, with `--install-prefix`, to further install the package to the system:
 
 ```
 opam build --install-prefix ~/local
@@ -108,8 +109,9 @@ their repository definition, or remove them, if they need recompilation.
 
 ### Planned extensions
 
-This is still in beta: there may still be a few rough edges, please experiment
-and give feedback!
+This is still in beta: there are still rough edges, please experiment and give
+feedback! It is still possible that the command syntax and semantics change
+significantly before release.
 
 Another use-case that we are striving to improve is sharing of development
 setups (share sets of pinned packages, depend on specific remotes or git hashes,
