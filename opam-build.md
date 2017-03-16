@@ -1,6 +1,6 @@
 title: "new opam features: \"opam build\""
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-03-06"
+date: "2017-03-16"
 --BODY--
 
 The new opam 2.0 release, currently in beta, introduces several new features.
@@ -122,3 +122,5 @@ is not, as of today, a direct solution to this. In particular, installing this
 way still relies on the default opam repository; a way to define specific
 options for the switch that is implicitely created on `opam build` is in the
 works.
+
+> NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the latter for the comments!
