@@ -98,10 +98,13 @@ to improve the project-local workflows:
 
 - `opam install --keep-build-dir` is now complemented with `--reuse-build-dir`,
   for incremental builds within opam (assuming your build-system supports it
-  correctly)
+  correctly). At the moment, you should specify both on every upgrade of the
+  concerned packages, or set the `OPAMKEEPBUILDDIR` and `OPAMREUSEBUILDDIR`
+  environment variables.
 - `opam install --inplace-build` runs the scripts directly within the source
   dir. If multiple packages are pinned to the same directory, they will be built
   sequentially.
 - `opam install --working-dir` uses the working directory state of your project,
   instead of the state registered in the version control system. Don't worry,
-  opam will warn you if you have uncommitted changes.
+  opam will warn you if you have uncommitted changes and forgot to specify
+  `--working-dir`.
