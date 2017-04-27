@@ -16,17 +16,17 @@ compiled and executed on the fly.
     # 1 + 1;;
     - : int = 2
 
-You can load libraries and your own modules in the toplevel, and is
+You can load libraries and your own modules in the toplevel, and it is
 great for playing with your code. You'll quickly notice that
 the user experience is not ideal, as there is no editing support:
-you cannot conveniently chagne what you type nor can you rewind to
+you cannot conveniently change what you type nor can you rewind to
 previously typed phrases.
 
 This can be improved by using tools such as
 [ledit](http://pauillac.inria.fr/~ddr/ledit/) or
 [rlwrap](http://freecode.com/projects/rlwrap) which adds line editing
 support for any program: `rlwrap ocaml`. This is better but still
-doesn't provides fancy features such as context sensitive completion.
+doesn't provide fancy features such as context sensitive completion.
 
 That's why [UTop](https://github.com/diml/utop) was started. UTop is a
 shiny frontend to the OCaml interactive toplevel, which tries to focus
@@ -36,7 +36,7 @@ on the user experience and features:
 - real-time tab completion of functions and values
 - syntax highlighting
 
-And many other things that makes life easier for users that have been
+And many other things which make life easier for users that have been
 added over time.
 
 What does UTop stand for?
