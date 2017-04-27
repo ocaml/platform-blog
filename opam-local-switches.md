@@ -1,6 +1,6 @@
 title: "new opam features: local switches"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-04-20"
+date: "2017-04-27"
 --BODY--
 
 Among the areas we wanted to improve on for opam 2.0 was the handling of
@@ -101,3 +101,8 @@ user-setup install`) already handles this well, and will access `ocp-indent` or
 `tuareg` from their initial switch, if not found in the current one. You will
 still need to install tools that are tightly bound to a compiler version, like
 `merlin` and `ocp-index`, in the switches where you need them, though.
+
+> NOTE: this article is cross-posted on
+> [opam.ocaml.org](https://opam.ocaml.org/blog/) and
+> [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the
+> latter for the comments!
