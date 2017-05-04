@@ -3,6 +3,10 @@ authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2017-03-16"
 --BODY--
 
+> UPDATE: after discussions following this post, this feature was abandoned with
+> the interface presented below. See [this post](../opam-install-dir) for
+> the details and the new interface!
+
 The new opam 2.0 release, currently in beta, introduces several new features.
 This post gets into some detail on the new `opam build` command, its purpose,
 its use, and some implementation aspects.
