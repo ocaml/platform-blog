@@ -1,9 +1,9 @@
 title: "new opam features: \"opam install <dir>\""
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-04-20"
+date: "2017-05-04"
 --BODY--
 
-After the [opam build](../opam-build) feature was announced, followed a lot of
+After the [opam build](../opam-build) feature was announced followed a lot of
 discussions, mainly having to do with its interface, and misleading name. The
 base features it offered, though, were still widely asked for:
 
@@ -14,7 +14,7 @@ base features it offered, though, were still widely asked for:
 ### Status of `opam build`
 
 `opam build`, as described in a [previous post](../opam-build) has been dropped.
-It will be absent from the next Beta, where the following replace it.
+It will be absent from the next Beta, where the following replaces it.
 
 ### Handling a local project
 
@@ -39,25 +39,27 @@ The following is a little bit more complex:
 This also retrieves the packages defined at `.`, __pins them__ to the current
 source (using version-control if present), and installs them. Note that
 subsequent runs actually synchronise the pinnings, so that packages removed or
-renamed in the source tree are tracked properly (i.e. removed ones are unpinned,
+renamed in the source tree are tracked properly (_i.e._ removed ones are unpinned,
 new ones pinned, the other ones upgraded as necessary).
 
 `opam upgrade`, `opam reinstall`, and `opam remove` have also been updated to
 handle directories as arguments, and will work on "all packages pinned to that
-target", i.e. the packages pinned by the previous call to `opam install <dir>`.
+target", _i.e._ the packages pinned by the previous call to `opam install <dir>`.
 In addition, `opam remove <dir>` unpins the packages, consistently reverting the
 converse `install` operation.
 
-`opam show` already had a `--file` option, but is now being extended in the same
-way, for consistency and convenience.
+`opam show` already had a `--file` option, but has also been extended in the
+same way, for consistency and convenience.
 
 This all, of course, works well with a local switch at `./`, but the two
-features can be used completely independently.
+features can be used completely independently. Note also that the directory name
+must be made unambiguous with a possible package name, so make sure to use
+`./foo` rather than just `foo` for a local project in subdirectory `foo`.
 
 ### Specifying a destdir
 
 This relies on installed files tracking, but was actually independent from the
-other `opam build` features. This is simply a new option to `opam install`:
+other `opam build` features. It is now simply a new option to `opam install`:
 
     opam install foo --destdir ~/local/
 
@@ -73,20 +75,21 @@ and had two drawbacks:
 - some important details (like shell setup for opam) were skipped
 - the initialisation options were much reduced, so you would often have to go
   back to `opam init` anyway. The other possibility being to duplicate `init`
-  options to all commands, adding lots of noise — keeping things separate has
+  options to all commands, adding lots of noise. Keeping things separate has
   its merits.
 
-Granted, another command, `opam switch create .`, was made implicit. But it's a
-user choice, and worse, in contradiction with the previous de facto opam
-default, so not doing it automatically seems safer: having to specify
-`--no-autoinit` to get the more simple behaviour was inconvenient and
-error-prone.
+Granted, another command, `opam switch create .`, was made implicit. But using a
+local switch is a user choice, and worse, in contradiction with the previous de
+facto opam default, so not creating one automatically seems safer: having to
+specify `--no-autoinit` to `opam build` in order to get the more simple
+behaviour was inconvenient and error-prone.
 
 One thing is provided to help with initialisation, though: `opam switch create
-<dir>` is being improved to handle package definitions at `<dir>`, and will use
-them to choose a compatible compiler, as `opam build` did. Because it's
-frustrating to create a switch, then find out the package wasn't compatible with
-the chosen compiler version.
+<dir>` has been improved to handle package definitions at `<dir>`, and will use
+them to choose a compatible compiler, as `opam build` did. This avoids the
+frustration of creating a switch, then finding out that the package wasn't
+compatible with the chosen compiler version, and having to start over with an
+explicit choice of a different compiler.
 
 If you would really like automatic initialisation, and have a better interface
 to propose, your feedback is welcome!
@@ -99,11 +102,11 @@ to improve the project-local workflows:
 - `opam install --keep-build-dir` is now complemented with `--reuse-build-dir`,
   for incremental builds within opam (assuming your build-system supports it
   correctly). At the moment, you should specify both on every upgrade of the
-  concerned packages, or set the `OPAMKEEPBUILDDIR` and `OPAMREUSEBUILDDIR`
-  environment variables.
-- `opam install --inplace-build` runs the scripts directly within the source
-  dir. If multiple packages are pinned to the same directory, they will be built
-  sequentially.
+  concerned packages, or you could set the `OPAMKEEPBUILDDIR` and
+  `OPAMREUSEBUILDDIR` environment variables.
+- `opam install --inplace-build` runs the scripts directly within the source dir
+  instead of a dedicated copy. If multiple packages are pinned to the same
+  directory, this disables parallel builds of these packages.
 - `opam install --working-dir` uses the working directory state of your project,
   instead of the state registered in the version control system. Don't worry,
   opam will warn you if you have uncommitted changes and forgot to specify
