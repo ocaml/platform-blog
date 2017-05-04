@@ -15,7 +15,7 @@ After the [opam build](../opam-build) feature was announced followed a lot of di
 
 ### Handling a local project
 
-Consistently with what was done with local switches, it was decided, where meaningful, to overload the `<packages>` arguments of the commands, allowing directory names instead, and meaning `all packages defined there`, with some side-effects.
+Consistently with what was done with local switches, it was decided, where meaningful, to overload the `<packages>` arguments of the commands, allowing directory names instead, and meaning "all packages defined there", with some side-effects.
 
 For example, the following command is now allowed, and I believe it will be extra convenient to many:
 
@@ -62,3 +62,5 @@ A few other new options have been added to `opam install` and related commands, 
 - `opam install --keep-build-dir` is now complemented with `--reuse-build-dir`, for incremental builds within opam (assuming your build-system supports it correctly). At the moment, you should specify both on every upgrade of the concerned packages, or you could set the `OPAMKEEPBUILDDIR` and `OPAMREUSEBUILDDIR` environment variables.
 - `opam install --inplace-build` runs the scripts directly within the source dir instead of a dedicated copy. If multiple packages are pinned to the same directory, this disables parallel builds of these packages.
 - `opam install --working-dir` uses the working directory state of your project, instead of the state registered in the version control system. Don't worry, opam will warn you if you have uncommitted changes and forgot to specify `--working-dir`.
+
+> NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the latter for the comments!
