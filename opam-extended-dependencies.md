@@ -42,6 +42,11 @@ the dependency is enforced, if not, it is discarded.
 This is documented in more detail
 [in the opam 2.0 manual](https://opam.ocaml.org/doc/2.0/Manual.html#Filteredpackageformulas).
 
+Note also that, since the compilers are now packages, the required OCaml version
+is now expressed using this mechanism as well, through a dependency to the
+(virtual) package `ocaml`, _e.g._ `depends: [ "ocaml" {>= "4.03.0"} ]`. This
+replaces uses of the `available:` field and `ocaml-version` switch variable.
+
 #### Conditional dependencies
 
 This makes it trivial to add, for example, a condition on the OS to a given
@@ -69,13 +74,13 @@ variables that can appear anywhere in the version specification. The following
 variables are typically useful there:
 
 - `with-test`, `with-doc`: replace the `test` and `doc` dependency flags, and
-  `true` when the package's tests or documentation have been requested
+  are `true` when the package's tests or documentation have been requested
 - likewise, `build` behaves similarly as before, limiting the dependency to a
-  "build-dependency", implying that the package won't need to be rebuilt if it
-  changes
+  "build-dependency", implying that the package won't need to be rebuilt if the
+  dependency changes
 - `dev`: this boolean variable holds `true` on "development" packages, that is,
   packages that are bound to a non-stable source (a version control system, or
-  if the package is pinned without a source checksum specified). `dev` sources
+  if the package is pinned to an archive without known checksum). `dev` sources
   often happen to need an additional preliminary step (e.g. `autoconf`), which
   may have its own dependencies.
 
