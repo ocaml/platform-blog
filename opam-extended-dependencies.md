@@ -84,10 +84,40 @@ variables are typically useful there:
   often happen to need an additional preliminary step (e.g. `autoconf`), which
   may have its own dependencies.
 
-Use `opam config list` for a list of pre-defined variables. Note that
-`with-test`, `with-doc` and `build` are specific to the `depends:` and
-`depopts:` field and otherwise not available.
+Use `opam config list` for a list of pre-defined variables. Note that the
+`with-test`, `with-doc` and `build` variables are not available everywhere: the
+first two are allowed only in the `depends:`, `depopts:`, `build:` and
+`install:` fields, and the latter is specific to the `depends:` and `depopts:`
+fields.
 
+For example, the `datakit.0.9.0` package has:
+
+```
+depends: [
+  ...
+  "datakit-server" {>= "0.9.0"}
+  "datakit-client" {with-test & >= "0.9.0"}
+  "datakit-github" {with-test & >= "0.9.0"}
+  "alcotest" {with-test & >= "0.7.0"}
+]
+```
+
+When running `opam install datakit.0.9.0`, the `with-test` variable is set to
+`false`, and the `datakit-client`, `datakit-github` and `alcotest` dependencies
+are filtered out: they won't be required. With `opam install datakit.0.9.0
+--with-test`, the `with-test` variable is true (for that package only, tests on
+packages not listed on the command-line are not enabled!). In this case, the
+dependencies resolve to:
+```
+depends: [
+  ...
+  "datakit-server" {>= "0.9.0"}
+  "datakit-client" {>= "0.9.0"}
+  "datakit-github" {>= "0.9.0"}
+  "alcotest" {>= "0.7.0"}
+]
+```
+which is treated normally.
 
 #### Computed versions
 
@@ -111,6 +141,40 @@ specifying an os-specific version differently than above:
 
 this will expand the `os` variable, resolving to `1.0+linux`, `1.0+darwin`, etc.
 
+Getting back to our `datakit` example, we could leverage this and rewrite it to
+the more generic:
+```
+depends: [
+  ...
+  "datakit-server" {>= version}
+  "datakit-client" {with-test & >= version}
+  "datakit-github" {with-test & >= version}
+  "alcotest" {with-test & >= "0.7.0"}
+]
+```
+
+Since the `datakit-*` packages follow the same versioning, this avoids having to
+rewrite the opam file on every new version, with a risk of error each time.
+
+As a side note, these variables are consistent with what is now used in the
+[`build:`](http://opam.ocaml.org/doc/2.0/Manual.html#opamfield-build) field, and
+the
+[`build-test:`](http://opam.ocaml.org/doc/2.0/Manual.html#opamfield-build-test)
+field is now deprecated. So this other part of the same `datakit` opam file:
+```
+build:
+  ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "false"]
+build-test: [
+  ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "true"]
+  ["ocaml" "pkg/pkg.ml" "test"]
+]
+```
+would now be preferably written as:
+```
+build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "%{with-test}%"]
+run-test: ["ocaml" "pkg/pkg.ml" "test"]
+```
+which avoids building twice just to change the options.
 
 #### Conclusion
 
