@@ -1,6 +1,6 @@
 title: "new opam features: more expressive dependencies"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-04-24"
+date: "2017-05-11"
 --BODY--
 
 This blog will cover yet another aspect of the improvements opam 2.0 has over opam 1.2. I may be a little more technical than previous issues, as it covers a feature directed specifically at packagers and repository maintainers, and regarding the package definition format.
@@ -69,7 +69,18 @@ depends: [
 ]
 ```
 
-When running `opam install datakit.0.9.0`, the `with-test` variable is set to `false`, and the `datakit-client`, `datakit-github` and `alcotest` dependencies are filtered out: they won't be required. With `opam install datakit.0.9.0 --with-test`, the `with-test` variable is true (for that package only, tests on packages not listed on the command-line are not enabled!). In this case, the dependencies resolve to: ``` depends: [ ... "datakit-server" {>= "0.9.0"} "datakit-client" {>= "0.9.0"} "datakit-github" {>= "0.9.0"} "alcotest" {>= "0.7.0"} ] ``` which is treated normally.
+When running `opam install datakit.0.9.0`, the `with-test` variable is set to `false`, and the `datakit-client`, `datakit-github` and `alcotest` dependencies are filtered out: they won't be required. With `opam install datakit.0.9.0 --with-test`, the `with-test` variable is true (for that package only, tests on packages not listed on the command-line are not enabled!). In this case, the dependencies resolve to:
+
+```
+depends: [
+  ...
+  "datakit-server" {>= "0.9.0"}
+  "datakit-client" {>= "0.9.0"}
+  "datakit-github" {>= "0.9.0"}
+  "alcotest" {>= "0.7.0"}
+]
+```
+which is treated normally.
 
 #### Computed versions
 
