@@ -69,7 +69,18 @@ depends: [
 ]
 ```
 
-When running `opam install datakit.0.9.0`, the `with-test` variable is set to `false`, and the `datakit-client`, `datakit-github` and `alcotest` dependencies are filtered out: they won't be required. With `opam install datakit.0.9.0 --with-test`, the `with-test` variable is true (for that package only, tests on packages not listed on the command-line are not enabled!). In this case, the dependencies resolve to: ``` depends: [ ... "datakit-server" {>= "0.9.0"} "datakit-client" {>= "0.9.0"} "datakit-github" {>= "0.9.0"} "alcotest" {>= "0.7.0"} ] ``` which is treated normally.
+When running `opam install datakit.0.9.0`, the `with-test` variable is set to `false`, and the `datakit-client`, `datakit-github` and `alcotest` dependencies are filtered out: they won't be required. With `opam install datakit.0.9.0 --with-test`, the `with-test` variable is true (for that package only, tests on packages not listed on the command-line are not enabled!). In this case, the dependencies resolve to:
+
+```
+depends: [
+  ...
+  "datakit-server" {>= "0.9.0"}
+  "datakit-client" {>= "0.9.0"}
+  "datakit-github" {>= "0.9.0"}
+  "alcotest" {>= "0.7.0"}
+]
+```
+which is treated normally.
 
 #### Computed versions
 
