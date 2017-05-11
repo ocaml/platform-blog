@@ -119,3 +119,5 @@ which avoids building twice just to change the options.
 Hopefully this extension to expressivity in dependencies will make the life of packagers easier; feedback is welcome on your personal use-cases.
 
 Note that the official repository is still in 1.2 format (served as 2.0 at `https://opam.ocaml.org/2.0`, through automatic conversion), and will only be migrated a little while after opam 2.0 is finally released. You are welcome to experiment on custom repositories or pinned packages already, but will need a little more patience before you can contribute package definitions making use of the above to the [official repository](https://github.com/ocaml/opam-repository).
+
+> NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the latter for the comments!
