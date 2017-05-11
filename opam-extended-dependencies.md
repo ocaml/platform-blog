@@ -1,6 +1,6 @@
 title: "new opam features: more expressive dependencies"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
-date: "2017-04-24"
+date: "2017-05-11"
 --BODY--
 
 This blog will cover yet another aspect of the improvements opam 2.0 has over opam 1.2. I may be a little more technical than previous issues, as it covers a feature directed specifically at packagers and repository maintainers, and regarding the package definition format.
