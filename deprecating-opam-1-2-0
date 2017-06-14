@@ -3,8 +3,8 @@ authors: [ "Anil Madhavapeddy" {"http://anil.recoil.org"} "Louis Gesbert" {"http
 date: "2017-06-14"
 --BODY--
 
-Opam 1.2.0 will be actively deprecated in favour of opam 1.2.2, which becomes
-the only supported stable release, and later.
+Opam 1.2.0 will be actively deprecated in favour of opam 1.2.2, which now becomes
+the only supported stable release.
 
 ### Why deprecate opam 1.2.0
 
@@ -41,8 +41,11 @@ main repository. To avoid those, as was done for 1.1.0, we are going to redirect
 users of 1.2.0 to a frozen mirror of the repository, making new package updates
 unavailable to them.
 
-If there are any users of opam 1.2.0, particularly industrial ones, please reach
+If there are any remaining users of opam 1.2.0, particularly industrial ones, please reach
 out (_e.g._ on [Github](https://github.com/ocaml/opam-repository/issues)). By
 performing an active deprecation of an older release, we hope we can focus our
 efforts on ensuring the opam users have a good out-of-the-box experience with
-opam 1.2.2 and the forthcoming opam 2.0 :-)
+opam 1.2.2 and the forthcoming opam 2.0.
+
+Please also see the [discussion thread](https://discuss.ocaml.org/t/rfc-deprecating-opam-1-2-0/332)
+regarding the deprecation on the OCaml Discourse forums.
