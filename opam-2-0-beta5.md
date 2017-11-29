@@ -29,14 +29,16 @@ opam switch create ./ --locked
 this leverages the presence of `opam.locked` or `<name>.opam.locked` files,
 which are valid package definitions that contain additional details of the build
 environment, and can be generated with the
-[`opam-lock` plugin](https://github.com/AltGr/opam-lock).
+[`opam-lock` plugin](https://github.com/AltGr/opam-lock) (the `lock` command may
+be merged into opam once finalised).
 
 But this new beta also provides a large amount of quality of life improvements,
 and other features. A big one, for example, is the integration of a built-in
 solver (derived from [`mccs`](http://www.i3s.unice.fr/~cpjm/misc/mccs.html) and
 [`glpk`](https://www.gnu.org/software/glpk/)). This means that the `opam` binary
 works out-of-the box, without requiring the external
-[`aspcud`](https://www.cs.uni-potsdam.de/wv/aspcud/) solver. It is also faster.
+[`aspcud`](https://www.cs.uni-potsdam.de/wv/aspcud/) solver, and on all
+platforms. It is also faster.
 
 Another big change is that detection of architecture and OS details is now done
 in opam, and can be used to select the external dependencies with the new format
@@ -79,3 +81,31 @@ There are three main ways to get the update:
 
    If the build fails after updating a git repo from a previous version, try
    `git clean -fdx src/` to remove any stale artefacts.
+
+Note that the repository format is different from that of opam 1.2. Opam 2 will
+be automatically redirected from the
+[opam-repository](https://github.com/ocaml/opam-repository) to an automatically
+rewritten 2.0 mirror, and is otherwise able to do the conversion on the fly
+(both for package definitions when pinning, and for whole repositories). You may
+not yet contribute packages in 2.0 format to opam-repository, though.
+
+## What we need tested
+
+We are interested in all opinions and reports, but here are a few areas where
+your feedback would be specially useful to us:
+
+- Use 2.0 day-to-day, in particular check any packages you may be maintaining.
+  We would like to ensure there are no regressions due to the rewrite from 1.2
+  to 2.0.
+- Check the quality of the solutions provided by the solver (or conflicts, when
+  applicable).
+- Test the different pinning mechanisms (rsync, git, hg, darcs) with your
+  project version control systems. See the `--working-dir` option.
+- Experiment with local switches for your project (and/or `opam install DIR`).
+  Give us feedback on the workflow. Use `opam lock` and share development
+  environments.
+- If you have any custom repositories, please try the conversion to 2.0 format
+  with `opam admin upgrade --mirror` on them, and use the generated mirror.
+- Start porting your CI systems for larger projects to use opam 2, and give us
+  feedback on any improvements you need for automated scripting (e.g. the
+  `--json` output).
