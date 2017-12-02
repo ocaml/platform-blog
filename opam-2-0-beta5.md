@@ -61,14 +61,18 @@ There are three main ways to get the update:
    will also make backups if you migrate from 1.x, and has an option to revert
    back:
 
-       sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    ```
+    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    ```
 
    This uses the binaries from https://github.com/ocaml/opam/releases/tag/2.0.0-beta5
 
 2. Another option is to compile from source, using an existing opam
    installation. Simply run:
 
-       opam update; opam install opam-devel
+    ```
+    opam update; opam install opam-devel
+    ```
 
    and follow the instructions (you will need to copy the compiled binary to
    your PATH).
