@@ -1,11 +1,11 @@
-title: "opam 2.0.0 Release Candidate is out!"
+title: "opam 2.0.0 Release Candidate 1 is out!"
 authors: "Louis Gesbert" {"mailto:louis.gesbert(à)ocamlpro.com"}
 date: "2018-02-02"
 --BODY--
 
 We are pleased to announce a first release candidate for the long-awaited opam 2.0.0.
 
-A lot of polishing has been done since the last beta, including tweaks to the built-in solver, allowing in-source package definitions to be gathered in an `opam/` directory, and much more.
+A lot of polishing has been done since the [last beta](https://opam.ocaml.org/blog/opam-2-0-beta5/), including tweaks to the built-in solver, allowing in-source package definitions to be gathered in an `opam/` directory, and much more.
 
 With all of the 2.0.0 features getting pretty solid, we are now focusing on bringing all the guides up-to-date¹, updating the tools and infrastructure, making sure there are no usability issues with the new workflows, and being future-proof so that further updates break as little as possible.
 
