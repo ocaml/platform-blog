@@ -27,7 +27,7 @@ sort them or associate them with a given project.
 >
 > or even for a single shell session, with
 >
->     eval $(opam env --switch other)
+>     eval $(opam config env --switch other)
 
 What opam 2.0 adds to this is the possibility to create so-called _local
 switches_, stored below a directory of your choice. This gets users back in
