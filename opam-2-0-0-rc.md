@@ -7,7 +7,7 @@ We are pleased to announce a first release candidate for the long-awaited opam 2
 
 A lot of polishing has been done since the [last beta](https://opam.ocaml.org/blog/opam-2-0-beta5/), including tweaks to the built-in solver, allowing in-source package definitions to be gathered in an `opam/` directory, and much more.
 
-With all of the 2.0.0 features getting pretty solid, we are now focusing on bringing all the guides up-to-date¹, updating the tools and infrastructure, making sure there are no usability issues with the new workflows, and being future-proof so that further updates break as little as possible.
+With all of the 2.0.0 features getting pretty solid, we are now focusing on bringing all the guides up-to-date[¹](#foot-1), updating the tools and infrastructure, making sure there are no usability issues with the new workflows, and being future-proof so that further updates break as little as possible.
 
 You are invited to read the [beta5 announcement](https://opam.ocaml.org/blog/opam-2-0-beta5/) for details on the 2.0.0 features. Installation instructions haven't changed:
 
@@ -33,4 +33,4 @@ Thanks a lot for testing out the RC and [reporting](https://github.com/ocaml/opa
 
 ---
 
-¹ You can at the moment rely on the [manpages](http://opam.ocaml.org/doc/2.0/man/opam.html), the [Manual](http://opam.ocaml.org/doc/2.0/Manual.html), and of course the [API](http://opam.ocaml.org/doc/2.0/api/), but other pages might be outdated.
+<a id="foot-1">¹</a> You can at the moment rely on the [manpages](http://opam.ocaml.org/doc/2.0/man/opam.html), the [Manual](http://opam.ocaml.org/doc/2.0/Manual.html), and of course the [API](http://opam.ocaml.org/doc/2.0/api/), but other pages might be outdated.
