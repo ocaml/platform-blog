@@ -46,6 +46,8 @@ A few days ago, we released [opam 2.0.0~rc4](https://opam.ocaml.org/blog/opam-2-
 
 - It is also advised to keep in-source opam files in 1.2 format until that date, so as not to break uses of `opam pin add --dev-repo` by opam 1.2 users. The small `opam-package-upgrade` plugin can be used to upgrade single 1.2 `opam` files to 2.0 format.
 
+- [`ocaml-ci-script`](https://github.com/ocaml/ocaml-ci-scripts) already switched to opam 2.0.0. To keep testing opam 1.2.2, you can set the variable `OPAM_VERSION=1.2.2` in the `.travis.yml` file.
+
 ## Advice for custom repository maintainers
 
 - The `opam admin upgrade` command can be used to upgrade your repository to 2.0.0 format. We recommand using it, as otherwise clients using opam 2.0.0 will do the upgrade locally every time. Add the option `--mirror` to continue serving both versions, with automatic redirects.
