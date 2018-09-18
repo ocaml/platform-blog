@@ -16,7 +16,7 @@ The website opam.ocaml.org has been updated, with the full 2.0.0 documentation p
 
 Package maintainers should be aware of the following:
 - the master branch of the [opam package repository](https://github.com/ocaml/opam-repository) is now in the 2.0.0 format
-- package submissions must accordingly be made in the 2.0.0 format, or using the new version of [`opam-publish`](). 
+- package submissions must accordingly be made in the 2.0.0 format, or using the new version of `opam-publish` (2.0.0).
 - anything that was merged into the repository in 1.2 format has been automatically updated to the 2.0.0 format.
 - the 1.2 format repository has been forked to its own branch, and will only be updated for critical fixes
 
