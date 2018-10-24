@@ -18,12 +18,12 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
 - Update configure scripts
 
 And some opam specific:
-- git: fix git fetch by sha1
+- git: fix git fetch by sha1 for git < 2.14
 - linting: add `test` variable warning and empty description error
 - upgrade: convert pinned but not installed opam files
-- error reporting: more comprehensible error for tar extraction, and upgrade of git-url compilers
+- error reporting: more comprehensible error message for tar extraction, and upgrade of git-url compilers
 - opam show: upgrade given local files
-- list: add `--silent` option for a silent output and returns 1 if list is empty
+- list: as opam 2.0.0 `list` doesn't return non-zero code if list is empty, add `--silent` option for a silent output and returns 1 if list is empty
 
 ---
 
