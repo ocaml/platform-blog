@@ -8,7 +8,7 @@ date: "2018-10-24"
 
 We are pleased to announce the release of [opam 2.0.1](https://github.com/ocaml/opam/releases/tag/2.0.1).
 
-This new version contains mainly fixes, some platform-specific:
+This new version contains mainly [backported fixes](https://github.com/ocaml/opam/pull/3560), some platform-specific:
 - Cold boot for MacOS/CentOS/Alpine
 - Install checksum validation on MacOS
 - Archive extraction for OpenBSD now defaults to using `gtar`
