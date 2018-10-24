@@ -12,7 +12,7 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
 - Cold boot for MacOS/CentOS/Alpine
 - Install checksum validation on MacOS
 - Archive extraction for OpenBSD now defaults to using `gtar`
-- Update mccs for MacOS/Nix
+- Fix compilation of mccs on MacOS and Nix platforms
 - Do not use GNU-sed specific features in the release Makefile, to fix build on OpenBSD/FreeBSD
 - Cleaning to enable reproducible builds
 - Update configure scripts
