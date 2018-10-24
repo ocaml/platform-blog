@@ -13,7 +13,7 @@ This new version contains mainly fixes, some platform-specific:
 - Install checksum validation on MacOS
 - Archive extraction for OpenBSD, using `gtar`
 - Update mccs for MacOS/Nix
-- Remove Gnu sed option for OpenBSD/FreeBSD
+- Do not use GNU-sed specific features in the release Makefile, to fix build on OpenBSD/FreeBSD
 - Cleaning to enable reproducible builds
 - Update configure scripts
 
