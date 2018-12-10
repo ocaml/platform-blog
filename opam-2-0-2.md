@@ -1,0 +1,64 @@
+title: "opam 2.0.2 release"
+authors: [
+  "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
+  "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
+]
+date: "2018-12-11"
+--BODY--
+
+We are pleased to announce the release of [opam 2.0.2](https://github.com/ocaml/opam/releases/tag/2.0.2).
+
+This new version contains mainly [backported fixes](https://github.com/ocaml/opam/pull/3669):
+* Doc:
+  * update man page
+  * add message for deprecated options
+  * reinsert removed ones
+  * deprecate `no-aspcud`
+* Pin:
+  * upgrade pin depends on pinning
+  * include descr & url files on pinning 1.2 opam files
+* Sandbox:
+  * handle symlinks in bwrap
+  * allow use of internal sockets on Mac OS
+  * change one-line conditional to if statement which was incompatible with set -e
+  * make /var readonly instead of empty and rw
+* Path: resolve default opam root path
+* System: suffix .out for read_command_output stdout files
+* Locked: check consistency with opam file when reading lock file to suggest regeneration message
+* Show: remove pin depends messages
+* Cudf: Fix closure computation in the presence of cycles
+* List: Fix some cases of listing coinstallable packages
+* Format upgrade: extract archived source files of version-pinned packages
+* Core: add is_archive in OpamSystem and OpamFilename
+* Init: don't fail if empty compiler given
+* Lint: fix light_uninstall flag for error 52
+* Build: partial port to dune
+* Update cold compiler to 4.07.1
+
+As **sandbox scripts** have been updated, don't forget to run `opam init --reinit -ni` to update yours.
+
+---
+
+Installation instructions (unchanged):
+
+1. From binaries: run
+
+    ```
+    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    ```
+
+    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.0.2) to your PATH. In this case, don't forget to run `opam init --reinit -ni` to enable sandboxing if you had version 2.0.0~rc manually installed or to update you sandbox script.
+
+2. From source, using opam:
+
+    ```
+    opam update; opam install opam-devel
+    ```
+
+   (then copy the opam binary to your PATH as explained, and don't forget to run `opam init --reinit -ni` to enable sandboxing if you had version 2.0.0~rc manually installed or to update you sandbox script)
+
+3. From source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.0.2#compiling-this-repo).
+
+We hope you enjoy this new major version, and remain open to [bug reports](https://github.com/ocaml/opam/issues) and [suggestions](https://github.com/ocaml/opam/issues).
+
+> NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the latter for the comments!
