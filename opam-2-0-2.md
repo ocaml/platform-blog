@@ -47,7 +47,7 @@ Installation instructions (unchanged):
     sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
     ```
 
-    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.0.2) to your PATH. In this case, don't forget to run `opam init --reinit -ni` to enable sandboxing if you had version 2.0.0~rc manually installed or to update you sandbox script.
+    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.0.2) to your PATH. In this case, don't forget to run `opam init --reinit -ni` to enable sandboxing if you had version 2.0.0~rc manually installed or to update your sandbox script.
 
 2. From source, using opam:
 
