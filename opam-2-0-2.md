@@ -8,14 +8,16 @@ date: "2018-12-11"
 
 We are pleased to announce the release of [opam 2.0.2](https://github.com/ocaml/opam/releases/tag/2.0.2).
 
+As **sandbox scripts** have been updated, don't forget to run `opam init --reinit -ni` to update yours.
+
 This new version contains mainly [backported fixes](https://github.com/ocaml/opam/pull/3669):
 * Doc:
   * update man page
   * add message for deprecated options
-  * reinsert removed ones
+  * reinsert removed ones to print a deprecated message instead of fail (e.g. `--alias-of`)
   * deprecate `no-aspcud`
 * Pin:
-  * upgrade pin depends on pinning
+  * on pinning, rebuild updated pin depends packages
   * include descr & url files on pinning 1.2 opam files
 * Sandbox:
   * handle symlinks in bubblewrap for system directories such as `/bin` or `/lib` ([#3661](https://github.com/ocaml/opam/pull/3661)).  Fixes sandboxing on some distributions such as CentOS 7 and Arch Linux.
@@ -26,7 +28,7 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
 * System: suffix .out for read_command_output stdout files
 * Locked: check consistency with opam file when reading lock file to suggest regeneration message
 * Show: remove pin depends messages
-* Cudf: Fix closure computation in the presence of cycles
+* Cudf: Fix closure computation in the presence of cycles to have a complete graph if a cycle is present in the graph (typically `ocaml-base-compiler` ⇄ `ocaml`) 
 * List: Fix some cases of listing coinstallable packages
 * Format upgrade: extract archived source files of version-pinned packages
 * Core: add is_archive in OpamSystem and OpamFilename
@@ -34,8 +36,6 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
 * Lint: fix light_uninstall flag for error 52
 * Build: partial port to dune
 * Update cold compiler to 4.07.1
-
-As **sandbox scripts** have been updated, don't forget to run `opam init --reinit -ni` to update yours.
 
 ---
 
