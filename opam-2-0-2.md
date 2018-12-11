@@ -18,7 +18,7 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
   * upgrade pin depends on pinning
   * include descr & url files on pinning 1.2 opam files
 * Sandbox:
-  * handle symlinks in bwrap
+  * handle symlinks in bubblewrap for system directories such as `/bin` or `/lib` ([#3661](https://github.com/ocaml/opam/pull/3661)).  Fixes sandboxing on some distributions such as CentOS 7 and Arch Linux.
   * allow use of internal sockets on Mac OS
   * change one-line conditional to if statement which was incompatible with set -e
   * make /var readonly instead of empty and rw
