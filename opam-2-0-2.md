@@ -17,7 +17,7 @@ This new version contains mainly [backported fixes](https://github.com/ocaml/opa
   * reinsert removed ones to print a deprecated message instead of fail (e.g. `--alias-of`)
   * deprecate `no-aspcud`
 * Pin:
-  * on pinning, rebuild updated pin depends packages
+  * on pinning, rebuild updated `pin-depends` packages reliably
   * include descr & url files on pinning 1.2 opam files
 * Sandbox:
   * handle symlinks in bubblewrap for system directories such as `/bin` or `/lib` ([#3661](https://github.com/ocaml/opam/pull/3661)).  Fixes sandboxing on some distributions such as CentOS 7 and Arch Linux.
