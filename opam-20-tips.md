@@ -21,6 +21,10 @@ you have a project `~/projects/foo`, defining two packages `foo-lib` and
 `-- src/ ...
 ```
 
+(See also about
+[computed dependency constraints](../opam-extended-dependencies/#Computed-versions)
+for handling multiple package definitions with mutual constraints)
+
 ### Automatic pinning
 
 The underlying mechanism is the same, but this is an interface improvement that
@@ -36,7 +40,7 @@ opam install .
 ```
 
 and both `foo-lib` and `foo-bin` will get automatically pinned to the current
-directory (using git if your project is versionned), and installed. You may
+directory (using git if your project is versioned), and installed. You may
 prefer to use:
 
 ```
@@ -45,10 +49,13 @@ opam install . --deps-only
 
 to just get the package dependencies ready before you start hacking on it.
 [See below](#Reproducing-build-environments) for details on how to reproduce a
-build environment more precisely.
+build environment more precisely. Note that `opam depext .` will not work at the
+moment, which will be fixed in the next release when the external dependency
+handling is integrated (opam will still list you the proper packages to install
+for your OS upon failure).
 
 If your project is versioned and you made changes, remember to either commit, or
-add `--working-dir` before you run the commands.
+add `--working-dir` so that your uncommitted changes are taken into account.
 
 
 ## Local switches
