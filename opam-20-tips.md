@@ -137,7 +137,7 @@ had to push a fix upstream), add to your opam file:
 ```
 depends: [ "some-package" ] # Remember that pin-depends are depends too
 pin-depends: [
-  [ "some-package" "git+https://gitfoo.com/blob.git#mybranch" ]
+  [ "some-package.version" "git+https://gitfoo.com/blob.git#mybranch" ]
 ]
 ```
 
