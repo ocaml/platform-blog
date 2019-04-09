@@ -9,23 +9,23 @@ date: "2019-04-09"
 We are pleased to announce the release of [opam 2.0.4](https://github.com/ocaml/opam/releases/tag/2.0.4).
 
 This new version contains some [backported fixes](https://github.com/ocaml/opam/pull/3805):
-* Sandboxing on MacOS: considering the possibility that TMPDIR in unset
+* Sandboxing on MacOS: considering the possibility that TMPDIR is unset
 * display: Fix `opam config var` display, aligned on `opam config list`
 * pin:
   * update source of (version) pinned directory
   * fix `--ignore-pin-depends` with autopin
   * fix pinnings not installing/upgrading already pinned packages (introduced in 2.0.2)
 * opam clean: Ignore errors trying to remove directories
-* remove wrong _mismatching extra-files_ warning
+* remove wrong "mismatched extra-files" warning
 * urls: fix hg opam 1.2 url parsing
-* lint: update message of warning 47
+* lint: update message of warning 47, to avoid confusion because of missing `synopsis` field internally infered from `descr`
 * system:
   * lock & signals: don't interrupt at non terminal signals
   * shell: fix fish manpath setting
   * git: use `diff.noprefix=false` config argument to overwrite user defined configuration
 * dirtrack: fix precise tracking mode
 
-> Note: To homogenise MacOS name on system detection, we decided to keep `macos`, and convert `darwin` to `macos` in opam. For the moment, to not break jobs & CIs, we keep uploading `darwin` & `macos` binaries, but from the 2.1.0 release, only `macos` ones will be kept.
+> Note: To homogenise macOS name on system detection, we decided to keep `macos`, and convert `darwin` to `macos` in opam. For the moment, to not break jobs & CIs, we keep uploading `darwin` & `macos` binaries, but from the 2.1.0 release, only `macos` ones will be kept.
 
 ---
 
