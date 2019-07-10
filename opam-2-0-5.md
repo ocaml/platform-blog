@@ -3,7 +3,7 @@ authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
-date: "2019-04-10"
+date: "2019-07-10"
 --BODY--
 
 We are pleased to announce the minor release of [opam 2.0.5](https://github.com/ocaml/opam/releases/tag/2.0.5).
