@@ -3,10 +3,12 @@ authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
-date: "2020-16-01"
+date: "2020-01-16"
 --BODY--
 
 We are pleased to announce the minor release of [opam 2.0.6](https://github.com/ocaml/opam/releases/tag/2.0.6).
+
+This new version contains some small [backported](https://github.com/ocaml/opam/pull/3973) fixes and build update:
 
 * Don't remove git cache objects that may be used [[#3831](https://github.com/ocaml/opam/pull/3831) [@AltGr](https://github.com/AltGr)]
 * Don't include .gitattributes in index.tar.gz [[#3873](https://github.com/ocaml/opam/pull/3873) [@dra27](https://github.com/dra27)]
