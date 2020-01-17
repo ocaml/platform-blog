@@ -18,7 +18,7 @@ This new version contains some small [backported](https://github.com/ocaml/opam/
   tracking [[#4038](https://github.com/ocaml/opam/pull/4038) [@hannesm](https://github.com/hannesm)]
 * Build:
   * Add sanity checks [[#3934](https://github.com/ocaml/opam/pull/3934) [@dra27](https://github.com/dra27)]
-  * Build man pages using dune [[#3902](https://github.com/ocaml/opam/issues/3902)] #dra27]
+  * Build man pages using dune [[#3902](https://github.com/ocaml/opam/issues/3902) ]
   * Add patch and bunzip check for make cold [[#4006](https://github.com/ocaml/opam/pull/4006) [@rjbou](https://github.com/rjbou) - fix [#3842](https://github.com/ocaml/opam/issues/3842)]
 * Shell:
   * fish: add colon for fish manpath [[#3886](https://github.com/ocaml/opam/pull/3886) [@rjbou](https://github.com/rjbou) - fix [#3878](https://github.com/ocaml/opam/issues/3878)]
