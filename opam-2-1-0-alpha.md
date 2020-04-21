@@ -21,7 +21,7 @@ completely integrated in the core of opam. No extra installs needed anymore, and
 a more smooth experience.
 
 
-### Seamless integration of System dependencies handling (_a.k.a._ "depexts")
+### Seamless integration of System dependencies handling (a.k.a. "depexts")
 
 A number of opam packages depend on tools or libraries installed on the system,
 which are out of the scope of opam itself. Previous versions of opam added a
