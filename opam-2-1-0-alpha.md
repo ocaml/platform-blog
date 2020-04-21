@@ -10,7 +10,8 @@ We are happy to announce a alpha for opam 2.1.0, one year and a half in the
 making after the release of 2.0.0.
 
 Many new features made it in (see the [complete
-changelog](https://github.com/ocaml/opam/blob/master/CHANGES) for the details),
+changelog](https://github.com/ocaml/opam/blob/2.1.0-alpha/CHANGES) or [release
+note](https://github.com/ocaml/opam/releases/tag/2.1.0-alpha) for the details),
 but here are a few highlights of this release.
 
 
