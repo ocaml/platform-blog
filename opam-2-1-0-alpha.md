@@ -124,13 +124,7 @@ The upgrade instructions are unchanged:
 
     or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.1.0-alpha) to your PATH.
 
-2. Or from source, using opam:
-
-    ```
-    opam update; opam install opam-devel
-    ```
-
-3. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.1.0-alpha#compiling-this-repo).
+2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.1.0-alpha#compiling-this-repo).
 
 
 You should then run:
