@@ -1,4 +1,4 @@
-title: "opam 2.1.0~beta4"
+title: "opam 2.1.0~beta4 released"
 authors: "David Allsopp" {"mailto:David.Allsopp(à)cl.cam.ac.uk"}
 date: "2021-02-08"
 --BODY--
