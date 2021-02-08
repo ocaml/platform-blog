@@ -8,7 +8,7 @@ date: "2021-02-08"
 
 We are pleased to announce the minor release of [opam 2.0.8](https://github.com/ocaml/opam/releases/tag/2.0.8).
 
-This new version contains [backported](https://github.com/ocaml/opam/pull/4425) small fixes:
+This new version contains some [backported](https://github.com/ocaml/opam/pull/4425) fixes:
  * Add colon for fish MANPATH fix. [[#4084](https://github.com/ocaml/opam/pull/4084) [@rjbou](https://github.com/rjbou) - fix [#4078](https://github.com/ocaml/opam/issues/4078)]
  * No error when linked directory doesn't exist (e.g. XDG defined) [[#4278](https://github.com/ocaml/opam/pull/4278) [@kit-ty-kate](https://github.com/kit-ty-kate)]
  * Add quotes to avoid space unwanted behaviors [[#4278](https://github.com/ocaml/opam/pull/4278) [@kit-ty-kate](https://github.com/kit-ty-kate)]
