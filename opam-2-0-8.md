@@ -15,7 +15,7 @@ This new version contains some [backported](https://github.com/ocaml/opam/pull/4
  * Handle `CCACHE_DIR` environment variable in sandbox script.  [[#4087](https://github.com/ocaml/opam/pull/4087) [@rjbou](https://github.com/rjbou) - fix [#4079](https://github.com/ocaml/opam/issues/4079)]
  * Follow links of `~/.cache` & `~/.cache/dune` for bwrap call.  [[#4087](https://github.com/ocaml/opam/pull/4087) [@rjbou](https://github.com/rjbou) - fix [#4068](https://github.com/ocaml/opam/issues/4068)]
  * Don't overwrite user's sandbox script modifications. [#4020 [#4092](https://github.com/ocaml/opam/pull/4092) [@rjbou](https://github.com/rjbou)]
- * On MacOS sandbox script, always read write mount `/tmp` [#3742 @rjbou - fix ocaml/opam-repository#13339]
+ * On the macOS sandbox script, always read/write mount `/tmp` [#3742 @rjbou - fix ocaml/opam-repository#13339]
  * The stdout of `pre-` and `post-session` hooks is now propagated to the user [[#4382](https://github.com/ocaml/opam/pull/4382) [@AltGr](https://github.com/AltGr) - fix [#4359](https://github.com/ocaml/opam/issues/4359)]
  * Run switch pre/post sessions hooks [[#4476](https://github.com/ocaml/opam/pull/4476) [@rjbou](https://github.com/rjbou) - fix [#4472](https://github.com/ocaml/opam/issues/4472)]
  * Use version var in opam file instead of equal current version number in opamlib dependencies [[#4178](https://github.com/ocaml/opam/pull/4178) [@rjbou](https://github.com/rjbou)]
