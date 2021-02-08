@@ -14,7 +14,7 @@ This new version contains some [backported](https://github.com/ocaml/opam/pull/4
  * Add quotes to avoid space unwanted behaviors [[#4278](https://github.com/ocaml/opam/pull/4278) [@kit-ty-kate](https://github.com/kit-ty-kate)]
  * Handle `CCACHE_DIR` environment variable in sandbox script.  [[#4087](https://github.com/ocaml/opam/pull/4087) [@rjbou](https://github.com/rjbou) - fix [#4079](https://github.com/ocaml/opam/issues/4079)]
  * Follow links of `~/.cache` & `~/.cache/dune` for bwrap call.  [[#4087](https://github.com/ocaml/opam/pull/4087) [@rjbou](https://github.com/rjbou) - fix [#4068](https://github.com/ocaml/opam/issues/4068)]
- * Don't overwrite user's sandbow script modification. [#4020 [#4092](https://github.com/ocaml/opam/pull/4092) [@rjbou](https://github.com/rjbou)]
+ * Don't overwrite user's sandbox script modifications. [#4020 [#4092](https://github.com/ocaml/opam/pull/4092) [@rjbou](https://github.com/rjbou)]
  * On MacOS sandbox script, always read write mount `/tmp` [#3742 @rjbou - fix ocaml/opam-repository#13339]
  * The stdout of `pre-` and `post-session` hooks is now propagated to the user [[#4382](https://github.com/ocaml/opam/pull/4382) [@AltGr](https://github.com/AltGr) - fix [#4359](https://github.com/ocaml/opam/issues/4359)]
  * Run switch pre/post sessions hooks [[#4476](https://github.com/ocaml/opam/pull/4476) [@rjbou](https://github.com/rjbou) - fix [#4472](https://github.com/ocaml/opam/issues/4472)]
@@ -51,4 +51,3 @@ Installation instructions (unchanged):
 We hope you enjoy this new minor version, and remain open to [bug reports](https://github.com/ocaml/opam/issues) and [suggestions](https://github.com/ocaml/opam/issues).
 
 > NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/). Please head to the latter for the comments!
-
