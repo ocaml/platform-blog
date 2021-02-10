@@ -3,7 +3,7 @@ authors: "David Allsopp" {"mailto:David.Allsopp(à)cl.cam.ac.uk"}
 date: "2021-02-08"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss]()!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-0-beta4/7252)!_
 
 On behalf of the opam team, it gives me great pleasure to announce the third beta release of opam 2.1. Don’t worry, you didn’t miss beta3 - we had an issue with a configure script that caused beta2 to report as beta3 in some instances, so we skipped to beta4 to avoid any further confusion!
 
