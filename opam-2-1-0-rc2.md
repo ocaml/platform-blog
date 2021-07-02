@@ -14,3 +14,30 @@ Please do take this release candidate for a spin! It is available in the Docker 
 Thank you to anyone who noticed the unannounced first release candidate and tried it out. Between tagging and what would have been announcing it, we discovered an issue with upgrading local switches from earlier alpha/beta releases, and so fixed that for this second release candidate.
 
 Assuming no showstoppers, we plan to release opam 2.1.0 next week. The improvements made in 2.1.0 will allow for a much faster release cycle, and we look forward to posting about the 2.2.0 plans soon!
+
+# Try it!
+
+In case you plan a possible rollback, you may want to first backup your
+`~/.opam` directory.
+
+The upgrade instructions are unchanged:
+
+1. Either from binaries: run
+
+    ```
+    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --dev
+    ```
+
+    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.1.0-rc2) to your PATH.
+
+2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.1.0-rc2#compiling-this-repo).
+
+
+You should then run:
+```
+opam init --reinit -ni
+```
+
+
+We hope there won't be any, but please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
+Thanks for trying it out, and hoping you enjoy!
