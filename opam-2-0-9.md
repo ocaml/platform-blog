@@ -31,8 +31,6 @@ This new version contains some [backported](https://github.com/ocaml/opam/pull/4
 
 A more complete [release note](https://github.com/ocaml/opam/releases/tag/2.0.9) is available.
 
-> Note: To homogenise macOS name on system detection, we decided to keep `macos`, and convert `darwin` to `macos` in opam. For the moment, in order to avoid breaking jobs & CIs, we keep uploading `darwin` & `macos` binaries, but from the 2.1.0 release, only `macos` ones will be kept.
-
 ---
 
 Installation instructions (unchanged):
