@@ -8,7 +8,7 @@ date: "2021-07-30"
 
 We are pleased to announce the minor release of [opam 2.0.9](https://github.com/ocaml/opam/releases/tag/2.0.9).
 
-This new version contains some [backported](https://github.com/ocaml/opam/pull/4547) fixes.
+This new version contains some [back-ported](https://github.com/ocaml/opam/pull/4547) fixes.
 
 ## New features
   * Back-ported ability to load upgraded roots read-only; allows applications compiled with opam-state 2.0.9 to load a root which has been upgraded to opam 2.1 [[#4636](https://github.com/ocaml/opam/issues/4636)]
@@ -56,4 +56,3 @@ Installation instructions (unchanged):
 We hope you enjoy this new minor version, and remain open to [bug reports](https://github.com/ocaml/opam/issues) and [suggestions](https://github.com/ocaml/opam/issues).
 
 > NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/), and published in [discuss.ocaml.org](https://discuss.ocaml.org/t/ann-opam-2-0-8-release/7242). Please head to the latter for the comments!
-
