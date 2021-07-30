@@ -6,6 +6,10 @@ authors: [
 date: "2021-07-30"
 --BODY--
 
+<!--
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-0-9/XXXX)!_
+-->
+
 We are pleased to announce the minor release of [opam 2.0.9](https://github.com/ocaml/opam/releases/tag/2.0.9).
 
 This new version contains some [back-ported](https://github.com/ocaml/opam/pull/4547) fixes.
@@ -28,8 +32,6 @@ This new version contains some [back-ported](https://github.com/ocaml/opam/pull/
   * Pinning no longer fails if the archive's opam file is malformed [[#4580](https://github.com/ocaml/opam/issues/4580)]
   * Fish: stop using deprecated `^` syntax to fix support for Fish 3.3.0+ [[#4736](https://github.com/ocaml/opam/issues/4736)]
 
-
-A more complete [release note](https://github.com/ocaml/opam/releases/tag/2.0.9) is available.
 
 ---
 
@@ -54,5 +56,3 @@ Installation instructions (unchanged):
 3. From source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.0.9#compiling-this-repo).
 
 We hope you enjoy this new minor version, and remain open to [bug reports](https://github.com/ocaml/opam/issues) and [suggestions](https://github.com/ocaml/opam/issues).
-
-> NOTE: this article is cross-posted on [opam.ocaml.org](https://opam.ocaml.org/blog/) and [ocamlpro.com](http://www.ocamlpro.com/category/blog/), and published in [discuss.ocaml.org](https://discuss.ocaml.org/t/ann-opam-2-0-8-release/7242). Please head to the latter for the comments!
