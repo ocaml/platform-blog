@@ -17,9 +17,9 @@ This new version contains some [backported](https://github.com/ocaml/opam/pull/4
   * When built with opam-file-format 2.1.3+, opam-format 2.0.x displays better errors for newer opam files [[#4394](https://github.com/ocaml/opam/issues/4394)]
 
 ## Bug fixes
+  * Linux sandbox now mounts _host_ `$TMPDIR` read-only, then sets the _sandbox_ `$TMPDIR` to a new separate tmpfs. **Hardcoded `/tmp` access no longer work if `TMPDIR` points to another directory** [[#4589](https://github.com/ocaml/opam/issues/4589)]
   * Stop clobbering `DUNE_CACHE` in the sandbox script [[#4535](https://github.com/ocaml/opam/issues/4535), fixing [ocaml/dune#4166](https://github.com/ocaml/dune/issues/4166)]
   * Ctrl-C now correctly terminates builds with bubblewrap; sandbox now requires bubblewrap 0.1.8 or later [[#4400](https://github.com/ocaml/opam/issues/4400)]
-  * Linux sandbox now mounts _host_ `$TMPDIR` read-only, then sets the _sandbox_ `$TMPDIR` to a new separate tmpfs [[#4589](https://github.com/ocaml/opam/issues/4589)]
   * Linux sandbox script no longer makes `PWD` read-write on remove actions [[#4589](https://github.com/ocaml/opam/issues/4589)]
   * Lint W59 and E60 no longer trigger for packages flagged `conf` [[#4549](https://github.com/ocaml/opam/issues/4549)]
   * Reduce the length of temporary file names for pin caching to ease pressure on Windows [[#4590](https://github.com/ocaml/opam/issues/4590)]
