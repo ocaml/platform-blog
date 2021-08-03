@@ -68,7 +68,7 @@ When opam was first released, it had the mission of gathering together
 scattered OCaml source code to build a [community
 repository](https://github.com/ocaml/opam-repository). As time marches on, the
 size of the opam repository has grown tremendously, to over 3000 unique
-packages with over 18000 unique versions. opam looks at all these packages and
+packages with over 19500 unique versions. opam looks at all these packages and
 is designed to solve for the best constraints for a given package, so that your
 project can keep up with releases of your dependencies.
 
