@@ -183,7 +183,7 @@ fixes need to change the semantics of some commands. For example:
 - `opam show --file` needed to change behaviour
 - The addition of new controls for setting global variables means that the
 `opam config` was becoming cluttered and some things want to move to `opam var`
-- `opam switch create 4.11.1` still works in opam 2.0, but it's really an OPAM
+- `opam switch install 4.11.1` still works in opam 2.0, but it's really an OPAM
 1.2.2 syntax.
 
 Changing the CLI is exceptionally painful since it can break scripts and tools
