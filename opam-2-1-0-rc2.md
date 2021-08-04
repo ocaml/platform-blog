@@ -25,7 +25,7 @@ The upgrade instructions are unchanged:
 1. Either from binaries: run
 
     ```
-    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --dev
+    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.1.0~rc2"
     ```
 
     or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.1.0-rc2) to your PATH.
