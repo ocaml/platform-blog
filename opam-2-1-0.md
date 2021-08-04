@@ -113,7 +113,7 @@ invariant is a package formula which must be satisfied on every upgrade and
 install. All existing switches' base packages could just be expressed as
 `package1 & package2 & package3` etc. but opam 2.1 recognises many existing
 patterns and simplifies them, so in most cases the invariant will be
-`"ocaml-base-compiler" {= 4.11.1}`, etc. This means that `opam switch create
+`"ocaml-base-compiler" {= "4.11.1"}`, etc. This means that `opam switch create
 my_switch ocaml-system` now creates a _switch invariant_ of `"ocaml-system"`
 rather than a specific version of the `ocaml-system` package. If your system
 OCaml package is updated, `opam upgrade` will seamlessly switch to the new
