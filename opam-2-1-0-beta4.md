@@ -70,7 +70,7 @@ A new `--cli` switch was added to the first beta release, but it’s only now th
 
 - `opam show --file` needed to change behaviour
 - The addition of new controls for setting global variables means that the `opam config` was becoming cluttered and some things want to move to `opam var`
-- `opam switch create 4.11.1` still works in opam 2.0, but it’s really an OPAM 1.2.2 syntax.
+- `opam switch install 4.11.1` still works in opam 2.0, but it’s really an OPAM 1.2.2 syntax.
 
 Changing the CLI is exceptionally painful since it can break scripts and tools which themselves need to drive `opam`. CLI versioning is our attempt to solve this. The feature is inspired by the `(lang dune ...)` stanza in `dune-project` files which has allowed the Dune project to rename variables and alter semantics without requiring every single package using Dune to upgrade their `dune` files on each release.
 
@@ -103,7 +103,7 @@ and many other bug fixes as listed [on the release page](https://github.com/ocam
 
 Several features that were formerly plugins have been integrated into opam 2.1.0. We have also developed some _new_ plugins that satisfy emerging workflows from the community and the core OCaml team. They are available for use with the opam 2.1 beta as well, and feedback on them should be directed to the respective GitHub trackers for those plugins.
 
-### opam compiler 
+### opam compiler
 
 The [`opam compiler`](https://github.com/ocaml-opam/opam-compiler) plugin can be used to create switches from various sources such as the main opam repository, the ocaml-multicore fork, or a local development directory. It can use Git tag names, branch names, or PR numbers to specify what to install.
 
