@@ -19,9 +19,7 @@ This new version contains some [backported](https://github.com/ocaml/opam/pull/4
  * Standalone `opam-installer` now correctly builds from sources [[#4173](https://github.com/ocaml/opam/issues/4173)]
  * Fix `arch` variable detection when using 32bit mode on ARM64 and i486 [[#4462](https://github.com/ocaml/opam/pull/4462)]
 
-A more complete [release note](https://github.com/ocaml/opam/releases/tag/2.0.8) is available. 
-
-> Note: To homogenise macOS name on system detection, we decided to keep `macos`, and convert `darwin` to `macos` in opam. For the moment, in order to avoid breaking jobs & CIs, we keep uploading `darwin` & `macos` binaries, but from the 2.1.0 release, only `macos` ones will be kept.
+A more complete [release note](https://github.com/ocaml/opam/releases/tag/2.0.8) is available.
 
 ---
 

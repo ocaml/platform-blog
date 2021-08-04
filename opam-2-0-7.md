@@ -14,8 +14,6 @@ This new version contains [backported](https://github.com/ocaml/opam/pull/4143) 
  * Fix various warnings [[#4132](https://github.com/ocaml/opam/pull/4132) [@rjbou](https://github.com/rjbou) [@AltGr](https://github.com/AltGr) - fix [#4100](https://github.com/ocaml/opam/issues/4100)]
  * Fix dune 2.5.0 promote-install-files duplication [[#4132](https://github.com/ocaml/opam/pull/4132) [@rjbou](https://github.com/rjbou)]
 
-> Note: To homogenise macOS name on system detection, we decided to keep `macos`, and convert `darwin` to `macos` in opam. For the moment, in order to avoid breaking jobs & CIs, we keep uploading `darwin` & `macos` binaries, but from the 2.1.0 release, only `macos` ones will be kept.
-
 ---
 
 Installation instructions (unchanged):
