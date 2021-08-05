@@ -262,7 +262,7 @@ are unable to load opam 2.1.0 roots). _
 -->
 
 **Tremendous thanks to all involved people, who've developed, tested & retested,
-helped with issue reports, comments, feedbacks, ...**
+helped with issue reports, comments, feedback...**
 
 # Try it!
 
