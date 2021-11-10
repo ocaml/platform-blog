@@ -1,5 +1,6 @@
 title: "opam releases: 2.0.10, 2.1.1, & opam depext 1.2!"
 authors: [
+  "David Allsopp - OcamlLabs {"mailto:David.Allsopp(à)cl.cam.ac.uk"}"
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
@@ -12,42 +13,62 @@ _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXX
 
 We are pleased to announce several minor releases: [opam 2.0.10](https://github.com/ocaml/opam/releases/tag/2.0.10), [opam 2.1.1](https://github.com/ocaml/opam/releases/tag/2.1.1), and [opam-depext 1.2](https://github.com/ocaml-opam/opam-depext/releases/tag/1.2).
 
-Opam releases version contain backported fixes, while `opam-depext` has been adapted to be compatible with opam 2.1.
+The opam releases consist of backported fixes, while `opam-depext` has been adapted to be compatible with opam 2.1, to allow for workflows which need to maintain compatibility with opam 2.0. With opam 2.1.1, if you export `OPAMCLI=2.0` into your environment then workflows expecting opam 2.0 should now behave even more equivalently.
 
-## [opam-depext 1.2]()
- Integrate opam calls for handling of external dependencies (check, install). If opam 2.1 is present on the system, opam-depext is usable, at worst depexts will be checked twice.
+## opam-depext 1.2
 
-On the 2.0 side:
-* Force yum-based distributions to not upgrade when updating
+Previous versions of opam-depext were made unavailable when using opam 2.1, since depext handling is done directly by opam 2.1 and later. This is still the recommended way, but this left workflows which wanted to maintain compatibility with opam 2.0 without a single command to install depexts. You can now run `OPAMCLI=2.0 opam depext -y package1 package2` and expect this to work correctly with any version of opam 2. If you don't specify `OPAMCLI=2.0` then the plugin will remind you that you should be using the integrated depext support! Calling `opam depext` this way with opam 2.1 and later still exposes the same double-solving problem that opam 2.0 has, but if for some reason the solver returns a different solution at `opam install` then the correct depexts would be installed.
+
+For opam 2.0, some useful depext handling changes are back-ported from opam 2.1.x to the plugin:
+With opam 2.0:
+* yum-based distributions: force not to upgrade
 * Archlinux: always upgrade all the installed packages when installing a new package
 
-## [opam 2.0.10](https://github.com/ocaml/opam/blob/2.0.10/CHANGES)
-* Fix reverting environment additions to PATH-like variables when several dirs added at once [#4861 @dra27]
-* Ensure setenv can use package variables defined during the build [#4841 @dra27]
-
 ## [opam 2.1.1](https://github.com/ocaml/opam/blob/2.1.1/CHANGES)
-### Switch
-* Put back support for switch creation with packages argument and `--packages` option with cli 2.0, e.g. `opam switch create . 4.12.0+options --packages=ocaml-option-flambda` [[4843](https://github.com/ocaml/opam/issues/4843)]
-* Fix `set-invariant`: default repos were loaded instead of switch repos
+opam 2.1.1 includes both the fixes in opam 2.0.10.
 
-### External dependencies
+General fixes:
 
-* Homebrew: add support for casks and full-names
-* Archlinux: handle virtual package detection [[4759](https://github.com/ocaml/opam/issues/4759)]
-* Disable the detection of available packages on RHEL-based distributions. This fixes an issue on RHEL-based distributions where yum list used to detect available and installed packages would wait for user input without showing any output and/or fail in some cases [[4790](https://github.com/ocaml/opam/issues/4790)]
+* Restore support for switch creation with "positional" package arguments and `--packages` option for CLI version 2.0, e.g. `OPAMCLI=2.0 opam switch create . 4.12.0+options --packages=ocaml-option-flambda`. In opam 2.1 and later, this syntax remains an error ([#4843](https://github.com/ocaml/opam/issues/4843))
+* Fix `opam switch set-invariant`: default repositories were loaded instead of the switch's repositories selection ([#4869](https://github.com/ocaml/opam/pull/4869))
+* Run the sandbox check in a temporary directory ([#4783](https://github.com/ocaml/opam/issues/4783))
 
-### Sandbox
-* Run the sandbox check in the temporary directory [[4783](https://github.com/ocaml/opam/issues/4783)]
+Integrated depext support has a few updates:
+* Homebrew now has support for casks and full-names ([#4800](https://github.com/ocaml/opam/issues/4800))
+* Archlinux now handles virtual package detection ([#4833](https://github.com/ocaml/opam/pull/4833), partially addressing [#4759](https://github.com/ocaml/opam/issues/4759))
+* Disable the detection of available packages on RHEL-based distributions.
+  This fixes an issue on RHEL-based distributions where yum list used to detect
+  available and installed packages would wait for user input without showing
+  any output and/or fail in some cases ([#4791](https://github.com/ocaml/opam/pull/4791))
+  
+And finally two regressions have been dealt with:
+* Regression: avoid calling `Unix.environment` on load (as a toplevel expression). This regression affected opam's libraries, rather than the binary itself ([#4789](https://github.com/ocaml/opam/pull/4789))
+* Regression: handle empty environment variable updates ([#4840](https://github.com/ocaml/opam/pull/4840))
 
-### System
-* OpamSystem: avoid calling Unix.environment at top level [[4801](https://github.com/ocaml/opam/issues/4801)]
-* Fix reverting environment additions to PATH-like variables when several dirs added at once
-* + opam 2.0.10 fixes
+A few issues with the compilation of opam from sources have been fixed as well:
+##`make build`
+works more reliably he the cold target in presence of an older
+* The vendored build of ocaml-mccs on mingw-w64 with g++ 11.2 now works
+* dose3 download URL has been amended, since Inria's GForge is no more
 
-### opam build
-* Fix the cold target in presence of an older OCaml compiler version on macOS
-* Fix vendored build on mingw-w64 with g++ 11.2
-* Fix dose3 download url since gforge is gone
+## [opam 2.0.10](https://github.com/ocaml/opam/blob/2.0.10/CHANGES)
+Two subtle fixes are included in opam 2.0.10. These actually affect the `ocaml` package. Both of these are Heisenbugs - investigating what's going wrong on your system may well have fixed them, they were both found on Windows!
+
+`$(opam env --revert)` is the reverse of the more familiar `$(opam env)` but it's effectively called by opam whenever you change switch. It has been wrong since 2.0.0 for the case where several values are added to an environment variable in one `setenv` update. For example, if a package included a `setenv` field of the form `[PATH += "dir1:dir2"]`, then this would not be reverted, but `[[PATH += "dir1"] [PATH += "dir2"]]` would be reverted. As it happens, this bug affects the `ocaml` package, but it was masked by another `setenv` update in the same package.
+
+The other fix is also to do with `setenv`. It can be seen immediately after creating a switch but before any additional packages are installed, as this `Dockerfile` shows:
+
+```
+FROM ocaml/opam@sha256:244b948376767fe91e2cd5caca3b422b2f8d332f105ef2c8e14fcc9a20b66e25
+RUN sudo apt-get install -y ocaml-nox
+RUN opam --version
+RUN opam switch create show-issue ocaml-system
+RUN eval $(opam env) ; echo $CAML_LD_LIBRARY_PATH
+RUN opam install conf-which
+RUN eval $(opam env) ; echo $CAML_LD_LIBRARY_PATH
+```
+
+Immediately after switch creation, `$CAML_LD_LIBRARY_PATH` was set to `/home/opam/.opam/show-issue/lib/stublibs:`, rather than `/home/opam/.opam/show-issue/lib/stublibs:/usr/local/lib/ocaml/4.08.1/stublibs:/usr/lib/ocaml/stublibs`
 
 ---
 
