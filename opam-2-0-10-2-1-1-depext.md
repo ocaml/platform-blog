@@ -45,11 +45,7 @@ And finally two regressions have been dealt with:
 * Regression: avoid calling `Unix.environment` on load (as a toplevel expression). This regression affected opam's libraries, rather than the binary itself ([#4789](https://github.com/ocaml/opam/pull/4789))
 * Regression: handle empty environment variable updates ([#4840](https://github.com/ocaml/opam/pull/4840))
 
-A few issues with the compilation of opam from sources have been fixed as well:
-##`make build`
-works more reliably he the cold target in presence of an older
-* The vendored build of ocaml-mccs on mingw-w64 with g++ 11.2 now works
-* dose3 download URL has been amended, since Inria's GForge is no more
+A few issues with the compilation of opam from sources have been fixed as well (e.g. mingw-w64 with g++ 11.2 now works)
 
 ## [opam 2.0.10](https://github.com/ocaml/opam/blob/2.0.10/CHANGES)
 Two subtle fixes are included in opam 2.0.10. These actually affect the `ocaml` package. Both of these are Heisenbugs - investigating what's going wrong on your system may well have fixed them, they were both found on Windows!
