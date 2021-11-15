@@ -21,8 +21,8 @@ Previous versions of opam-depext were made unavailable when using opam 2.1, sinc
 
 For opam 2.0, some useful depext handling changes are back-ported from opam 2.1.x to the plugin:
 With opam 2.0:
-* yum-based distributions: force not to upgrade
-* Archlinux: always upgrade all the installed packages when installing a new package
+* yum-based distributions: force not to upgrade ([#137](https://github.com/ocaml-opam/opam-depext/pull/137))
+* Archlinux: always upgrade all the installed packages when installing a new package ([#138](https://github.com/ocaml-opam/opam-depext/pull/138))
 
 ## [opam 2.1.1](https://github.com/ocaml/opam/blob/2.1.1/CHANGES)
 opam 2.1.1 includes both the fixes in opam 2.0.10.
