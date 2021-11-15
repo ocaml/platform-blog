@@ -4,7 +4,7 @@ authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
-date: "2021-11-10"
+date: "2021-11-15"
 --BODY--
 
 <!--
