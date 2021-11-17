@@ -1,6 +1,6 @@
 title: "opam releases: 2.0.10, 2.1.1, & opam depext 1.2!"
 authors: [
-  "David Allsopp - OcamlLabs {"mailto:David.Allsopp(à)cl.cam.ac.uk"}"
+  "David Allsopp - OCamlLabs" {"mailto:David.Allsopp(à)cl.cam.ac.uk"}
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
