@@ -7,9 +7,7 @@ authors: [
 date: "2021-11-15"
 --BODY--
 
-<!--
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXXXX)!_
--->
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-1-opam-2-0-10-opam-depext-1-2/8872)!_
 
 We are pleased to announce several minor releases: [opam 2.0.10](https://github.com/ocaml/opam/releases/tag/2.0.10), [opam 2.1.1](https://github.com/ocaml/opam/releases/tag/2.1.1), and [opam-depext 1.2](https://github.com/ocaml-opam/opam-depext/releases/tag/1.2).
 
