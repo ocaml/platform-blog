@@ -14,7 +14,7 @@ _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXX
 
 We are pleased to announce the minor release of [opam 2.1.2](https://github.com/ocaml/opam/releases/tag/2.1.2).
 
-This opam release consist of [backported](https://github.com/ocaml/opam/issues/4920) fixes, including:
+This opam release consists of [backported](https://github.com/ocaml/opam/issues/4920) fixes, including:
 
 * Fallback on `dnf` if `yum` does not exist on RHEL-based systems ([#4825](https://github.com/ocaml/opam/pull/4825))
 * Use `--no-depexts` in CLI 2.0 mode. This further improves the use of opam 2.1 as a drop-in replacement for opam 2.0 in CI, for example with setup-ocaml in GitHub Actions. ([#4908](https://github.com/ocaml/opam/pull/4908))
