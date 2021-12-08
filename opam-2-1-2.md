@@ -1,7 +1,7 @@
 title: "opam 2.1.2 release"
 authors: [
-  "Kate Deplaix - OCamlLabs" {"mailto:kit.ty.kate(à)disroot.org"}
-  "David Allsopp - OCamlLabs" {"mailto:David.Allsopp(à)cl.cam.ac.uk"}
+  "Kate Deplaix - OCaml Labs" {"mailto:kit.ty.kate(à)disroot.org"}
+  "David Allsopp - OCaml Labs" {"mailto:david(à)ocamllabs.io"}
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
 ]
@@ -16,8 +16,8 @@ We are pleased to announce the minor release of [opam 2.1.2](https://github.com/
 
 This opam release consist of [backported](https://github.com/ocaml/opam/issues/4920) fixes, including:
 
-* Fallback on dnf if yum does not exist on RHEL-based systems [#4825](https://github.com/ocaml/opam/pull/4825)
-* Use --no-depexts in CLI 2.0 mode [#4908](https://github.com/ocaml/opam/pull/4908)
+* Fallback on `dnf` if `yum` does not exist on RHEL-based systems ([#4825](https://github.com/ocaml/opam/pull/4825))
+* Use `--no-depexts` in CLI 2.0 mode ([#4908](https://github.com/ocaml/opam/pull/4908))
 
 ---
 
