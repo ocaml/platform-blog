@@ -5,9 +5,7 @@ authors: [
 date: "2021-08-12"
 --BODY--
 
-<!--
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXXXX)!_
--->
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-3/10299)!_
 
 We are pleased to announce the minor release of [opam 2.1.3](https://github.com/ocaml/opam/releases/tag/2.1.3).
 
