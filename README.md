@@ -12,5 +12,3 @@ Files should be markdown (omd) with a preamble using the following format:
 Publication is done by the scripts at https://github.com/ocaml/opam.ocaml.org.
 Manually, as user `opam` on the server, you can simply run
 `~/local/bin/update-opam-repo.sh` to update.
-
-Log at http://opam.ocaml.org/lastlog.txt
