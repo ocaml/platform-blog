@@ -5,7 +5,9 @@ authors: [
 date: "2022-12-15"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-4/10299)!_
+<!---
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXXXX)!_
+--->
 
 We are pleased to announce the minor release of [opam 2.1.4](https://github.com/ocaml/opam/releases/tag/2.1.4), [opam-publish 2.2.0](https://github.com/ocaml-opam/opam-publish/releases/tag/2.2.0) and [opam-file-format 2.1.5](https://github.com/ocaml/opam-file-format/releases/tag/2.1.5).
 
