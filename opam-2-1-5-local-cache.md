@@ -1,4 +1,4 @@
-title: "security in opam's cache handling (before 2.1.5)"
+title: "Security in opam's cache handling (before 2.1.5)"
 authors: [
  "Reynir" {"mailto:team(à)robur.coop"}
  "Hannes" {"mailto:team(à)robur.coop"}
