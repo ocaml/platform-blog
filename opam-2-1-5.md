@@ -5,9 +5,8 @@ authors: [
 date: "2023-05-25"
 --BODY--
 
-<!--
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-5/10299)!_
---!>
+
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-5-release/12290)!_
 
 We are pleased to announce the patch release of [opam 2.1.5]((https://github.com/ocaml/opam/releases/tag/2.1.5).
 
