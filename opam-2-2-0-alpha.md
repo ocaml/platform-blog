@@ -62,7 +62,7 @@ subdirectories in different ways:
   file and pin the corresponding package to this subdirectory 
 * These options can be combined
 
-You can use these options with `opam pin` and `opam install`.
+You can use these options with `opam pin`, `opam install`, and ``opam remove`.
 
 ```
 $ tree .
