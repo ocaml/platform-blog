@@ -21,10 +21,10 @@ your preferred Windows terminal! We rely on the [Cygwin](https://cygwin.com/)
 UNIX-like environment for Windows as a compatibility layer, but it is possible
 for a package to generate native executables.
 
-The main opam repository is not Windows compliant at the moment, but existing
+The main opam repository is not Windows compatible at the moment, but existing
 work on a [compatible
 repository](https://github.com/ocaml-opam/opam-repository-mingw) (originally
-from @fdopen) is in the process of being merged.
+from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64 packages](https://github.com/dra27/opam-repository) (by [@dra27](https://github.com/dra27)) is in the process of being merged.
 
 ### How to Test opam on Windows
 
@@ -33,7 +33,7 @@ management of a local Cygwin environment inside of opam (so that it's as
 transparent as possible) is queued already and should be available
 in 2.2.0~alpha2 as another option.
 
-1. Check that you have all dependencies installed: autoconf, make, mingw or msvc gcc/g++ compiler
+1. Check that you have all dependencies installed: Autoconf, Make, MinGW, or MSVC GCC
 2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha/opam-full-2.2.0-alpha.tar.gz)
 3. In the directory launch `make cold [OCAML_PORT=mingw64|mingw|msvc64|msvc|auto]`
 4. A coffee later, you now have an opam executable!
@@ -47,7 +47,7 @@ It will help opam repository maintainers to add Windows repository packages
 into the main repository.
 
 > Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the path
-to libc dlls.
+to `libc` dlls.
 
 
 
@@ -238,7 +238,7 @@ Here are several of new options (possibly scripts breaking changes are marked wi
   * `opam clean --untracked` to remove untracked files interactively
   * `opam switch -` that goes back to the previously selected global switch
   * Add `opam admin add-constraint <cst> --packages` to select a subset of packages to apply constraints
-  * ✘ Change `--base` into `--invariant`, column name and the content is invariant formula installed dependencies
+  * ✘ Change `--base` into `--invariant`. `opam switch` _compiler_ column now contains installed packages that verifier invariant formula, and empty synopsis shows switch invariant.
 
 
 ## Try It!
