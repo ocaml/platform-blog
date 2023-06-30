@@ -8,8 +8,10 @@ date: "2023-06-30"
 --BODY--
 
 We are happy to announce the alpha release of opam 2.2.0. It contains numerous
-fixes, enhancements, updates. You can view the full list in the [release
+fixes, enhancements, and updates; including much-improved Windows support, addressing one of the most important pain points [identified by the OCaml community](https://discuss.ocaml.org/t/what-are-the-biggest-reasons-newcomers-give-up-on-ocaml/10958). You can view the full list of changes in the [release
 note](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha).
+
+This alpha release is a significant milestone, brought together by Raja Boujbel after years of work from the opam dev team (Raja Boujbel, David Allsopp, Kate Deplaix, Louis Gesbert, in a united OCamlPro/Tarides collaboration) with the help of many community contributors. We also thank JaneStreet for their continued sponsorship.
 
 This version is an alpha, so we invite users to test it to spot previously
 unnoticed bugs and work towards a stable release.
@@ -31,7 +33,7 @@ from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64 packages](ht
 This alpha requires a preexisting Cygwin installation. Support for full
 management of a local Cygwin environment inside of opam (so that it's as
 transparent as possible) is queued already and should be available
-in 2.2.0~alpha2 as another option.
+in 2.2.0~alpha2 as the default option.
 
 1. Check that you have all dependencies installed: Autoconf, Make, MinGW, or MSVC GCC
 2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha/opam-full-2.2.0-alpha.tar.gz)
@@ -53,16 +55,19 @@ to `libc` dlls.
 
 ## Recursive Pin
 
-Recursive pinning allows opam to lookup opam files in
-subdirectories in different ways:
+When installing or pinning a package using `opam install` or `opam pin`, opam normally only looks for opam files at
+the root of the installed package. With recursive pinning, you can now instruct opam to also look for `.opam` files in
+subdirectories, while maintaining the correct relationship between the `.opam` files and the package root for versioning
+and build purposes.
 
-* `--recursive` option, opam goes through subdirectories to look for opam
-  files and pin them to their respective subdirectories 
-* `--subpath <path>` option, opam goes to the given subdirectory to find the opam
-  file and pin the corresponding package to this subdirectory 
-* These options can be combined
+Recursive pinning is used with the following options to `opam pin` and `opam install`:
+ * With `--recursive`, opam will look for `.opam` files recursively in all subdirectories.
+  * With `--subpath <path>`, opam will only look for `.opam` files in the subdirectory `<path>`.
 
-You can use these options with `opam pin`, `opam install`, and ``opam remove`.
+The two options can be combined: for instance, if your opam packages are stored as a deep hierarchy in the `mylib`
+subdirectory of your project, give `opam pin . --recursive --subpath mylib` a try!
+
+You can use these options with `opam pin`, `opam install`, and `opam remove`.
 
 ```
 $ tree .
@@ -74,7 +79,7 @@ $ tree .
 │   └── bar.opam
 └── foo.opam
 
-$ opam pin --recursive . -n
+$ opam pin --recursive . --no-action
 This will pin the following packages: foo, z, bar. Continue? [y/n] y
 foo is now pinned to git+file:///tmp/recpin#master (version 0.1)
 Package z does not exist, create as a NEW package? [y/n] y
