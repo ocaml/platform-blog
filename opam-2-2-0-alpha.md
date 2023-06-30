@@ -1,8 +1,14 @@
 -----
 title: "opam 2.2.0 alpha is ready!"
 authors: [
+  "David Allsopp - Tarides" {"mailto:david(à)tarides"}
+  "Léo Andrès - OCamlPro" {"mailto:leo.andres(à)ocamlpro.com"}
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
+  "Basile Clément - OCamlPro" {"mailto:basile.clement(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
+  "Dario Pinto" - OCamlPro" {"mailto:dario.pinto(à)ocamlpro.com"}
+  "Christine Rose - Tarides" {"mailto:christine(à)tarides.com"}
+  "Riku Silvola - Tarides" {"mailto:riku(à)tarides.com"}
 ]
 date: "2023-06-30"
 --BODY--
@@ -42,7 +48,7 @@ in 2.2.0~alpha2 as the default option.
 5. Start your preferred Windows terminal (cmd or PowerShell), and initialise opam with the Windows _sunset_ repository:
   * `opam init https://github.com/ocaml-opam/opam-repository-mingw`
 
-From here, you can try to install sunset repository packages. If any bug is
+From here, you can try to install [sunset repository](https://discuss.ocaml.org/t/sunsetting-opam-repository-mingw/11632) packages. If any bug is
 found, please [submit an
 issue](https://github.com/ocaml-opam/opam-repository-mingw#what-do-i-do-when-things-are-broken).
 It will help opam repository maintainers to add Windows repository packages
@@ -79,6 +85,10 @@ $ tree .
 │   └── bar.opam
 └── foo.opam
 
+$ opam pin . --subpath ba/z --no-action
+Package z does not exist, create as a NEW package? [y/n] y
+z is now subpath-pinned to directory /ba/z in git+file:///tmp/recpin#master (version 0.1)
+
 $ opam pin --recursive . --no-action
 This will pin the following packages: foo, z, bar. Continue? [y/n] y
 foo is now pinned to git+file:///tmp/recpin#master (version 0.1)
@@ -91,6 +101,10 @@ $ opam pin
 bar.0.1  (uninstalled)  rsync  directory /bar in file:///tmp/recpin
 foo.0.1  (uninstalled)  git    git+file:///tmp/recpin#master
 z.0.1    (uninstalled)  git    directory /ba/z in git+file:///tmp/recpin#master
+
+$ opam pin . --recursive --subpath ba/ --no-action
+Package z does not exist, create as a NEW package? [y/n] y
+z is now subpath-pinned to directory /ba/z in git+file:///tmp/recpin#master (version 0.1)
 ```
 
 ## Tree View
