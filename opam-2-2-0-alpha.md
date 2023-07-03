@@ -1,4 +1,3 @@
------
 title: "opam 2.2.0 alpha is ready!"
 authors: [
   "David Allsopp - Tarides" {"mailto:david(à)tarides"}
