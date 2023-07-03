@@ -10,14 +10,21 @@ authors: [
   "Christine Rose - Tarides" {"mailto:christine(à)tarides.com"}
   "Riku Silvola - Tarides" {"mailto:riku(à)tarides.com"}
 ]
-date: "2023-06-30"
+date: "2023-07-03"
 --BODY--
 
 We are happy to announce the alpha release of opam 2.2.0. It contains numerous
-fixes, enhancements, and updates; including much-improved Windows support, addressing one of the most important pain points [identified by the OCaml community](https://discuss.ocaml.org/t/what-are-the-biggest-reasons-newcomers-give-up-on-ocaml/10958). You can view the full list of changes in the [release
+fixes, enhancements, and updates; including much-improved Windows support,
+addressing one of the most important pain points [identified by the OCaml
+community](https://discuss.ocaml.org/t/what-are-the-biggest-reasons-newcomers-give-up-on-ocaml/10958).
+You can view the full list of changes in the [release
 note](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha).
 
-This alpha release is a significant milestone, brought together by Raja Boujbel after years of work from the opam dev team (Raja Boujbel, David Allsopp, Kate Deplaix, Louis Gesbert, in a united OCamlPro/Tarides collaboration) with the help of many community contributors. We also thank JaneStreet for their continued sponsorship.
+This alpha release is a significant milestone, brought together by Raja Boujbel
+after years of work from the opam dev team (Raja Boujbel, David Allsopp, Kate
+Deplaix, Louis Gesbert, in a united OCamlPro/Tarides collaboration) with the
+help of many community contributors. We also thank JaneStreet for their
+continued sponsorship.
 
 This version is an alpha, so we invite users to test it to spot previously
 unnoticed bugs and work towards a stable release.
@@ -32,14 +39,18 @@ for a package to generate native executables.
 The main opam repository is not Windows compatible at the moment, but existing
 work on a [compatible
 repository](https://github.com/ocaml-opam/opam-repository-mingw) (originally
-from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64 packages](https://github.com/dra27/opam-repository) (by [@dra27](https://github.com/dra27)) is in the process of being merged. Before the final release, we expect it to be possible to run `opam init` and use the main opam-repository for Windows.
+from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64
+packages](https://github.com/dra27/opam-repository) (by
+[@dra27](https://github.com/dra27)) is in the process of being merged. Before
+the final release, we expect it to be possible to run `opam init` and use the
+main opam-repository for Windows.
 
 ### How to Test opam on Windows
 
 This alpha requires a preexisting Cygwin installation. Support for full
 management of a local Cygwin environment inside of opam (so that it's as
-transparent as possible) is queued already and should be available
-in 2.2.0~alpha2 as the default option.
+transparent as possible) is queued already and should be available in
+2.2.0~alpha2 as the default option.
 
 1. Check that you have all dependencies installed:
   * `autoconf`, `make`
@@ -51,29 +62,37 @@ in 2.2.0~alpha2 as the default option.
 5. Start your preferred Windows terminal (cmd or PowerShell), and initialise opam with the Windows _sunset_ repository:
   * `opam init https://github.com/ocaml-opam/opam-repository-mingw`
 
-From here, you can try to install [sunset repository](https://discuss.ocaml.org/t/sunsetting-opam-repository-mingw/11632) packages. If any bug is
-found, please [submit an
+From here, you can try to install [sunset
+repository](https://discuss.ocaml.org/t/sunsetting-opam-repository-mingw/11632)
+packages. If any bug is found, please [submit an
 issue](https://github.com/ocaml-opam/opam-repository-mingw#what-do-i-do-when-things-are-broken).
 It will help opam repository maintainers to add Windows repository packages
 into the main repository.
 
-> Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the path to `libc` dlls (usually `C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\bin`). Or compile opam with `make cold CONFIGURE_ARGS=--with-private-runtime`, and if you change opam location, don't forget to copy `Opam.Runtime.amd64` (or `Opam.Runtime.i386`) with it.
+> Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the
+path to `libc` dlls (usually
+`C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\bin`). Or compile opam with
+`make cold CONFIGURE_ARGS=--with-private-runtime`, and if you change opam
+location, don't forget to copy `Opam.Runtime.amd64` (or `Opam.Runtime.i386`)
+with it.
 
 
 
 ## Recursive Pin
 
-When installing or pinning a package using `opam install` or `opam pin`, opam normally only looks for opam files at
-the root of the installed package. With recursive pinning, you can now instruct opam to also look for `.opam` files in
-subdirectories, while maintaining the correct relationship between the `.opam` files and the package root for versioning
-and build purposes.
+When installing or pinning a package using `opam install` or `opam pin`, opam
+normally only looks for opam files at the root of the installed package. With
+recursive pinning, you can now instruct opam to also look for `.opam` files in
+subdirectories, while maintaining the correct relationship between the `.opam`
+files and the package root for versioning and build purposes.
 
 Recursive pinning is used with the following options to `opam pin` and `opam install`:
  * With `--recursive`, opam will look for `.opam` files recursively in all subdirectories.
-  * With `--subpath <path>`, opam will only look for `.opam` files in the subdirectory `<path>`.
+ * With `--subpath <path>`, opam will only look for `.opam` files in the subdirectory `<path>`.
 
-The two options can be combined: for instance, if your opam packages are stored as a deep hierarchy in the `mylib`
-subdirectory of your project, give `opam pin . --recursive --subpath mylib` a try!
+The two options can be combined: for instance, if your opam packages are stored
+as a deep hierarchy in the `mylib` subdirectory of your project, give `opam pin
+. --recursive --subpath mylib` a try!
 
 You can use these options with `opam pin`, `opam install`, and `opam remove`.
 
@@ -195,16 +214,17 @@ available via the [search webpage](https://archive.softwareheritage.org/) and
 via a unique identifier called the
 [SWHID](https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html#uri-scheme).
 Some OCaml source code is [already
-archived](https://www.softwareheritage.org/2021/04/20/connecting-ocaml/), and the
-main opam and Coq repository packages are continuously uploaded.
+archived](https://www.softwareheritage.org/2021/04/20/connecting-ocaml/), and
+the main opam and Coq repository packages are continuously uploaded.
 
 Opam now integrates a fallback to Software Heritage archive retrieval, based on
 SWHID. If an SWHID URL is present in an opam file, the fallback can be
 activated.
 
-To keep backwards compatibility of opam files, we added a specific
-Software Heritage URL syntax to the `url.mirrors:` field, which is used to specify mirrors of the main URL. Opam 2.2.+ understands this specific syntax as a Software
-Heritage fallback URL: `https://swhid.opam.ocaml.org/<SWHID>`.
+To keep backwards compatibility of opam files, we added a specific Software
+Heritage URL syntax to the `url.mirrors:` field, which is used to specify
+mirrors of the main URL. Opam 2.2.+ understands this specific syntax as a
+Software Heritage fallback URL: `https://swhid.opam.ocaml.org/<SWHID>`.
 
 ```
 url {
@@ -236,16 +256,16 @@ ocaml -e '#use "topfind";; #require "digestif.ocaml";; #require "swhid";; Swhid_
 It is now possible to leverage the full expressivity of package dependency
 formulas from the command line during switch creation and package operations.
 
-It is possible to create a switch using a formula, for example:
- with `ocaml-variant` or `ocaml-system`, excluding `ocaml-base-compiler`:
+It is possible to create a switch using a formula. For example, with
+`ocaml-variant` or `ocaml-system`, excluding `ocaml-base-compiler`:
 
 ```
 opam switch create ocaml --formula '"ocaml-variants" {>= "4.14.1"} | "ocaml-system"'
 ```
 
-This syntax is brought to install commands.
-For example, while installing a package, let's say `genet`, you can specify
-that you want to install either `conf-mariadb & mariadb` or `conf-postgresql`:
+This syntax is brought to install commands.  For example, while installing a
+package, let's say `genet`, you can specify that you want to install either
+`conf-mariadb & mariadb` or `conf-postgresql`:
 
 ```
 opam install genet --formula '["mysql" ("conf-mariadb" & "mariadb" | "conf-postgresql")]'
@@ -254,10 +274,18 @@ opam install genet --formula '["mysql" ("conf-mariadb" & "mariadb" | "conf-postg
 
 ## New Options
 Here are several of new options (possibly scripts breaking changes are marked with ✘):
-  * `opam pin --current` to fix a package to its current state (disabling pending reinstallations or removals from the repository). The installed package will be pinned with the opam file that is stored in opam internal state, the one that is currently installed.
-  * `opam pin remove --all` to remove all the pinned packages from a switch
-  * `opam pin remove pkg.version` now removes the pins on pinned `pkg.version`
-  * `opam exec --no-switch` to remove opam environment from launched command
+
+* `opam pin --current` to fix a package to its current state (disabling pending
+  reinstallations or removals from the repository). The installed package will
+  be pinned with the opam file that is stored in opam internal state, the one
+  that is currently installed.
+
+* `opam pin remove --all` to remove all the pinned packages from a switch.
+
+* `opam pin remove pkg.version` now removes the pins on pinned `pkg.version`.
+
+* `opam exec --no-switch` to remove opam environment from launched command.
+
 ```
 $ export FOOVAR=env
 $ opam show foo --field setenv
@@ -268,11 +296,23 @@ OPAM_SWITCH_PREFIX=~/.opam/env
 $ opam exec --no-switch -- env | grep "OPAM_SWITCH\|FOO"
 FOOVAR=env
 ```
-  * `opam source --no-switch` to allow downloading package sources without having an installed switch (instead of failing)
-  * `opam clean --untracked` to remove untracked files interactively remaining from previous packages removal
-  * `opam switch -`, inspired from `git -`, that goes back to the previously selected global switch
-  * `opam admin add-constraint <cst> --packages pkg1,pkg2,pkg3` permits to select a subset of packages to apply constraints
-  * ✘ Change `--base` into `--invariant`. `opam switch` _compiler_ column now contains installed packages that verifies invariant formula, and empty synopsis shows switch invariant.
+
+* `opam source --no-switch` to allow downloading package sources without having
+  an installed switch (instead of failing).
+
+* `opam clean --untracked` to remove untracked files interactively remaining
+  from previous packages removal.
+
+* `opam switch -`, inspired from `git -`, that goes back to the previously
+  selected global switch.
+
+* `opam admin add-constraint <cst> --packages pkg1,pkg2,pkg3` to select
+  a subset of packages to apply constraints.
+
+* ✘ Change `--base` into `--invariant`. `opam switch` _compiler_ column now
+  contains installed packages that verifies invariant formula, and empty
+  synopsis shows switch invariant.
+
 ```
 $ opam switch create inv --formula '["ocaml" {>= "4.14.1"} "dune"]'
 $ opam switch invariant
