@@ -57,8 +57,7 @@ issue](https://github.com/ocaml-opam/opam-repository-mingw#what-do-i-do-when-thi
 It will help opam repository maintainers to add Windows repository packages
 into the main repository.
 
-> Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the path
-to `libc` dlls.
+> Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the path to `libc` dlls (usually `C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\bin`). Or compile opam with `make cold CONFIGURE_ARGS=--with-private-runtime`, and if you change opam location, don't forget to copy `Opam.Runtime.amd64` (or `Opam.Runtime.i386`) with it.
 
 
 
