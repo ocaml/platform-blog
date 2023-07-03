@@ -32,7 +32,7 @@ for a package to generate native executables.
 The main opam repository is not Windows compatible at the moment, but existing
 work on a [compatible
 repository](https://github.com/ocaml-opam/opam-repository-mingw) (originally
-from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64 packages](https://github.com/dra27/opam-repository) (by [@dra27](https://github.com/dra27)) is in the process of being merged.
+from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64 packages](https://github.com/dra27/opam-repository) (by [@dra27](https://github.com/dra27)) is in the process of being merged. Before the final release, we expect it to be possible to run `opam init` and use the main opam-repository for Windows.
 
 ### How to Test opam on Windows
 
@@ -41,9 +41,12 @@ management of a local Cygwin environment inside of opam (so that it's as
 transparent as possible) is queued already and should be available
 in 2.2.0~alpha2 as the default option.
 
-1. Check that you have all dependencies installed: Autoconf, Make, MinGW, or MSVC GCC
+1. Check that you have all dependencies installed:
+  * `autoconf`, `make`
+  * MinGW compilers: `mingw64-x86_64-gcc-g++`, `mingw64-i686-gcc-g++`
+  * Or if you want to use the MSVC port of OCaml, you'll need to install Visual Studio or Visual Studio Build Tools
 2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha/opam-full-2.2.0-alpha.tar.gz)
-3. In the directory launch `make cold [OCAML_PORT=mingw64|mingw|msvc64|msvc|auto]`
+3. In the directory launch `make cold`
 4. A coffee later, you now have an opam executable!
 5. Start your preferred Windows terminal (cmd or PowerShell), and initialise opam with the Windows _sunset_ repository:
   * `opam init https://github.com/ocaml-opam/opam-repository-mingw`
@@ -186,7 +189,7 @@ post-messages:
 ## Software Heritage Binding
 
 [Software Heritage](https://www.softwareheritage.org) is a project that aims to
-archive all software source code in existence. This is done by first collecting
+archive all software source code in existence. This is done by collecting
 source code with a _loader_ that uploads software source code to the Software
 Heritage distributed infrastructure. From there, any project/version is
 available via the [search webpage](https://archive.softwareheritage.org/) and
@@ -234,6 +237,14 @@ ocaml -e '#use "topfind";; #require "digestif.ocaml";; #require "swhid";; Swhid_
 It is now possible to leverage the full expressivity of package dependency
 formulas from the command line during switch creation and package operations.
 
+It is possible to create a switch using a formula, for example:
+ with `ocaml-variant` or `ocaml-system`, excluding `ocaml-base-compiler`:
+
+```
+opam switch create ocaml --formula '"ocaml-variants" {>= "4.14.1"} | "ocaml-system"'
+```
+
+This syntax is brought to install commands.
 For example, while installing a package, let's say `genet`, you can specify
 that you want to install either `conf-mariadb & mariadb` or `conf-postgresql`:
 
@@ -241,23 +252,42 @@ that you want to install either `conf-mariadb & mariadb` or `conf-postgresql`:
 opam install genet --formula '["mysql" ("conf-mariadb" & "mariadb" | "conf-postgresql")]'
 ```
 
-Or create a switch with `ocaml-variant` or `ocaml-system`, excluding `ocaml-base-compiler`:
-
-```
-opam switch create ocaml --formula '"ocaml-variants" {>= "4.14.1"} | "ocaml-system"'
-```
 
 ## New Options
 Here are several of new options (possibly scripts breaking changes are marked with ✘):
-  * `opam pin --current` to fix a package to its current state (disabling pending reinstallations or removals from the repository)
+  * `opam pin --current` to fix a package to its current state (disabling pending reinstallations or removals from the repository). The installed package will be pinned with the opam file that is stored in opam internal state, the one that is currently installed.
   * `opam pin remove --all` to remove all the pinned packages from a switch
-  * Allow `opam pin remove` to take a package (`<pkg>.<version>`) as argument
+  * `opam pin remove pkg.version` now removes the pins on pinned `pkg.version`
   * `opam exec --no-switch` to remove opam environment from launched command
-  * `opam source --no-switch`
-  * `opam clean --untracked` to remove untracked files interactively
-  * `opam switch -` that goes back to the previously selected global switch
-  * Add `opam admin add-constraint <cst> --packages` to select a subset of packages to apply constraints
-  * ✘ Change `--base` into `--invariant`. `opam switch` _compiler_ column now contains installed packages that verifier invariant formula, and empty synopsis shows switch invariant.
+```
+$ export FOOVAR=env
+$ opam show foo --field setenv
+FOOVAR = "package"
+$ opam exec  -- env | grep "OPAM_SWITCH\|FOO"
+FOOVAR=package
+OPAM_SWITCH_PREFIX=~/.opam/env
+$ opam exec --no-switch -- env | grep "OPAM_SWITCH\|FOO"
+FOOVAR=env
+```
+  * `opam source --no-switch` to allow downloading package sources without having an installed switch (instead of failing)
+  * `opam clean --untracked` to remove untracked files interactively remaining from previous packages removal
+  * `opam switch -`, inspired from `git -`, that goes back to the previously selected global switch
+  * `opam admin add-constraint <cst> --packages pkg1,pkg2,pkg3` permits to select a subset of packages to apply constraints
+  * ✘ Change `--base` into `--invariant`. `opam switch` _compiler_ column now contains installed packages that verifies invariant formula, and empty synopsis shows switch invariant.
+```
+$ opam switch create inv --formula '["ocaml" {>= "4.14.1"} "dune"]'
+$ opam switch invariant
+["ocaml" {>= "4.14.1"} "dune"]
+$ opam list --invariant
+# Packages matching: invariant
+# Name # Installed # Synopsis
+dune   3.8.2       Fast, portable, and opinionated build system
+ocaml  5.0.0       The OCaml compiler (virtual package)
+$ opam switch list
+#  switch   compiler                                            description
+→  inv      ocaml-base-compiler.5.0.0,ocaml-options-vanilla.1   ocaml >= 4.14.1 & dune
+```
+
 
 
 ## Try It!
