@@ -174,7 +174,7 @@ cmdliner.1.2.0
 └── user-setup.0.7
 ```
 
-> Special thanks to [@cannorin](https://github.com/@cannorin) for collaborating on this feature.
+> Special thanks to [@cannorin](https://github.com/cannorin) for contributing this feature.
 
 ## Recommended Development Tools
 
@@ -250,7 +250,7 @@ function:
 ocaml -e '#use "topfind";; #require "digestif.ocaml";; #require "swhid";; Swhid_core.Object.pp Format.std_formatter (Result.get_ok (Swhid.Compute.directory_identifier_deep "."))'
 ```
 
-> Special thanks to [@zapashcanon](https://github.com/@zapashcanon) for collaborating on this feature
+> Special thanks to [@zapashcanon](https://github.com/zapashcanon) for collaborating on this feature.
 
 ## Formula (Experimental)
 
