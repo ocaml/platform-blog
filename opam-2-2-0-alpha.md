@@ -12,6 +12,8 @@ authors: [
 date: "2023-07-03"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-alpha-release/12536)!_
+
 We are happy to announce the alpha release of opam 2.2.0. It contains numerous
 fixes, enhancements, and updates; including much-improved Windows support,
 addressing one of the most important pain points [identified by the OCaml
