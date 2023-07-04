@@ -174,7 +174,7 @@ cmdliner.1.2.0
 └── user-setup.0.7
 ```
 
-> Special thanks to [@cannorin](htpps://github.com/@cannorin) for collaborating on this feature.
+> Special thanks to [@cannorin](https://github.com/@cannorin) for collaborating on this feature.
 
 ## Recommended Development Tools
 
