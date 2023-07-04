@@ -338,9 +338,9 @@ In case you plan a possible rollback, you may want to first backup your
 The upgrade instructions are unchanged:
 
 1. From binaries: run
-    ```
-    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.2.0~alpha"
-    ```
+```
+bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.2.0~alpha"
+```
 Or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha) to your PATH.
 
 2. From source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.2.0-alpha#compiling-this-repo).
