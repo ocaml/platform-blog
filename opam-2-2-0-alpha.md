@@ -24,7 +24,7 @@ note](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha).
 This alpha release is a significant milestone, brought together by Raja Boujbel
 after years of work from the opam dev team (Raja Boujbel, David Allsopp, Kate
 Deplaix, Louis Gesbert, in a united OCamlPro/Tarides collaboration) with the
-help of many community contributors. We also thank JaneStreet for their
+help of many community contributors. We also thank Jane Street for their
 continued sponsorship.
 
 This version is an alpha, so we invite users to test it to spot previously
@@ -304,7 +304,7 @@ FOOVAR=env
 * `opam clean --untracked` to remove untracked files interactively remaining
   from previous packages removal.
 
-* `opam switch -`, inspired from `git -`, that goes back to the previously
+* `opam switch -`, inspired from `git switch -`, that goes back to the previously
   selected global switch.
 
 * `opam admin add-constraint <cst> --packages pkg1,pkg2,pkg3` to select
