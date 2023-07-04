@@ -5,7 +5,7 @@ authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Basile Clément - OCamlPro" {"mailto:basile.clement(à)ocamlpro.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
-  "Dario Pinto" - OCamlPro" {"mailto:dario.pinto(à)ocamlpro.com"}
+  "Dario Pinto - OCamlPro" {"mailto:dario.pinto(à)ocamlpro.com"}
   "Christine Rose - Tarides" {"mailto:christine(à)tarides.com"}
   "Riku Silvola - Tarides" {"mailto:riku(à)tarides.com"}
 ]
