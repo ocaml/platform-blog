@@ -4,6 +4,7 @@ authors: [
   "Léo Andrès - OCamlPro" {"mailto:leo.andres(à)ocamlpro.com"}
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Basile Clément - OCamlPro" {"mailto:basile.clement(à)ocamlpro.com"}
+  "Kate Deplaix - Tarides" {"mailto:kit-ty-kate(à)outlook.com"}
   "Louis Gesbert - OCamlPro" {"mailto:louis.gesbert(à)ocamlpro.com"}
   "Dario Pinto - OCamlPro" {"mailto:dario.pinto(à)ocamlpro.com"}
   "Christine Rose - Tarides" {"mailto:christine(à)tarides.com"}
@@ -54,7 +55,7 @@ transparent as possible) is queued already and should be available in
 2.2.0~alpha2 as the default option.
 
 1. Check that you have all dependencies installed:
-  * `autoconf`, `make`
+  * `autoconf`, `make`, `patch`, `curl`
   * MinGW compilers: `mingw64-x86_64-gcc-g++`, `mingw64-i686-gcc-g++`
   * Or if you want to use the MSVC port of OCaml, you'll need to install Visual Studio or Visual Studio Build Tools
 2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha/opam-full-2.2.0-alpha.tar.gz)
