@@ -1,6 +1,7 @@
 title: "opam 2.2.0 alpha2 release"
 authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
+  "Kate Deplaix - Tarides" {"mailto:kit-ty-kate(à)outlook.com"}
 ]
 date: "2023-07-26"
 --BODY--
@@ -14,17 +15,17 @@ some fixes and a new feature for Windows.  You can view the full list in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha2).
 
 This version is an alpha, we invite users to test it to spot previously
-unnoticed bugs and get towards a stable release.
+unnoticed bugs to head towards the stable release.
 
 ## Windows Support
 
 The first alpha came with native Windows compatibility. This second alpha comes
-with a more simple init for Windows: no more rely on an already present
+with a more simple init for Windows: we no longer rely on an already present
 [Cygwin](https://cygwin.com/) UNIX-like environment for Windows as a
-compatibility layer. At initialisation, opam proposes to embed its own fully
+compatibility layer. During initialisation, opam now proposes to embed its own fully
 managed Cygwin install.
 
-The main opam repository Windows compliance is still a work in progress, we
+The main opam-repository Windows compliance is still a work in progress, we
 recommend to use existing [compatible
 repository](https://github.com/ocaml-opam/opam-repository-mingw) (originally
 from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64
@@ -46,11 +47,11 @@ This alpha requires a preexisting Cygwin installation for compiling opam.
 5. Start your preferred Windows terminal (`cmd` or `PowerShell`), and initialise opam with the Windows _sunset_ repository:
   * `opam init https://github.com/ocaml-opam/opam-repository-mingw`
 
-From here, you can try to install [sunset
+From here, you can try to install the [sunset
 repository](https://discuss.ocaml.org/t/sunsetting-opam-repository-mingw/11632)
-packages. If any bug is found, please [submit an
+packages. If you find any bugs, please [submit an
 issue](https://github.com/ocaml-opam/opam-repository-mingw#what-do-i-do-when-things-are-broken).
-It will help opam repository maintainers to add Windows repository packages
+It will help opam-repository maintainers to add Windows repository packages
 into the main repository.
 
 > Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the
@@ -93,4 +94,4 @@ opam init --reinit -ni
 
 Please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
 
-Thanks for trying this new release out, and hoping you will enjoy the new features!
+Thanks for trying this new release out, and we hope you will enjoy the new features!
