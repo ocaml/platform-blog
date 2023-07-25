@@ -41,7 +41,7 @@ This alpha requires a preexisting Cygwin installation for compiling opam.
   * `autoconf`, `make`, `patch`, `curl`
   * MinGW compilers: `mingw64-x86_64-gcc-g++`, `mingw64-i686-gcc-g++`
   * Or if you want to use the MSVC port of OCaml, you'll need to install Visual Studio or Visual Studio Build Tools
-2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha/opam-full-2.2.0-alpha.tar.gz)
+2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha2/opam-full-2.2.0-alpha2.tar.gz)
 3. In the directory launch `make cold`
 4. A coffee later, you now have an opam executable!
 5. Start your preferred Windows terminal (`cmd` or `PowerShell`), and initialise opam with the Windows _sunset_ repository:
@@ -78,12 +78,12 @@ The upgrade instructions are unchanged:
 1. Either from binaries: run
 
     ```
-    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.2.0~alpha"
+    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.2.0~alpha2"
     ```
 
-    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha) to your PATH.
+    or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.2.0-alpha2) to your PATH.
 
-2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.2.0-alpha#compiling-this-repo).
+2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.2.0-alpha2#compiling-this-repo).
 
 
 You should then run:
