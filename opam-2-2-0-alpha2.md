@@ -1,4 +1,3 @@
------
 title: "opam 2.2.0 alpha2 release"
 authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
