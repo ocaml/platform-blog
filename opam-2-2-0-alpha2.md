@@ -6,9 +6,8 @@ authors: [
 date: "2023-07-26"
 --BODY--
 
-<!--
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/XXXX)!_
---!>
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-alpha2-release/12699)!_
+
 
 We are happy to announce the second alpha release of opam 2.2.0. It contains
 some fixes and a new feature for Windows.  You can view the full list in the
