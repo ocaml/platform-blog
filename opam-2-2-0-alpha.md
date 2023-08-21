@@ -62,7 +62,7 @@ transparent as possible) is queued already and should be available in
 3. In the directory launch `make cold`
 4. A coffee later, you now have an opam executable!
 5. Start your preferred Windows terminal (cmd or PowerShell), and initialise opam with the Windows _sunset_ repository:
-  * `opam init https://github.com/ocaml-opam/opam-repository-mingw`
+  * `opam init git+https://github.com/ocaml-opam/opam-repository-mingw`
 
 From here, you can try to install [sunset
 repository](https://discuss.ocaml.org/t/sunsetting-opam-repository-mingw/11632)
