@@ -20,15 +20,17 @@ unnoticed bugs as we head towards the stable release.
 
 ## Major change: Environment variables handling on Windows
 
-The `x-env-path-rewrite` extensions field is now handled specially.
-It allows to specify the rewriting rules for the environment variables defined
-in `setenv` and `build-env`.
+opam files now support a new `x-env-path-rewrite` field which
+specifies rewriting rules for the environment variable updates defined in
+the `setenv` and `build-env` fields. This field allows greater control over the
+separator character used for PATH-like fields (i.e. `;` vs `:`), conversion of
+slashes to backslashes, and even conversion from Windows native path format
+(`C:\cygwin64\home\dra\.opam`) to Cygwin format (`/home/dra/.opam`).
 
-Such rewriting rules allow to support platforms like Windows where the path
-format is different than on Unix-like systems (`/path/to/something` vs. `C:\path\to\something`).
-The format expected of list can also differ (`PATH=/bin:/usr/bin` vs. `PATH=C:\bin;C:\usr\bin`, note the color vs. semi-colon).
+The rewriting rules allow opam directory-like variables (e.g. the `%{lib}%` directory
+of a switch) to be used in `setenv` and `build-env` fields in a portable way.
 
-For example:
+For example, given:
 ```
 setenv: [
   [PKG_CONFIG_PATH += "%{lib}%/pkgconfig"]
@@ -39,9 +41,19 @@ x-env-path-rewrite: [
   [ PATH (":" {os != "win32"} | ";" {os = "win32"}) ("target" {os != "win32"} | "target-quoted" {os = "win32"}) ]
 ]
 ```
+the environment variable changes given by `opam env` on Windows would be:
 
-In this example `PKG_CONFIG_PATH` will be a list separated by `:` and the added path will always be in its unix form (on Windows `cygpath` will be used).
-`PATH` will be separated by `:` on Unix-like systems and `;` on Windows. The path will also be transformed to use backslashes on Windows and quoted if the path contains semi-colons.
+```
+PKG_CONFIG_PATH='/cygdrive/c/Users/DRA/AppData/Local/opam/default/lib/pkgconfig[:<rest-of-PKG_CONFIG_PATH, if given>]'
+PATH='C:\Users\DRA\AppData\Local\opam\default\share\bin;C:\Users\DRA\AppData\Local\opam\default\bin;<rest-of-PATH>'
+```
+
+with the following interesting parts for Windows users:
+- `PKG_CONFIG_PATH`, which is consumed by a Cygwin-tool, has the directory given in Unix-like syntax, and opam's `share` variable was automatically converted
+- The correct separator is used for each (`:` for `PKG_CONFIG_PATH`, `;` for `PATH` is used when adding entries)
+- In the `PATH` update, `/bin` was converted to `\bin`
+
+*Note that the specification for `PATH` is opam's _default_ behaviour, so it's not actually necessary to have this formula for `PATH` in the `x-env-path-rewrite` field.*
 
 The full syntax is described in full in the [manual](https://opam.ocaml.org/doc/Manual.html#env-update-rewrite).
 
@@ -50,31 +62,30 @@ If you want to make sure users of the package containing it have a compatible op
 ```
 available: opam-version >= "2.2.0~alpha3"
 ```
-if the change is Windows specific, you can use:
+or, if the change is Windows-specific:
 ```
 available: opam-version >= "2.2.0~alpha3" | os != "win32"
 ```
 
-## Other note-worthy changes
+## Other noteworthy changes
 
-* Sandbox: Make /tmp writable again to restore POSIX compliancy
-* opam tree: Allow packages with a specific version, directories or local opam files, as input
-* opam tree: Handle `--recurse` and `--subpath` for directory arguments
-* opam admin: Add the `add-extrafiles` command to add/check/update the `extra-files:` field according to the files present in the `files/` directory
-* opam lint: Allow to mark a set of warnings as errors using a new syntax -W @1..9
+* Sandbox: `/tmp` is now writable again, restoring POSIX compliance
+* opam tree: `opam tree package.version` is now supported, displaying the dependency tree of a specific version of a package
+* opam tree: `--recurse` and `--subpath` are supported for directory arguments
+* opam admin: new `add-extrafiles` command to add/check/update the `extra-files:` field according to the files present in the `files/` directory
+* opam lint: new syntax allow marking a set of warnings as errors e.g. `-W @1..9`
 * Releases: Pre-built binaries now include ppc64le and s390x
 
 ## Miscellaneous changes
 
-* A handful of issues related to the compilation of opam on Windows, were fixed
+* A handful of issues related to the compilation of opam on Windows were fixed
 * Bugs in the handling of the `OPAMCURL`, `OPAMFETCH` and `OPAMVERBOSE` environment variables were fixed
 * Bugs in the handling of the `--assume-built` argument were fixed
 * Sporadic crashes and segfaults during shell detection on Windows were fixed
-* The switch specific `environment` file now stores environment variable rewriting rules
 
 Various other improvements were made and bugs were fixed.
 API changes are denoted in the release note linked above.
-This release also includes a handful of PRs improving the documentation and more than a dozen PRs improving an extending the tests.
+This release also includes a handful of PRs improving the documentation and more than a dozen PRs improving and extending the tests.
 
 ## Windows Support
 
@@ -82,7 +93,7 @@ The main opam-repository Windows compliance is still a work in progress, we
 recommend to use existing [compatible
 repository](https://github.com/ocaml-opam/opam-repository-mingw) (originally
 from [@fdopen](https://github.com/fdopen)) and [32/64 bit mingw-w64
-packages](https://github.com/dra27/opam-repository) (by
+packages](https://github.com/dra27/opam-repository/tree/windows-5.0) (by
 [@dra27](https://github.com/dra27)).
 
 
