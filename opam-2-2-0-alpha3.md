@@ -9,7 +9,7 @@ date: "2023-11-13"
 
 <!--
 _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-alpha3-release/12699)!_
----!>
+--!>
 
 We are happy to announce the third alpha release of opam 2.2.0. It contains
 some fixes and a new feature for Windows.  You can view the full list in the
