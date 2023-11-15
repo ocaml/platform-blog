@@ -109,7 +109,10 @@ This alpha requires a preexisting Cygwin installation for compiling opam.
   * MinGW compilers: `mingw64-x86_64-gcc-g++`, `mingw64-i686-gcc-g++`
   * Or if you want to use the MSVC port of OCaml, you'll need to install Visual Studio or Visual Studio Build Tools
 2. Download & extract the [opam archive](https://github.com/ocaml/opam/releases/download/2.2.0-alpha3/opam-full-2.2.0-alpha3.tar.gz)
-3. In the directory launch `make cold`
+3. In the directory:
+  a. if you are using MSVC: launch `make cold`
+  b. if you are using MinGW: make sure the path to the `libc` dlls are in your `PATH` and launch `make cold`. For instance: `export PATH='C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\bin':$PATH && make cold`. Don’t forget to update `PATH` accordingly or place the `opam` binary in the same directory as the `libc` dlls if you want to move the resulting opam binary.
+  c. alternatively, if you're using MinGW: `make cold CONFIGURE_ARGS=--with-private-runtime`. If you change the location of the resulting opam binary, don't forget to copy `Opam.Runtime.amd64` (or `Opam.Runtime.i386`) in the same directory.
 4. A coffee later, you now have an opam executable!
 5. Start your preferred Windows terminal (`cmd` or `PowerShell`), and initialise opam with the Windows _sunset_ repository:
   * `opam init git+https://github.com/ocaml-opam/opam-repository-mingw`
@@ -120,13 +123,6 @@ packages. If you find any bugs, please [submit an
 issue](https://github.com/ocaml-opam/opam-repository-mingw#what-do-i-do-when-things-are-broken).
 It will help opam-repository maintainers to add Windows repository packages
 into the main repository.
-
-> Hint: if you use the MinGW compiler, don't forget to add to your `PATH` the
-path to `libc` dlls (usually
-`C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\bin`). Or compile opam with
-`make cold CONFIGURE_ARGS=--with-private-runtime`, and if you change opam
-location, don't forget to copy `Opam.Runtime.amd64` (or `Opam.Runtime.i386`)
-with it.
 
 ## Try it!
 
