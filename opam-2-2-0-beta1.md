@@ -4,7 +4,7 @@ authors: [
   "Kate Deplaix - Tarides" {"mailto:kit-ty-kate(à)outlook.com"}
   "David Allsopp - Tarides" {"mailto:david(à)tarides.com"}
 ]
-date: "2024-01-17"
+date: "2024-01-18"
 --BODY--
 
 <!--
@@ -20,25 +20,31 @@ unnoticed bugs as we head towards the stable release.
 
 ## Major change: Check and advertise to use Git for Windows
 
-TODO
+Opam 2.2 is based on Cygwin install (previously installed, or internally to
+opam). Cygwin Git is known to not have a common behaviour: different set of
+trusted certificates authorities, its own Credential Manager, different Git
+configuration, etc.  We recommend then to install and use [Git for
+Windows](https://gitforwindows.org) or via `winget`.
+
+At init stage, opam checks available Git(s), and ask users to choose one of the
+already ones, or to rerun `opam init` after installing another Git.
 
 ## Other noteworthy changes
 
-* When compiling opam on Windows with MinGW, the resulting opam binary now contains libstdc++ instead of requiring the DLL to be distributed alongside it or present in the environment
+* When compiling opam on Windows with MinGW, the resulting opam binary now contains `libstdc++` instead of requiring the DLL to be distributed alongside it or present in the environment
 * Fix opam env containing carriage return on Cygwin
 
 ## Miscellaneous changes
 
-* Remove stray comments from pwsh and cmd env
-* Add ./configure --enable-static to compile the opam binary statically on Linux
+* Remove stray comments from `pwsh` and `cmd` opam env output
+* Add `./configure --enable-static` to compile the opam binary statically on Linux
 * Fix debug logs showing up regardless of verbosity on macOS 12.7.1 / 13.6.3 / 14.2 and FreeBSD
 * Upgrade to, and require mccs >= 1.1+17
-* Fix `opam tree --dev`
-* Fix opam tree --no-switch. Instead of emptying the current switch from its installed packages, it load a fresh virtual switch
+* Fix `opam tree` options `--dev` and `--no-switch`
 
 Various other improvements were made and bugs were fixed.
 API changes are denoted in the release note linked above.
-This release also includes a handful of PRs improving the documentation and more than a dozen PRs improving and extending the tests.
+This release also includes PRs improving the documentation and improving and extending the tests.
 
 ## Windows Support
 
