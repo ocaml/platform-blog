@@ -59,7 +59,7 @@ packages](https://github.com/dra27/opam-repository/tree/windows-5.0) (by
 
 ### How to Test opam on Windows
 
-If you're feeling adventurous, you can use the experimental pre-built binary for Windows available [here](https://github.com/ocaml/opam/releases/download/2.2.0-beta1/opam-2.2.0-beta1-preview-for-windows.exe).
+If you're feeling adventurous, you can use the experimental pre-built binary for Windows available [here](https://github.com/ocaml/opam/releases/download/2.2.0-beta1/opam-2.2.0-beta1-x86_64-preview-for-windows.exe).
 
 Otherwise you can compile opam yourself using the following steps:
 
