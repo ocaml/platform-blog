@@ -20,19 +20,20 @@ unnoticed bugs as we head towards the stable release.
 
 ## Major change: Check and advertise to use Git for Windows
 
-Opam 2.2 is based on Cygwin install (previously installed, or internally to
-opam). Cygwin Git is known to not have a common behaviour: different set of
-trusted certificates authorities, its own Credential Manager, different Git
-configuration, etc.  We recommend then to install and use [Git for
-Windows](https://gitforwindows.org) or via `winget`.
+Opam 2.2 is based on a Cygwin installation (previously installed, or managed
+internally by opam). Cygwin's Git has three known usability issues when used
+outside a Cygwin environment: it uses a different set of trusted certificate
+authorities, has its own Credential Manager and potentially uses a separate Git
+configuration.  We therefore recommend using [Git for
+Windows](https://gitforwindows.org) either installed manually or via `winget`.
 
-At init stage, opam checks available Git(s), and ask users to choose one of the
-already ones, or to rerun `opam init` after installing another Git.
+At `opam init`, opam checks for available Git(s), and asks the user to choose
+one of the available, or to rerun `opam init` after installing another Git.
 
 ## Other noteworthy changes
 
 * When compiling opam on Windows with MinGW, the resulting opam binary now contains `libstdc++` instead of requiring the DLL to be distributed alongside it or present in the environment
-* Fix opam env containing carriage return on Cygwin
+* Fix `opam env` containing carriage return on Cygwin - `eval $(opam env)` now works from a Cygwin bash terminal
 
 ## Miscellaneous changes
 
