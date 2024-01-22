@@ -7,9 +7,7 @@ authors: [
 date: "2024-01-18"
 --BODY--
 
-<!--
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-beta1/?????)!_
----!>
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-beta1/13913)!_
 
 We are happy to announce the first beta release of opam 2.2.0. It contains
 some fixes and a new feature for Windows.  You can view the full list in the
