@@ -108,7 +108,7 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
 * Upgrade other vendored packages
   (cmdliner 1.2.0, re 1.11.0, ocamlgraph 2.1.0, opam-file-format 2.1.6)
 
-Various other improvements were made and bugs were fixed.
+Various other general and performance improvements were made and bugs were fixed.
 API changes are denoted in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.2.0-beta2).
 This release also includes PRs improving the documentation and improving
