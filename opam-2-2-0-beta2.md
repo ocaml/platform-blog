@@ -32,12 +32,13 @@ This beta introduces a handful of changes necessary to be able to
 make the default opam-repository support Windows out of the box:
 
 * Add a new `sys-ocaml-system` variable
-* Hijack the `"%{?val_if_true:val_if_false:}%"` syntax to support extending
-  the variables of packages with + in their name (`conf-c++` and `conf-g++` already exist)
-* Add `winsymlinks:native` to the CYGWIN environment variable when installing
+* Hijack the `"%{var?string-if-true:string-if-false-or-undefined}%"` syntax to
+  support extending the variables of packages with + in their name
+  (`conf-c++` and `conf-g++` already exist) using `"%{?pgkname:var:}%"`
+* Add `winsymlinks:native` to the `CYGWIN` environment variable when installing
   a package on Windows. In particular, this provides a workaround when extracting
   ocamlbuild's sources.
-* Internal Cygwin installation's bin directory is placed as far down PATH as
+* Internal Cygwin installation's bin directory is placed as far down `PATH` as
   is necessary not to shadow `bash`, `tar`, `sort` or `git`
 * Disable ACL in Cygwin internal install to avoid permission mismatch errors
 
@@ -76,7 +77,7 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
   This allows the creation of symlinks without requiring elevation.
   Longer-term, the aim is that we should never _require_ Developer Mode,
   but at the moment more things work with it than without it!
-* Mark the internal cygwin installation as recommended.
+* Mark the internal Cygwin installation as recommended.
   Please don't try to maintain your own Cygwin install
   for use with opam unless you really know what you're doing!
 * Fix MSYS2 support. For 2.2.0, the focus has been on Cygwin,
@@ -92,7 +93,7 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
 * Sandbox: Mark the user temporary directory
   (as returned by `getconf DARWIN_USER_TEMP_DIR`) as writable when TMPDIR
   is not defined on macOS
-* Add warning 69: Warn for new syntax when package name in variable in string
+* Add Warning 69: Warn for new syntax when package name in variable in string
   interpolation contains several '+' (this is related to the "hijack" item above)
 * Add support for Wolfi OS, treat it like Alpine family as it also uses apk
 * Upgrade the vendored dune package to 3.14.2 to allow to compile opam when
