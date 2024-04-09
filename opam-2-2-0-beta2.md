@@ -11,14 +11,14 @@ date: "2024-04-09"
 _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-beta2/XXXX)!_
 --->
 
-We are happy to announce the second beta release of opam 2.2.0.
+We are indescribably thrilled to announce the second beta release of opam 2.2.0.
 
 It contains everything required to be able to make opam-repository compatible
 with Windows, as well as a whole bunch of fixes. You can view the full list
 of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.2.0-beta2).
 
-**We'll post another blog post very soon with more direction on how to test
+**We'll post another blog post very soon with more directions on how to test
 opam on Windows with this release.**
 
 This version is a beta, we invite users to test it to spot previously
@@ -33,9 +33,10 @@ make the default opam-repository support Windows out of the box:
 
 * Add a new `sys-ocaml-system` variable
 * Hijack the `"%{?val_if_true:val_if_false:}%"` syntax to support extending
-  the variables of packages with + in their name
-* Add winsymlinks:native to the CYGWIN environment variable when installing
-  a package on Windows
+  the variables of packages with + in their name (`conf-c++` and `conf-g++` already exist)
+* Add `winsymlinks:native` to the CYGWIN environment variable when installing
+  a package on Windows. In particular, this provides a workaround when extracting
+  ocamlbuild's sources.
 * Internal Cygwin installation's bin directory is placed as far down PATH as
   is necessary not to shadow `bash`, `tar`, `sort` or `git`
 * Disable ACL in Cygwin internal install to avoid permission mismatch errors
@@ -43,24 +44,24 @@ make the default opam-repository support Windows out of the box:
 We expect to be able to show the proposed changed to opam-repository
 very soon to take advantage of all these changes.
 
-### opam-repository scallability
+### opam-repository scalability
 
 The current draft resolution resulting from the discussion in
 [ocaml/opam-repository#23789](https://github.com/ocaml/opam-repository/issues/23789)
-about the scallability of opam-repository includes the removal of some
+about the scalability of opam-repository includes the removal of some
 packages. However currently, opam uses the `patch` system command to apply
 changes from a repository. The behaviour of that command is thus very
 important and it is a known behaviour for the macOS and BSDs `patch`
 command to not be able to delete files which leads to failures and
 inconsistencies for opam. Package managers on those platforms installing
-opam already makes opam depend on GNU patch, however a certain number of
-people do not install opam via a system package manager (e.g. our install script)
+opam already make opam depend on GNU patch, however a certain number of
+people do not install opam via a system package manager (e.g. our own install script!)
 and end up using their system version of `patch`. This is in particular
 a problem on macOS as the name of the GNU patch command is not `gpatch` like
 on BSDs but simply `patch` when installed via Homebrew.
 
-To fix this issue, after many trials and errors
-(this issue being surprisingly tricky to fix), we've decided to:
+This issue is surprisingly tricky to fix, and after many trials and errors,
+we've decided to:
 
 * Warn if GNU patch is not detected when a patch is applied
 * Use `gpatch` by default instead of `patch` on NetBSD and DragonFlyBSD
@@ -71,9 +72,17 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
 
 ### Other noteworthy changes
 
-* Recommend enabling Developer Mode on Windows
-* Fix MSYS2 support
-* Mark the internal cygwin installation as recommended
+* Recommend enabling Developer Mode on Windows.
+  This allows the creation of symlinks without requiring elevation.
+  Longer-term, the aim is that we should never _require_ Developer Mode,
+  but at the moment more things work with it than without it!
+* Mark the internal cygwin installation as recommended.
+  Please don't try to maintain your own Cygwin install
+  for use with opam unless you really know what you're doing!
+* Fix MSYS2 support. For 2.2.0, the focus has been on Cygwin,
+  so configuring opam to use MSYS2 is quite manual.
+  Please don't try to maintain your own MSYS2 install for use
+  with opam unless you _really really_ know what you're doing!
 * Fix issues when using fish
 * Improve the internal Cygwin installation during init on Windows
 * Unixify Windows paths in init shells scripts
@@ -84,11 +93,11 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
   (as returned by `getconf DARWIN_USER_TEMP_DIR`) as writable when TMPDIR
   is not defined on macOS
 * Add warning 69: Warn for new syntax when package name in variable in string
-  interpolation contains several '+'
-* Check for gpatch instead of patch on NetBSD and DragonFlyBSD
-* Add support for Wolfi OS, treat it like Apline family as it uses apk too
+  interpolation contains several '+' (this is related to the "hijack" item above)
+* Add support for Wolfi OS, treat it like Alpine family as it also uses apk
 * Upgrade the vendored dune package to 3.14.2 to allow to compile opam when
-  the environment contains unicode characters on Windows
+  the environment contains unicode characters on Windows (in particular,
+  this means opam now works if your username contains accented characters)
 * Upgrade other vendored packages
   (cmdliner 1.2.0, re 1.11.0, ocamlgraph 2.1.0, opam-file-format 2.1.6)
 
