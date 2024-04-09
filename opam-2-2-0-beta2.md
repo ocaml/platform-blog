@@ -87,7 +87,11 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
 * Fix issues when using fish
 * Improve the internal Cygwin installation during init on Windows
 * Unixify Windows paths in init shells scripts
-* Disable Software Heritage fallbacks by default
+* Disable Software Heritage fallback by default as there currently no CI job
+  in opam-repository to check validity of proposed `swhid` regarding release
+  archive (neither publication tools support) and some concerns were raised
+  regarding the degree of trust of the hashing method used by Software
+  Heritage (sha1).
 * Make sure `opam source --dev` with git sources, clones the whole repository
   instead of using `--depth=1`
 * Sandbox: Mark the user temporary directory
