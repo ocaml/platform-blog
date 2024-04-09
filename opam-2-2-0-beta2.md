@@ -31,7 +31,7 @@ unnoticed bugs as we head towards the stable release.
 This beta introduces a handful of changes necessary to be able to
 make the default opam-repository support Windows out of the box:
 
-* Add a new `sys-ocaml-system` variable
+* Add a new `sys-ocaml-system` init default global eval variable
 * Hijack the `"%{var?string-if-true:string-if-false-or-undefined}%"` syntax to
   support extending the variables of packages with + in their name
   (`conf-c++` and `conf-g++` already exist) using `"%{?pgkname:var:}%"`
