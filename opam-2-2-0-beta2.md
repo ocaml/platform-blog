@@ -82,8 +82,10 @@ These changes will make their way to the upcoming opam 2.1.6, in a few weeks.
   for use with opam unless you really know what you're doing!
 * Fix MSYS2 support. For 2.2.0, the focus has been on Cygwin,
   so configuring opam to use MSYS2 is quite manual.
-  Please don't try to maintain your own MSYS2 install for use
-  with opam unless you _really really_ know what you're doing!
+  Please note that even if opam can use a MSYS2 installation,
+  it is not yet officially supported and opam repository is not 
+  yet MSYS2 compatible. Use opam with MSYS2 only if you 
+  _really really_ know what you're doing!
 * Fix issues when using fish
 * Improve the internal Cygwin installation during init on Windows
 * Unixify Windows paths in init shells scripts
