@@ -7,9 +7,7 @@ authors: [
 date: "2024-04-09"
 --BODY--
 
-<!---
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-beta2/XXXX)!_
---->
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-beta2/14461)!_
 
 We are indescribably thrilled to announce the second beta release of opam 2.2.0.
 
