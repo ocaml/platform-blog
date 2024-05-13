@@ -1,4 +1,4 @@
-title: "opam 2.2.0 beta2 - Windows OCaml"
+title: "opam 2.2.0~beta2 - Windows OCaml"
 authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
   "Kate Deplaix - Ahrefs" {"mailto:kit-ty-kate(à)outlook.com"}
