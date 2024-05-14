@@ -7,7 +7,7 @@ authors: [
 date: "2024-05-13"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss](??)!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/14648)!_
 
 Almost exactly 8 years ago, in a small village to the north of Cambridge, a Dell Precision 5510 laptop running an experimental build of opam just recently re-versioned from 1.3~dev7 to 2.0~alpha, crunched its way through the creation of 80 compiler switches and verified that the native Windows builds of OCaml for 3.07-4.03 all passed a battery of compilation tests. Time to upstream it.
 
