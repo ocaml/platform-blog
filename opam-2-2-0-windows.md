@@ -102,7 +102,7 @@ or, for PowerShell:
 and you should then be able to run `ocaml` and see: 🎆🥳🎉
 
 ```
-OCaml version 5.1.1
+OCaml version 5.2.0
 Enter #help;; for help.
 
 #
@@ -163,7 +163,7 @@ Those are things we already know, but there are going to be a bunch of things we
 
 If you don't already have it, you can install Visual Studio Code with `winget install Microsoft.VisualStudioCode` (remember to start a fresh terminal, set `OPAMROOT` again, if you did that before, and run the appropriate `eval $(opam env)` rune which `opam switch` will remind you about)! Make sure you've installed the [`ocamllabs.ocaml-platform`](https://marketplace.visualstudio.com/items?itemName=ocamllabs.ocaml-platform) extension in Visual Studio Code.
 
-Switch back to the 5.1.1 switch opam initially created with `opam switch default` and issue `opam install ocaml-lsp-server` and create that all-important "Hello, world" program with either
+Switch back to the 5.2.0 switch opam initially created with `opam switch default` and issue `opam install ocaml-lsp-server` and create that all-important "Hello, world" program with either
 
 ```
 echo print_endline "Hello, world"> hello.ml
@@ -185,7 +185,7 @@ One of the biggest differences between opam 2.0 and opam 2.1 is that the externa
 
 Figuring out how to implement this with opam 2.1's integrated depext has been a very large part of the behind-the-scenes work for opam 2.2, and there are still many more packaging changes needed in opam-repository before everything "just works".
 
-Here is a worked example trying to install the `ssl` package in OCaml 5.1.1.
+Here is a worked example trying to install the `ssl` package in OCaml 5.2.0.
 
 Let's start off with `opam install ssl`:
 
@@ -246,7 +246,7 @@ opam install ssl
 ...
 
 #=== ERROR while compiling ssl.0.7.0 ==========================================#
-# context     2.2.0~beta2 | win32/x86_64 | ocaml.5.1.1 | git+https://github.com/dra27/opam-repository.git#windows-initial-conf-libssl
+# context     2.2.0~beta2 | win32/x86_64 | ocaml.5.2.0 | git+https://github.com/dra27/opam-repository.git#windows-initial-conf-libssl
 # path        ~\AppData\Local\opam\default\.opam-switch\build\ssl.0.7.0
 # command     ~\AppData\Local\opam\default\bin\dune.exe build -p ssl -j 15 @install
 # exit-code   1
