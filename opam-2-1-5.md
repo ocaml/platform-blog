@@ -8,7 +8,7 @@ date: "2023-05-25"
 
 _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-5-release/12290)!_
 
-We are pleased to announce the patch release of [opam 2.1.5]((https://github.com/ocaml/opam/releases/tag/2.1.5).
+We are pleased to announce the patch release of [opam 2.1.5](https://github.com/ocaml/opam/releases/tag/2.1.5).
 
 This opam release consists of [backported](https://github.com/ocaml/opam/issues/5444) bug & security fixes:
 
