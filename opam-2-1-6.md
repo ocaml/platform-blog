@@ -8,7 +8,7 @@ date: "2024-05-17"
 --BODY--
 
 
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/)!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-1-6/14683)!_
 
 We are pleased to announce the patch release of [opam 2.1.6](https://github.com/ocaml/opam/releases/tag/2.1.6).
 
