@@ -10,7 +10,7 @@ date: "2024-05-17"
 
 _Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/)!_
 
-We are pleased to announce the patch release of [opam 2.1.6]((https://github.com/ocaml/opam/releases/tag/2.1.6).
+We are pleased to announce the patch release of [opam 2.1.6](https://github.com/ocaml/opam/releases/tag/2.1.6).
 
 This opam release consists of [backported](https://github.com/ocaml/opam/issues/5870) bug fixes and improvements:
 
