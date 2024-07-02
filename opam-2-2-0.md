@@ -7,7 +7,7 @@ authors: [
 date: "2024-07-01"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0/XXXXX)!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-0-is-out/14893)!_
 
 We are very pleased to announce the release of opam 2.2.0, and encourage all users to upgrade. Please read on for installation and upgrade instructions.
 
