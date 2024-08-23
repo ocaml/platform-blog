@@ -7,7 +7,7 @@ authors: [
 date: "2024-08-22"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-1-release/XXXXX)!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-2-1/15192)!_
 
 We are pleased to announce the release of opam 2.2.1.
 
