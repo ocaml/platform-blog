@@ -22,6 +22,7 @@ unnoticed bugs as we head towards the stable release.
 ## Major breaking change
 
 When loading a repository, opam now ignores files in packages' `files/` directories which aren't listed in the `extra-files` field of the opam file.
+This was done to simplify the opam specification where we hope the opam file to be the only thing that you have to look at when reading a package specification. The optionality of the `extra-files:` field goes against that principle. This change also reduces the surface area for potential file corruption as it ensures that extra-files are checked against their checksums.
 
 This is a breaking change and means that if you are using the `files/` directory without the `extra-files:` field, you need to make sure that all files in that directory are listed in the `extra-files` field.
 Once done, the resulting opam file is backward-compatible and you don't need to worry about anything else.
