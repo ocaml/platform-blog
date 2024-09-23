@@ -21,13 +21,12 @@ unnoticed bugs as we head towards the stable release.
 
 ## Major breaking change
 
-When loading a repository, opam won't automatically populate the `extra-files:` field with the files found in the `files/` directory anymore.
+When loading a repository, opam now ignores files in packages' `files/` directories which aren't listed in the `extra-files` field of the opam file.
 
-This is a breaking change and means that if you are using the `files/` directory without the `extra-files:` field, you need to make sure that every files in that directory are listed in the `extra-files` field.
-Once done the resulting opam file is backward-compatible and you don't need to worry about anything else.
+This is a breaking change and means that if you are using the `files/` directory without the `extra-files:` field, you need to make sure that all files in that directory are listed in the `extra-files` field.
+Once done, the resulting opam file is backward-compatible and you don't need to worry about anything else.
 
-If you have an opam repository, you should make sure every files are listed so every packages continue to work without any issue.
-This can be done automatically using the `opam admin update-extrafiles` command.
+If you have an opam repository, you should make sure all files are listed so every packages continues to work without any issue, which can be done automatically using the `opam admin update-extrafiles` command.
 
 ## Major changes
 
