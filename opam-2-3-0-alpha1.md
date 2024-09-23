@@ -49,7 +49,7 @@ This can be done automatically using the `opam admin update-extrafiles` command.
 
 * The `builtin-0install` solver was improved and should now be capable of being your default solver instead of `builtin-mccs+glpk`. It was previously mostly only suited for automated tasks such as Continuous Integration. If you wish to give it a try, simply call `opam option solver=builtin-0install`
 
-* Most unhelpful conflict messages were fixed
+* Most of the unhelpful conflict messages were fixed
 
 * Fix the value of the `arch` variable when the current OS is 32bit on a 64bit machine (e.g. Raspberry Pi OS)
 
