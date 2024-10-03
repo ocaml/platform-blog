@@ -272,7 +272,7 @@ The upgrade instructions are unchanged:
 1. Either from binaries: run
 
     ```
-    bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.1.0"
+    bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh) --version 2.1.0"
     ```
 
     or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.1.0) to your PATH.
