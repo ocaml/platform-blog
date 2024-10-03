@@ -62,7 +62,7 @@ There are three main ways to get the update:
    back:
 
     ```
-    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    sh <(curl -sL https://opam.ocaml.org/install.sh)
     ```
 
    This uses the binaries from https://github.com/ocaml/opam/releases/tag/2.0.0-beta5
