@@ -28,12 +28,6 @@ unnoticed bugs as we head towards the stable release.
 
 * Fix a regression in lint W59 with local urls that are not archives
 
-* Bump to lang dune to 2.8 and bump the requirement to dune >= 2.8, which was actually required in the previous alpha release
-
-* Bump the vendored version of dune to 3.16.0, cppo to 1.7.0 and extlib to 1.8.0
-
-* Fix compilation with OCaml 5.3 when using the vendored extlib by updating to the 5.3 compatible version
-
 * Fix the compilation of opam on Windows with OCaml >= 5.0 (again)
 
 * Several improvements to the pre-built release binaries were made:
