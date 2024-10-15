@@ -19,14 +19,14 @@ unnoticed bugs as we head towards the stable release.
 ## Changes
 
 * Fix an opam 2.1 regression where the initial pin of a local VCS directory would store untracked and ignored files.
-  Those files would usually be cleaned before building the package, however git submodules would not be cleaned and would cause issues when paired with the new behaviour added in 2.3.0\~alpha1 which makes opam error when git submodules fail to update (it was previously a warning)
+  Those files would usually be cleaned before building the package, however git submodules would not be cleaned and would cause issues when paired with the new behaviour added in 2.3.0\~alpha1 which makes opam error when git submodules fail to update (it was previously a warning). ([#5809](https://github.com/ocaml/opam/issues/5809))
 
-* Fix a regression which would make opam crash on platforms where `getconf LONG_BIT` is not available (e.g. OpenBSD)
+* Fix a regression which would make opam crash on platforms where `getconf LONG_BIT` is not available (e.g. OpenBSD). ([#6215](https://github.com/ocaml/opam/issues/6215))
 
 * Fix the installed packages internal cache, which was storing the wrong version of the opam file after a build failure.
-  This could be triggered easily for users with custom repositories with non-populated extra-files
+  This could be triggered easily for users with custom repositories with non-populated extra-files. ([#6213](https://github.com/ocaml/opam/pull/6213))
 
-* Fix a regression in lint W59 with local urls that are not archives
+* Fix a regression in lint W59 with local urls that are not archives. ([#6218](https://github.com/ocaml/opam/issues/6218))
 
 * Fix the compilation of opam on Windows with OCaml >= 5.0 (again)
 
