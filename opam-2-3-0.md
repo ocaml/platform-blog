@@ -93,7 +93,7 @@ If you have an opam repository, you should make sure all files are listed so eve
   * A NetBSD/x86_64 binary is now available
 
 
-And many other general and performance improvements were made and bugs were fixed.
+And many other general, performance and UI improvements were made and bugs were fixed.
 You can take a look to previous blog posts.
 API changes and a more detailed description of the changes are listed in:
 - [the release note for 2.3.0~alpha1](https://github.com/ocaml/opam/releases/tag/2.3.0-alpha1)
