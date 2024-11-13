@@ -44,7 +44,7 @@ opam init --reinit -ni
 ## Major breaking change: extra-files
 
 When loading a repository, opam now ignores files in packages' `files/` directories which aren't listed in the `extra-files` field of the opam file.
-This was done to simplify the opam specification where we hope the opam file to be the only thing that you have to look at when reading a package specification. The optionality of the `extra-files:` field goes against that principle. This change also reduces the surface area for potential file corruption as it ensures that extra-files are checked against their checksums.
+This was done to simplify the opam specification where we hope the opam file to be the only thing that you have to look at when reading a package specification. The optionality of the `extra-files:` field goes against that principle. This change also reduces the surface area for potential file corruption as it ensures that extra-files are checked against their checksums instead of adding it on-the-fly.
 
 This is a breaking change and means that if you are using the `files/` directory without the `extra-files:` field, you need to make sure that all files in that directory are listed in the `extra-files` field.
 Once done, the resulting opam file is backward-compatible and you don't need to worry about anything else.
@@ -55,7 +55,7 @@ If you have an opam repository, you should make sure all files are listed so eve
 
 * Packages requiring an unsupported version of opam are now marked unavailable, instead of causing a repository error. This means an opam repository can now allow smoother upgrade in the future where some packages can require a newer version of opam without having to fork the repository to upgrade every package to that version as was done for the upgrade from opam 1.2 to 2.0
 
-* Add a new `opam list --latests-only` option to list only the latest versions of packages. Note that this option is respects the order options were given on the command line. For example: `--available --latests-only` will first list all the available packages, then choose only the latest packages in that set; while `--latests-only --available` will first list all the latest packages, then only show the ones that are available in that set
+* Add a new `opam list --latests-only` option to list only the latest versions of packages. Note that this option respects the order options were given on the command line. For example: `--available --latests-only` will first list all the available packages, then choose only the latest packages in that set; while `--latests-only --available` will first list all the latest packages, then only show the ones that are available in that set
 
 * Fix and improve `opam install --check`, which now checks if the whole dependency tree of the package is installed instead of only the root dependencies
 
@@ -63,7 +63,7 @@ If you have an opam repository, you should make sure all files are listed so eve
 
 * Add a new `opam switch import --deps-only` option to install only the dependencies of the root packages listed in the opam switch export file
 
-* `opam switch list-available` will now not display compilers flagged with `avoid-version`/`deprecated` unless `--all` is given, meaning that the "trunk" build of OCaml no longer appears to be the latest version
+* `opam switch list-available` will now not display compilers flagged with `avoid-version`/`deprecated` unless `--all` is given, meaning that the pre-release or unreleased OCaml packages no longer appears to be the latest version
 
 * `opam switch create --repos` now accepts git URLs suffixed with `.git` instead of requiring the `git+https://` protocol prefix. This is consistant with other commands such as `opam repository add`. *Thanks to [@Keryan-dev](https://github.com/Keryan-dev) for this contribution*
 
