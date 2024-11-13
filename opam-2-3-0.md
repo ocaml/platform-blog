@@ -73,14 +73,14 @@ If you have an opam repository, you should make sure all files are listed so eve
 
 * Most of the unhelpful conflict messages were fixed. ([#4373](https://github.com/ocaml/opam/issues/4373))
 
+* Fix an opam 2.1 regression where the initial pin of a local VCS directory would store untracked and ignored files.
+  Those files would usually be cleaned before building the package, however git submodules would not be cleaned and would cause issues when paired with the new behaviour added in 2.3.0\~alpha1 which makes opam error when git submodules fail to update (it was previously a warning). ([#5809](https://github.com/ocaml/opam/issues/5809))
+
 * Fix the value of the `arch` variable when the current OS is 32bit on a 64bit machine (e.g. Raspberry Pi OS). ([#5949](https://github.com/ocaml/opam/issues/5949))
 
 * opam now fails when git submodules fail to update instead of ignoring the error and just showing a warning
 
 * opam's libraries now compile with OCaml >= 5.0 on Windows
-
-* Fix an opam 2.1 regression where the initial pin of a local VCS directory would store untracked and ignored files.
-  Those files would usually be cleaned before building the package, however git submodules would not be cleaned and would cause issues when paired with the new behaviour added in 2.3.0\~alpha1 which makes opam error when git submodules fail to update (it was previously a warning). ([#5809](https://github.com/ocaml/opam/issues/5809))
 
 * Fix the installed packages internal cache, which was storing the wrong version of the opam file after a build failure.
   This could be triggered easily for users with custom repositories with non-populated extra-files. ([#6213](https://github.com/ocaml/opam/pull/6213))
