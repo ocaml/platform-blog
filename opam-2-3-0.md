@@ -88,9 +88,8 @@ If you have an opam repository, you should make sure all files are listed so eve
 * Several improvements to the pre-built release binaries were made:
   * The Linux binaries are now built on Alpine 3.20
   * The FreeBSD binary is now built on FreeBSD 14.1
-  * The OpenBSD binary is now built on OpenBSD 7.6 and looses support for OpenBSD 7.5 and older
-  * A Linux/riscv64 binary is now available
-  * A NetBSD/x86_64 binary is now available
+  * The OpenBSD binary is now built on OpenBSD 7.6 and loses support for OpenBSD 7.5 and earlier
+  * Linux/riscv64 and NetBSD/x86_64 binaries are now available
 
 
 And many other general, performance and UI improvements were made and bugs were fixed.
