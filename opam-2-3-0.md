@@ -7,7 +7,7 @@ authors: [
 date: "2024-11-13"
 --BODY--
 
-_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-3-0-is-out/XXXXXX)!_
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-3-0-is-out/15609)!_
 
 As mentioned in [our talk at the OCaml Workshop 2024](https://icfp24.sigplan.org/details/ocaml-2024-papers/10/Opam-2-2-and-beyond),
 we decided to switch to a time-based release cycle (every 6 months), starting with opam 2.3.
