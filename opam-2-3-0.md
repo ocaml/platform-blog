@@ -44,10 +44,10 @@ opam init --reinit -ni
 ## Major breaking change: extra-files
 
 When loading a repository, opam now ignores files in packages' `files/` directories which aren't listed in the `extra-files` field of the opam file.
-This was done to simplify the opam specification where we hope the opam file to be the only thing that you have to look at when reading a package specification. The optionality of the `extra-files:` field goes against that principle. This change also reduces the surface area for potential file corruption as it ensures that extra-files are checked against their checksums instead of adding it on-the-fly.
+This was done to simplify the opam specification where we hope the opam file to be the only thing that you have to look at when reading a package specification. It being optional to list all files in the `extra-files:` field went against that principle. This change also reduces the surface area for potential file corruption as all extra-files must have checksums.
 
-This is a breaking change and means that if you are using the `files/` directory without the `extra-files:` field, you need to make sure that all files in that directory are listed in the `extra-files` field.
-Once done, the resulting opam file is backward-compatible and you don't need to worry about anything else.
+This is a breaking change and means that if you are using the `files/` directory without listing them in the `extra-files:` field, you need to make sure that all files in that directory are included in the `extra-files` field.
+The resulting opam file remains compatible with all previous opam 2.x releases.
 
 If you have an opam repository, you should make sure all files are listed so every packages continues to work without any issue, which can be done automatically using the `opam admin update-extrafiles` command.
 
@@ -63,13 +63,13 @@ If you have an opam repository, you should make sure all files are listed so eve
 
 * Add a new `opam switch import --deps-only` option to install only the dependencies of the root packages listed in the opam switch export file
 
-* `opam switch list-available` will now not display compilers flagged with `avoid-version`/`deprecated` unless `--all` is given, meaning that the pre-release or unreleased OCaml packages no longer appears to be the latest version
+* `opam switch list-available` no longer displays compilers flagged with `avoid-version`/`deprecated` unless `--all` is given, meaning that pre-release or unreleased OCaml packages no longer appear to be the latest version
 
-* `opam switch create --repos` now accepts git URLs suffixed with `.git` instead of requiring the `git+https://` protocol prefix. This is consistant with other commands such as `opam repository add`. *Thanks to [@Keryan-dev](https://github.com/Keryan-dev) for this contribution*
+* `opam switch create --repositories` now correctly infers `--kind=git` for URLs ending with `.git` rather than requiring the `git+https://` protocol. This is consistant with other commands such as `opam repository add`. *Thanks to [@Keryan-dev](https://github.com/Keryan-dev) for this contribution*
 
-* `opam switch set-invariant` now displays the switch invariant using the same syntax as the `--invariant` flag
+* `opam switch set-invariant` now displays the switch invariant using the same syntax as the `--formula` flag
 
-* The `builtin-0install` solver was improved and should now be capable of being your default solver instead of `builtin-mccs+glpk`. It was previously mostly only suited for automated tasks such as Continuous Integration. If you wish to give it a try, simply call `opam option solver=builtin-0install`
+* The `builtin-0install` solver was improved and should now be capable of being your default solver instead of `builtin-mccs+glpk`. It was previously mostly only suited for automated tasks such as Continuous Integration. If you wish to give it a try, simply calling `opam option solver=builtin-0install` (call `opam option solver=` restores the default)
 
 * Most of the unhelpful conflict messages were fixed. ([#4373](https://github.com/ocaml/opam/issues/4373))
 
