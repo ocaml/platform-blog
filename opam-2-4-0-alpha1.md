@@ -43,7 +43,7 @@ opam init --reinit -ni
 
 * Remove `ocaml-system` from the list of default compilers chosen at `opam init` time ([#3509](https://github.com/ocaml/opam/issues/3509))
 
-* Patches are now applied using the `patch` OCaml library instead of GNU Patch ([#6019](https://github.com/ocaml/opam/issues/6019) [#6052](https://github.com/ocaml/opam/issues/6052) [#3782](https://github.com/ocaml/opam/issues/3782) [ocaml/setup-ocaml#933](https://github.com/ocaml/setup-ocaml/pull/933))
+* Patches are now applied using the `patch` OCaml library instead of GNU Patch ([#6019](https://github.com/ocaml/opam/issues/6019), [#6052](https://github.com/ocaml/opam/issues/6052), [#3782](https://github.com/ocaml/opam/issues/3782), [ocaml/setup-ocaml#933](https://github.com/ocaml/setup-ocaml/pull/933))
   * Context diffs are not supported anymore, only Unified diffs are (including its git extensions)
   * Stop support of file permission changes via git extension to the unified diff specification
   * GNU `patch` and the `diff` command are no longer runtime dependencies
