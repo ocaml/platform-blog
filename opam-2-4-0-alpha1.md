@@ -50,9 +50,9 @@ opam init --reinit -ni
 
 * Support providing external dependencies with Nix by adding support for stateless depexts systems ([#5982](https://github.com/ocaml/opam/issues/5982)). *Thanks to [@RyanGibb](https://github.com/RyanGibb) for this contribution*
 
-* Fix `opam install <local_dir>` not updating or storing pinned packages' metadata ([#6248](https://github.com/ocaml/opam/issues/6248))
+* Fix `opam install <local_dir>` not updating or storing pinned packages' metadata ([#6248](https://github.com/ocaml/opam/issues/6248), [#6379](https://github.com/ocaml/opam/issues/6379))
 
-* Fix `opam install --deps-only/--show-action <local_dir>` not updating (without storing) pinned packages' metadata ([#5567](https://github.com/ocaml/opam/issues/5567))
+* Fix `opam install --deps-only/--show-action <local_dir>` not updating (without storing) pinned packages' metadata ([#5567](https://github.com/ocaml/opam/issues/5567), [#4507](https://github.com/ocaml/opam/issues/4507))
 
 * `opam pin`/`opam pin list` now displays the current revision of a pinned repository in a new column. *Thanks to [@desumn](https://github.com/desumn) for this contribution*
 
@@ -96,7 +96,7 @@ opam init --reinit -ni
 
 
 Various performance and other improvements were made and bugs were fixed.
-API changes are denoted in the release note linked above.
+API changes are also denoted in the release note linked above.
 This release also includes a handful of improvement the documentation and more than two dozen improvement and extensions to our testsuite.
 
 
