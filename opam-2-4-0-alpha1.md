@@ -50,7 +50,7 @@ opam init --reinit -ni
 
 * Support providing external dependencies with Nix by adding support for stateless depexts systems ([#5982](https://github.com/ocaml/opam/issues/5982)). *Thanks to [@RyanGibb](https://github.com/RyanGibb) for this contribution*
 
-* Fix `opam install <local_dir>` not updating or storing pinned packages' metadata ([6248]())
+* Fix `opam install <local_dir>` not updating or storing pinned packages' metadata ([#6248](https://github.com/ocaml/opam/issues/6248))
 
 * Fix `opam install --deps-only/--show-action <local_dir>` not updating (without storing) pinned packages' metadata ([#5567](https://github.com/ocaml/opam/issues/5567))
 
