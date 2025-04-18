@@ -7,6 +7,8 @@ authors: [
 date: "2025-04-18"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-4-0-alpha1/16520)!_
+
 We are happy to announce the first alpha release of opam 2.4.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.4.0-alpha1).
@@ -52,7 +54,7 @@ opam init --reinit -ni
 
 * Add Nix support for external dependencies (depexts) by adding support for stateless package managers ([#5982](https://github.com/ocaml/opam/issues/5982)). *Thanks to [@RyanGibb](https://github.com/RyanGibb) for this contribution*
 
-* Fix `opam install <local_dir>` with and without options like `--deps-only` or `--show-action` having unexpected behaviours (([#6248](https://github.com/ocaml/opam/issues/6248)), [#5567](https://github.com/ocaml/opam/issues/5567)) such as:
+* Fix `opam install <local_dir>` with and without options like `--deps-only` or `--show-action` having unexpected behaviours ([#6248](https://github.com/ocaml/opam/issues/6248), [#5567](https://github.com/ocaml/opam/issues/5567)) such as:
   * reporting `Nothing to do` despite dependencies or package not being up-to-date
   * asking to install the wrong dependencies
 
