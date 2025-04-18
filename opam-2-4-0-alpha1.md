@@ -41,18 +41,23 @@ opam init --reinit -ni
 
 ## Major changes
 
-* Remove `ocaml-system` from the list of default compilers chosen at `opam init` time ([#3509](https://github.com/ocaml/opam/issues/3509))
+* On `opam init` the compiler chosen for the default switch will no longer be `ocaml-system` ([#3509](https://github.com/ocaml/opam/issues/3509))
+  This was done because the system compiler (as-is your ocaml installed system wide, e.g. /usr/bin/ocaml) is known to be under-tested and prone to a variety of bugs and configuration issues.
+  Removing it from the default compiler allows new-comers a more smooth experience.
+  *Note: if you wish to use it anyway, you are always able to do it explicitly using `opam init --compiler=ocaml-system`*
 
-* Patches are now applied using the `patch` OCaml library instead of GNU Patch ([#6019](https://github.com/ocaml/opam/issues/6019), [#6052](https://github.com/ocaml/opam/issues/6052), [#3782](https://github.com/ocaml/opam/issues/3782), [ocaml/setup-ocaml#933](https://github.com/ocaml/setup-ocaml/pull/933))
-  * Context diffs are not supported anymore, only Unified diffs are (including its git extensions)
-  * Stop support of file permission changes via git extension to the unified diff specification
-  * GNU `patch` and the `diff` command are no longer runtime dependencies
+* GNU `patch` and the `diff` command are no longer runtime dependencies. Instead the OCaml `patch` library is used ([#6019](https://github.com/ocaml/opam/issues/6019), [#6052](https://github.com/ocaml/opam/issues/6052), [#3782](https://github.com/ocaml/opam/issues/3782), [ocaml/setup-ocaml#933](https://github.com/ocaml/setup-ocaml/pull/933))
+  Doing this we've removed some rarely used features of GNU Patch such as the support of [Context diffs](https://www.gnu.org/software/diffutils/manual/html_node/Example-Context.html).
+  The new implementation only supports [Unified diffs](https://www.gnu.org/software/diffutils/manual/html_node/Example-Unified.html) including the [git extended headers](https://git-scm.com/docs/diff-format), however file permission changes via said extended headers have no effect.
 
-* Support providing external dependencies with Nix by adding support for stateless depexts systems ([#5982](https://github.com/ocaml/opam/issues/5982)). *Thanks to [@RyanGibb](https://github.com/RyanGibb) for this contribution*
+* Add Nix support for external dependencies (depexts) by adding support for stateless package managers ([#5982](https://github.com/ocaml/opam/issues/5982)). *Thanks to [@RyanGibb](https://github.com/RyanGibb) for this contribution*
 
-* Fix `opam install <local_dir>` not updating or storing pinned packages' metadata ([#6248](https://github.com/ocaml/opam/issues/6248), [#6379](https://github.com/ocaml/opam/issues/6379))
+* Fix `opam install <local_dir>` with and without options like `--deps-only` or `--show-action` having unexpected behaviours (([#6248](https://github.com/ocaml/opam/issues/6248)), [#5567](https://github.com/ocaml/opam/issues/5567)) such as:
+  * reporting `Nothing to do` despite dependencies or package not being up-to-date
+  * asking to install the wrong dependencies
 
-* Fix `opam install --deps-only/--show-action <local_dir>` not updating (without storing) pinned packages' metadata ([#5567](https://github.com/ocaml/opam/issues/5567), [#4507](https://github.com/ocaml/opam/issues/4507))
+
+## Other noteworthy changes
 
 * `opam pin`/`opam pin list` now displays the current revision of a pinned repository in a new column. *Thanks to [@desumn](https://github.com/desumn) for this contribution*
 
