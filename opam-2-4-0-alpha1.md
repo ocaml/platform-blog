@@ -1,10 +1,10 @@
 title: "opam 2.4.0 alpha1 release"
 authors: [
   "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
-  "Kate Deplaix - Ahrefs" {"mailto:kit-ty-kate(à)outlook.com"}
+  "Kate Deplaix - Ahrefs" {"mailto:kit-ty-kate(à)exn.st"}
   "David Allsopp - Tarides" {"mailto:david(à)tarides.com"}
 ]
-date: "2025-04-17"
+date: "2025-04-18"
 --BODY--
 
 We are happy to announce the first alpha release of opam 2.4.0.
