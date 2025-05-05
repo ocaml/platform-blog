@@ -41,7 +41,7 @@ opam init --reinit -ni
 
 ## Changes
 
-* `opam switch create [name] <version>` will not include compiler packages flagged with `avoid-version`/`deprecated` in the generated invariant anymore ([#6494](https://github.com/ocaml/opam/pull/6494))
+* `opam switch create [name] <version>` will not include compiler packages flagged with `avoid-version`/`deprecated` in the generated invariant anymore ([#6494](https://github.com/ocaml/opam/pull/6494)). This will allow opam to avoid the use of the `ocaml-system` package unless actually explicitly requested by the user. The opam experience when the `ocaml-system` compiler is used is known to be prone to a variety of bugs and configuration issues.
 * Cygwin: Fallback to the existing `setup-x86_64.exe` if its upgrade failed to be fetched ([#6495](https://github.com/ocaml/opam/issues/6495), partial fix for [#6474](https://github.com/ocaml/opam/issues/6474))
 * Fix a memory leak happening when running large numbers of commands or opening large number of opam files ([#6484](https://github.com/ocaml/opam/issues/6484)). *Thanks to [@hannesm](https://github.com/hannesm) for this contribution*
 * Remove handling of the `OPAMSTATS` environment variable ([#6485](https://github.com/ocaml/opam/pull/6485)). *Thanks to [@hannesm](https://github.com/hannesm) for this contribution*
