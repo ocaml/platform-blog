@@ -56,11 +56,11 @@ opam init --reinit -ni
   * Updating a repository where a line was added at the end of a file without final newline character was making the update fail ([#6527](https://github.com/ocaml/opam/issues/6527))
     
 ### Build changes
-* Bump the downloaded-if-missing dune to 3.19.0, cppo to 1.8.0, ocamlgraph to 2.2.0, uutf to 1.0.4 and patch to 3.0.0~beta1 ([#6527](https://github.com/ocaml/opam/issues/6527))
+* Bump the _downloaded-if-missing_ `dune` to `3.19.0`, `cppo` to `1.8.0`, `ocamlgraph` to `2.2.0`, `uutf` to `1.0.4` and `patch` to `3.0.0~beta1` ([#6527](https://github.com/ocaml/opam/issues/6527))
 * Allows `./configure --without-dune` to build with OCaml 5.4 ([#6527](https://github.com/ocaml/opam/issues/6527))
 * Add a `--with-cygwin-setup` option to the `configure` script, only available on Windows and disabled by default, which includes the optionally given `setup-x86_64.exe` binary inside the opam binary. If the option is given without a filename, the file with be fetched from `cygwin.com` ([#6498](https://github.com/ocaml/opam/issues/6498))
 
-### Release scripts
+### Windows binary
 * Improve the prebuilt Windows binaries by including Cygwin's `setup-x86_64.exe` in the binary itself as fallback, in case `cygwin.com` is inaccessible ([#6538](https://github.com/ocaml/opam/issues/6538))
   
 
