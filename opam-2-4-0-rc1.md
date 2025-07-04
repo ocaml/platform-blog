@@ -11,9 +11,8 @@ We are happy to announce the first release candidate of opam 2.4.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.4.0-rc1).
 
-This version is an beta, we invite users to test it to spot previously
-unnoticed bugs as we head towards the stable release, which hopefully
-shouldn't take too long.
+This version is a release candidate, we invite users to test it to spot previously
+unnoticed bugs as we head towards the final release.
 
 ## Try it!
 
@@ -42,7 +41,7 @@ opam init --reinit -ni
 
 ## Changes
 
-* Fix a regression in `opam switch create <version>` when all compilers of that version are flagged with `avoid-version` ([#6563](https://github.com/ocaml/opam/issues/6563))
+* Fix switch creation with pre-release compilers: It was a regression in `opam switch create <version>` when all compilers of that version are flagged with `avoid-version` ([#6563](https://github.com/ocaml/opam/issues/6563))
 * Performance improvement: ignore VCS directories of non-VCS repositories during `opam update` ([#6560](https://github.com/ocaml/opam/issues/6560))
 * Do not remove the generated patch file during updates when debug-mode is on ([#6575](https://github.com/ocaml/opam/pull/6575))
 
