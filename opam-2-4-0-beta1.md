@@ -7,6 +7,8 @@ authors: [
 date: "2025-06-18"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-4-0-beta1/16856)!_
+
 We are happy and relieved to announce the first beta release of opam 2.4.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.4.0-beta1).
