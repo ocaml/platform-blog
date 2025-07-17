@@ -120,3 +120,7 @@ and extending the tests.
 Please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
 
 We hope you will enjoy the new features of opam 2.4!
+
+
+---
+*Special thanks to the whole haematology department of the NHS Greater Glasgow for making this release – in the state that it is – possible. Fighting cancer is not easy but it is much more bearable with great people <3*
