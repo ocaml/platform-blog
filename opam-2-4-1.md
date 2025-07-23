@@ -1,0 +1,47 @@
+title: "opam 2.4.1 release"
+authors: [
+  "Raja Boujbel - OCamlPro" {"mailto:raja.boujbel(à)ocamlpro.com"}
+  "Kate Deplaix - Ahrefs" {"mailto:kit-ty-kate(à)exn.st"}
+  "David Allsopp - Tarides" {"mailto:david(à)tarides.com"}
+]
+date: "2025-07-23"
+--BODY--
+
+We are pleased to announce the release of opam 2.4.1 fixing a regression affecting some uses of `pin-depends`, and encourage all users to upgrade.
+Please read on for installation and upgrade instructions.
+
+## Try it!
+
+The upgrade instructions are unchanged:
+
+1. Either from binaries: run
+
+For Unix systems
+```
+bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh) --version 2.4.1"
+```
+or from PowerShell for Windows systems
+```
+Invoke-Expression "& { $(Invoke-RestMethod https://opam.ocaml.org/install.ps1) } -Version 2.4.1"
+```
+or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.4.1) to your PATH.
+
+2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.4.1#compiling-this-repo).
+
+
+You should then run:
+```
+opam init --reinit -ni
+```
+
+
+## Changes
+
+* Fix `pin-depends` being ignored with `opam install --deps-only` ([#6610](https://github.com/ocaml/opam/issues/6610))
+
+This release also extends the tests.
+
+
+Please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
+
+Happy hacking!
