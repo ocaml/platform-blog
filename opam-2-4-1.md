@@ -7,8 +7,17 @@ authors: [
 date: "2025-07-23"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-4-1/17002)!_
+
 We are pleased to announce the release of opam 2.4.1 fixing a regression affecting some uses of `pin-depends`, and encourage all users to upgrade.
 Please read on for installation and upgrade instructions.
+
+## Changes
+
+* Fix `pin-depends` being ignored with `opam install --deps-only` ([#6610](https://github.com/ocaml/opam/issues/6610))
+
+This release also extends the tests.
+
 
 ## Try it!
 
@@ -33,13 +42,6 @@ You should then run:
 ```
 opam init --reinit -ni
 ```
-
-
-## Changes
-
-* Fix `pin-depends` being ignored with `opam install --deps-only` ([#6610](https://github.com/ocaml/opam/issues/6610))
-
-This release also extends the tests.
 
 
 Please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
