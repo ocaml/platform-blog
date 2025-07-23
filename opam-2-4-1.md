@@ -37,7 +37,7 @@ opam init --reinit -ni
 
 ## Changes
 
-* Fix `pin-depends` being ignored on simulated pins (e.g. `opam install --deps-only`) ([#6610](https://github.com/ocaml/opam/issues/6610))
+* Fix `pin-depends` being ignored with `opam install --deps-only` ([#6610](https://github.com/ocaml/opam/issues/6610))
 
 This release also extends the tests.
 
