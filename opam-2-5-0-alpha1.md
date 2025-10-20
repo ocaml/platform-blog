@@ -41,7 +41,7 @@ opam init --reinit -ni
 
 ## Major changes: speedup opam update up to 70%
 
-Thanks to [@arozovyk](https://github.com/arozovyk), `opam update` now load opam
+Thanks to [@arozovyk](https://github.com/arozovyk), `opam update` now loads opam
 file incrementally, only parsing the files that have changed since the last
 time you called `opam update`. Before that, the repository was reading all
 repository files to load them. The performance improvement of this change thus
@@ -82,25 +82,25 @@ let us know if some adjustments are needed.
 
 ## Other noteworthy changes
 
-* Archives without checksums now fetch only once per call of `opam install` if their url match ([#5638](https://github.com/ocaml/opam/issues/5638))
+* Archives without checksums are now fetched only once per call of `opam install` if their url match ([#5638](https://github.com/ocaml/opam/issues/5638))
 
-* Do not ignore `extra-files` whose name is invalid and fail early in that case ([#6679](https://github.com/ocaml/opam/issues/6679))
+* `extra-files` whose name is invalid now make opam fail early instead of ignoring the error ([#6679](https://github.com/ocaml/opam/issues/6679))
 
-* Refine the specification of `pkg:opamfile` variable and update its computation accordingly ([#5346](https://github.com/ocaml/opam/issues/5346))
+* The specification of the `pkg:opamfile` variable was refined and its computation was updated accordingly ([#5346](https://github.com/ocaml/opam/issues/5346))
 
 * Make global option `default-invariant` modifiable ([#6730](https://github.com/ocaml/opam/issues/6730))
 
-* Check the status of git submodules when checking if a repository is up-to-date ([#6132](https://github.com/ocaml/opam/issues/6132))
+* opam now makes sure that git submodules are up-to-date when checking if a source git repository is up-to-date. This caused issues on subsequent package updates when git submodules originally failed to download or when the submodules got updated in some cases ([#6132](https://github.com/ocaml/opam/issues/6132))
 
 * Fix `opam install pkg --depext-only` exiting with code 0 instead of 20 (not found) ([#6488](https://github.com/ocaml/opam/issues/6488))
 
-* Fix parsing of `OPAMFETCH` (support quotes / proper POSIX shell syntax) ([#5490](https://github.com/ocaml/opam/issues/5490))
+* Fix the parsing of `OPAMFETCH` (support quotes / proper POSIX shell syntax) ([#5490](https://github.com/ocaml/opam/issues/5490))
 
 * Fix `opam remove --force` that was launching commands in current directory ([#6570](https://github.com/ocaml/opam/issues/6570))
 
 * Fix `opam lock`'s error message on pinned packages with no git remote by handling exit code 2 from `git remote get-url` ([#6422](https://github.com/ocaml/opam/issues/6422))
 
-* Remove `getconf` from the list of required runtime tools, which allows `opam init` to work out-of-the-box on Haiku ([#6632](https://github.com/ocaml/opam/issues/6632))
+* `getconf` was removed from the list of required runtime tools, which allows `opam init` to work out-of-the-box on Haiku ([#6632](https://github.com/ocaml/opam/issues/6632))
 
 * `./configure --enable-static` is now supported on OpenBSD. This mode is used in the prebuilt release binaries ([#6705](https://github.com/ocaml/opam/issues/6705), thanks to [@flumf](https://github.com/flumf))
 
