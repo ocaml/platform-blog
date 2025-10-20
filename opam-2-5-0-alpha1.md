@@ -60,15 +60,15 @@ reported similar issues without nuking their root directory and in that case we
 believe to have fixed the majority of issues.
 ([dbuenzli/topkg#142](https://github.com/dbuenzli/topkg/issues/142), [#4649](https://github.com/ocaml/opam/issues/4649), [#5761](https://github.com/ocaml/opam/issues/5761))
 
-On top of that we've also changed for `bash` users the default file to which
-`opam init` write the opam shell integration to be `.bashrc` instead of the
+On top of that, for `bash` users, we've also changed the default file to which
+`opam init` writes the opam shell integration to be `.bashrc` instead of the
 previous `.profile` or `.bash_profile`.  Doing it this way prevents some issues
 with existing `.profile` files that source the `.bashrc` file and causing an
 infinity loop when opam asks users to make sure to source their
 `.bashrc` file into their `.profile` file.
 ([#5819](https://github.com/ocaml/opam/issues/5819), [#4201](https://github.com/ocaml/opam/issues/4201), [#3990](https://github.com/ocaml/opam/issues/3990))
 
-We incite users to test this change for the editor integration, to spot any bug early.
+We invite users to test this change for the editor integration, to spot any bug early.
 
 ## Change to the install script
 
@@ -77,7 +77,7 @@ systems configured with `apparmor`.  This change is not strictly speaking
 related to this release as it is deployed for every versions.
 ([#5968](https://github.com/ocaml/opam/issues/5968))
 
-We incite `apparmor` users, especially Ubuntu ones, to test this feature and
+We invite `apparmor` users (enabled by default on Ubuntu), to test this feature and
 let us know if some adjustments are needed.
 
 ## Other noteworthy changes
