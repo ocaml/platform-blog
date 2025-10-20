@@ -41,7 +41,7 @@ opam init --reinit -ni
 
 ## Major changes: speedup opam update up to 70%
 
-Thanks to [@arozovyk](htpps://github.com/arozovyk), `opam update` now load opam
+Thanks to [@arozovyk](https://github.com/arozovyk), `opam update` now load opam
 file incrementally, only parsing the files that have changed since the last
 time you called `opam update`. Before that, the repository was reading all
 repository files to load them. The performance improvement of this change thus
