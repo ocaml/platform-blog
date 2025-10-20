@@ -43,8 +43,8 @@ opam init --reinit -ni
 
 Thanks to [@arozovyk](https://github.com/arozovyk), `opam update` now loads opam
 file incrementally, only parsing the files that have changed since the last
-time you called `opam update`. Before that, the repository was reading all
-repository files to load them. The performance improvement of this change thus
+time you called `opam update`. Before that, opam files in opam repositories were
+all loaded from the file system after an update if there was any change. The performance improvement of this change thus
 depends on how often you call `opam update` and what type of repository and OS
 you are using.
 ([#5824](https://github.com/ocaml/opam/issues/5824))
