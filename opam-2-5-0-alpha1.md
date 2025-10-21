@@ -7,6 +7,8 @@ authors: [
 date: "2025-10-20"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-5-0-alpha1/17411)!_
+
 We are happy to announce the first alpha release of opam 2.5.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.5.0-alpha1).
