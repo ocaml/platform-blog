@@ -88,7 +88,7 @@ let us know if some adjustments are needed.
 
 * The specification of the `pkg:opamfile` variable was refined and its computation was updated accordingly ([#5346](https://github.com/ocaml/opam/issues/5346))
 
-* Make global option `default-invariant` modifiable ([#6730](https://github.com/ocaml/opam/issues/6730))
+* The global option `default-invariant` is now modifiable. This is used as default value when creating a local switch ([#6730](https://github.com/ocaml/opam/issues/6730))
 
 * opam now makes sure that git submodules are up-to-date when checking if a source git repository is up-to-date. This caused issues on subsequent package updates when git submodules originally failed to download or when the submodules got updated in some cases ([#6132](https://github.com/ocaml/opam/issues/6132))
 
