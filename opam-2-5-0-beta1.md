@@ -40,9 +40,9 @@ opam init --reinit -ni
 
 ## Changes
 
-* Allow the macOS sandbox to write in the `/var/folders/` and `/var/db/mds/` directories as it is required by some of macOS core tools ([#4389](https://github.com/ocaml/opam/issues/4389), [#6460](https://github.com/ocaml/opam/issues/6460))
-* Stop `opam switch create --dry-run` from creating switch root directory by stopping the creation of build directory and writing the switch-state cache. *Thanks to @hannesm for this contribution.* ([#5918](https://github.com/ocaml/opam/issues/5918))
-* Stop cleaning the build directory when installing packages with `--dry-run`. Thanks to @hannesm for this contribution. ([#6540](https://github.com/ocaml/opam/pull/6540))
+* Allow the macOS sandbox to write in the `/var/folders/` and `/var/db/mds/` directories as it is required by some macOS core tools ([#4389](https://github.com/ocaml/opam/issues/4389), [#6460](https://github.com/ocaml/opam/issues/6460))
+* Stop `opam switch create --dry-run` from creating switch root directory by stopping the creation of build directory and writing the switch-state cache. *Thanks to [@hannesm](https://github.com/hannesm) for this contribution.* ([#5918](https://github.com/ocaml/opam/issues/5918))
+* Stop cleaning the build directory when installing packages with `--dry-run`. Thanks to [@hannesm](https://github.com/hannesm) for this contribution. ([#6540](https://github.com/ocaml/opam/pull/6540))
 
 ### Regression fixes from 2.5.0~alpha1
 
