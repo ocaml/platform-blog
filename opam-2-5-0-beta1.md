@@ -51,7 +51,7 @@ opam init --reinit -ni
 ### Build changes
 
 * opam no longer depends on `cmdliner`. This change allows cmdliner 2.0.0 to be co-installable with `opam-installer` and the `opam-client` library ([#6425](https://github.com/ocaml/opam/issues/6425))
-* Add the upcoming OCaml 5.5 (trunk) support when using dune's dev profile ([#6670](https://github.com/ocaml/opam/pull/6670))
+* Allow building opam using the upcoming OCaml 5.5 (trunk) when using dune's dev profile ([#6670](https://github.com/ocaml/opam/pull/6670))
 * Clean variables before calling `make` on different projects (e.g. downlodad-if-missing OCaml compiler) to avoid clashes with other variables set by these projects ([#6769](https://github.com/ocaml/opam/pull/6769))
 
 
