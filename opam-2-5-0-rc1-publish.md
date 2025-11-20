@@ -8,10 +8,10 @@ date: "2025-11-19"
 --BODY--
 
 We are happy to announce the first release candidate of opam 2.5.0,
-which boasts a grand zero (0) changes compared to the previous 2.5.0\~beta1.
+which boasts a grand total of zero (0) changes compared to 2.5.0\~beta1!
 
-We then take this oportunity to also announce the release of opam-publish 2.7.1,
-whose release note can be seen
+We also take this opportunity to announce the release of opam-publish 2.7.1,
+whose full release notes can be seen
 [here](https://github.com/ocaml-opam/opam-publish/releases/tag/2.7.1).
 
 ## Try the new opam 2.5.0 release candidate:
