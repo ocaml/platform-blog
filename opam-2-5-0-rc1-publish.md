@@ -7,6 +7,8 @@ authors: [
 date: "2025-11-19"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-5-0-rc1-opam-publish-2-7-1/17515)!_
+
 We are happy to announce the first release candidate of opam `2.5.0`,
 which boasts a grand total of zero (0) changes compared to `2.5.0~beta1`!
 
