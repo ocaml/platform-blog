@@ -34,6 +34,9 @@ You should then run:
 opam init --reinit -ni
 ```
 
+---
+**Note**: the following section will recap the various major changes in opam `2.5.0` for anyone who haven't already read the previous pre-release announcements. For those who did, note that nothing changed between `2.5.0~beta1` and the final `2.5.0`.
+
 ## Major changes: speedup opam update up to 70%
 
 Thanks to [@arozovyk](https://github.com/arozovyk), `opam update` now loads opam
