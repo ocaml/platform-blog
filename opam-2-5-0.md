@@ -7,6 +7,8 @@ authors: [
 date: "2025-11-26"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-5-0-is-out/17538)!_
+
 We're happy to announce the release of opam 2.5.0 and encourage all users to upgrade.
 Please read on for installation and upgrade instructions.
 
