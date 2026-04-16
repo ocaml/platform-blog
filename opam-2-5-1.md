@@ -14,7 +14,7 @@ We advise everyone to upgrade. Please read on for installation and upgrade instr
 
 ## Security fix
 
-**OSEC-2026-03**: Invalidate .install fields containing destination filepath trying to escape their scope. *Thanks to [@andrew](https://github.com/andrew) for reporting this issue.* ([#6897](https://github.com/ocaml/opam/pull/6897))
+**OSEC-2026-03**: Invalidate `.install` fields containing destination filepath trying to escape their scope. *Thanks to [@andrew](https://github.com/andrew) for reporting this issue.* ([#6897](https://github.com/ocaml/opam/pull/6897))
 
 Distributions maintainers that have not already done so, are invited to either upgrade their opam package to 2.5.1 or backport the fix. For any questions please send an email to the authors of this here blog post as listed above.
 
@@ -25,7 +25,7 @@ Distributions maintainers that have not already done so, are invited to either u
 
 * Restore the distribution detection on Gentoo. ([#6887](https://github.com/ocaml/opam/issues/6887))
 
-* Add support for single-quoted values of the /etc/os-release file. ([#6887](https://github.com/ocaml/opam/issues/6887))
+* Add support for single-quoted values of the `/etc/os-release` file. ([#6887](https://github.com/ocaml/opam/issues/6887))
 
 * Fix rare potential GC corruptions. *Thanks to [@avsm](https://github.com/avsm) for the contribution and [@andrew](https://github.com/andrew) for the report.* ([#6882](https://github.com/ocaml/opam/pull/6882), [#6880](https://github.com/ocaml/opam/issues/6880))
 
