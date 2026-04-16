@@ -7,7 +7,7 @@ authors: [
 date: "2026-04-16"
 --BODY--
 
-We are pleased to announce the release of opam 2.5.1 fixing a security fix ([OSEC-2026-03](https://github.com/ocaml/security-advisories/blob/main/advisories/2026/OSEC-2026-03.md)) and other minor things.
+We are pleased to announce the release of opam 2.5.1 fixing a security issue ([OSEC-2026-03](https://github.com/ocaml/security-advisories/blob/main/advisories/2026/OSEC-2026-03.md)) and other minor things.
 
 We advise everyone to upgrade. Please read on for installation and upgrade instructions.
 
@@ -27,7 +27,7 @@ Distributions maintainers that have not already done so, are invited to either u
 
 * Add support for single-quoted values of the /etc/os-release file. ([#6887](https://github.com/ocaml/opam/issues/6887))
 
-* Fix rare potential GC corruptions. *Thanks to [@avsm](https://github.com/avsm) for the contribution and [@andrew](https://github.com/andrew) for the report.* ([#6882](https://github.com/ocaml/opam/pull/6882), [#6880](https://github.com/ocaml/opam/6880))
+* Fix rare potential GC corruptions. *Thanks to [@avsm](https://github.com/avsm) for the contribution and [@andrew](https://github.com/andrew) for the report.* ([#6882](https://github.com/ocaml/opam/pull/6882), [#6880](https://github.com/ocaml/opam/issues/6880))
 
 
 ## Try it!
