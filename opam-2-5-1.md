@@ -7,6 +7,8 @@ authors: [
 date: "2026-04-16"
 --BODY--
 
+_Feedback on this post is welcomed on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-5-1/17997)!_
+
 We are pleased to announce the release of opam 2.5.1 fixing a security issue ([OSEC-2026-03](https://github.com/ocaml/security-advisories/blob/main/advisories/2026/OSEC-2026-03.md)) and other minor things.
 
 We advise everyone to upgrade. Please read on for installation and upgrade instructions.
