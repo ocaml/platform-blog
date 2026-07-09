@@ -23,7 +23,7 @@ Distributions maintainers that have not already done so, are invited to either u
 
 ## Other changes
 
-* Re-allow `..` in `.install` files, partially reverting 2.5.1's [#6879](https://github.com/ocaml/opam/pull/6979) ([#7008](https://github.com/ocaml/opam/pull/7008), [ocaml/dune#14393](https://github.com/ocaml/dune/issues/14393))
+* Re-allow `..` in `.install` files, partially reverting 2.5.1's [#6879](https://github.com/ocaml/opam/pull/6879) ([#7009](https://github.com/ocaml/opam/pull/7009), [ocaml/dune#14393](https://github.com/ocaml/dune/issues/14393))
 
 
 ## Try it!
