@@ -56,8 +56,7 @@ When installing a package, opam doesn't exactly go easy on disk usage. For peopl
 While no-one really can get rid of this type of error completely, this release comes with some quite substential improvements to the disk space used during installs.
 
 In particular the `build` directory is now deleted as soon as possible during a build instead of waiting until the end. ([#6906](https://github.com/ocaml/opam/pull/6906), [#5884](https://github.com/ocaml/opam/issues/5884)).
-We also used to cache both the extracted sources and the original archive of packages. However this is redundant and inefficient on some file-systems, thus opam now doesn't cache the extracted sources anymore.
-([#6440](https://github.com/ocaml/opam/pull/6440), [#4056](https://github.com/ocaml/opam/issues/4056), [#5448](https://github.com/ocaml/opam/issues/5448)).
+We also used to cache both the extracted sources and the original archive of packages. However this is redundant and inefficient on some file-systems, thus opam no longer keep the extracted sources when installing the package ([#6440](https://github.com/ocaml/opam/pull/6440), [#4056](https://github.com/ocaml/opam/issues/4056), [#5448](https://github.com/ocaml/opam/issues/5448)).
 
 While the disk usage used by opam can be reduced over time while simply reinstalling packages, you can liberate some free GB in one go using `opam clean --all-switches`.
 
@@ -100,6 +99,8 @@ than the default HTTP repository so this is less of an issue. However we will st
 
 * Fix package installation during `opam pin add <url to archive>` ([#7012](https://github.com/ocaml/opam/pull/7012), [#6999](https://github.com/ocaml/opam/issues/6999)). *Thanks to [@zoggy](https://codeberg.org/zoggy) for this contribution.*
 
+* Fix the filename check used when parsing arguments to allow / to be recognised as a directory separator on Windows ([#6981](https://github.com/ocaml/opam/pull/6981), [#6940](https://github.com/ocaml/opam/issues/6940))
+
 * Make `git` calls more deterministic regardless of the global or system config ([#6992](https://github.com/ocaml/opam/pull/6992), [#6937](https://github.com/ocaml/opam/issues/6937))
 
 * Read full lines when asking for user input when `TERM=dumb` (e.g. emacs' `M-x shell`) ([#6829](https://github.com/ocaml/opam/pull/6829), [#6828](https://github.com/ocaml/opam/issues/6828). *Thanks to [@arvidj](https://github.com/arvidj) for this contribution.*
@@ -113,3 +114,6 @@ This release also includes a handful of improvement the documentation and more t
 Please report any issues to [the bug-tracker](https://github.com/ocaml/opam/issues).
 
 Happy hacking!
+
+---
+**Special thanks to the Haematology department and Bone Marrow Transplant Unit of the NHS Greater Glasgow for making this release possible <3**
