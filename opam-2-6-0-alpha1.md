@@ -82,17 +82,17 @@ than the default HTTP repository so this is less of an issue. However we will st
 
 * Reorder the list of actions by increased priority ([#6864](https://github.com/ocaml/opam/pull/6864), [#6863](https://github.com/ocaml/opam/issues/6863))
 
-* Improved depexts handling by caching system package availability during `opam update`, avoiding redundant system checks at install time ([#6489](https://github.com/ocaml/opam/pull/), [#6461](https://github.com/ocaml/opam/issues/))
+* Improved depexts handling by caching system package availability during `opam update`, avoiding redundant system checks at install time ([#6489](https://github.com/ocaml/opam/pull/6489), [#6461](https://github.com/ocaml/opam/issues/6461))
 
-* Allow detection of installed system packages through their virtual names on ALT Linux, RHEL-based and SUSE-based distributions ([#6431](https://github.com/ocaml/opam/pull/), [#6426](https://github.com/ocaml/opam/issues/))
+* Allow detection of installed system packages through their virtual names on ALT Linux, RHEL-based and SUSE-based distributions ([#6431](https://github.com/ocaml/opam/pull/6431), [#6426](https://github.com/ocaml/opam/issues/6426))
 
 * Added `--ignore-available-on` option to allow ignoring the `available:` field of certain packages ([#6836](https://github.com/ocaml/opam/pull/6836), [#5283](https://github.com/ocaml/opam/issues/5283)). *Thanks once-again to [@WardBrian](https://github.com/WardBrian) for this contribution.*
 
 * Fix an opam 2.5 regression where `opam pin list` failed abruptly when the source of the pinned package doesn't exist ([#6910](https://github.com/ocaml/opam/pull/6910), [#6597](https://github.com/ocaml/opam/pull/6597))
 
-* `opam update` now supports updating a repository that changed a file to a directory of the same name and vice versa ([#6915](https://github.com/ocaml/opam/pull/), [#3830](https://github.com/ocaml/opam/issues/))
+* `opam update` now supports updating a repository that changed a file to a directory of the same name and vice versa ([#6915](https://github.com/ocaml/opam/pull/6915), [#3830](https://github.com/ocaml/opam/issues/3830))
 
-* Do not fail on directories named `opam` when scanning the `packages` directory of a repository during `opam repo add` or `opam init` (worked on subsequent `opam update`) ([#6941](https://github.com/ocaml/opam/pull/6941))
+* Do not fail on directories named `opam` when scanning the `packages` directory of a repository during `opam repo add` or `opam init` (worked on subsequent `opam update`) ([#6995](https://github.com/ocaml/opam/pull/6995))
 
 * Fix "undefined variable" error when a lock file filter contains an undefined variables: fail gracefully with strict mode, continue and default the variable to false otherwise ([#6947](https://github.com/ocaml/opam/pull/6947), [#6946](https://github.com/ocaml/opam/issues/6946))
 
