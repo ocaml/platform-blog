@@ -72,6 +72,7 @@ Instead we now use the `ocaml-tar` library to read the file in-memory, thus only
 
 While this only helps HTTP repositories (e.g. the default opam-repository), other types of repositories are usually either smaller (local repositories) or less impacted (VCS repositories) and overall less used
 than the default HTTP repository so this is less of an issue. However we will still look into it in the future.
+You can enable this mechanism for all non-VCS repositories by setting the environment variable `OPAMREPOSITORYTARRING=1`, however this is not as efficient as for HTTP, so it may or may not be worth doing depending on your file-system.
 
 ([#6625](https://github.com/ocaml/opam/pull/6625), [#5346](https://github.com/ocaml/opam/issues/5346), [#5741](https://github.com/ocaml/opam/issues/5741), [#5648](https://github.com/ocaml/opam/issues/5648), [#5484](https://github.com/ocaml/opam/issues/5484), [#5559](https://github.com/ocaml/opam/issues/5559), [#3050](https://github.com/ocaml/opam/issues/3050), [#6974](https://github.com/ocaml/opam/issues/6974)).
 
@@ -99,7 +100,7 @@ than the default HTTP repository so this is less of an issue. However we will st
 
 * Fix package installation during `opam pin add <url to archive>` ([#7012](https://github.com/ocaml/opam/pull/7012), [#6999](https://github.com/ocaml/opam/issues/6999)). *Thanks to [@zoggy](https://codeberg.org/zoggy) for this contribution.*
 
-* Fix the filename check used when parsing arguments to allow / to be recognised as a directory separator on Windows ([#6981](https://github.com/ocaml/opam/pull/6981), [#6940](https://github.com/ocaml/opam/issues/6940))
+* Fix the filename check used when parsing arguments to allow `/` to be recognised as a directory separator on Windows ([#6981](https://github.com/ocaml/opam/pull/6981), [#6940](https://github.com/ocaml/opam/issues/6940))
 
 * Make `git` calls more deterministic regardless of the global or system config ([#6992](https://github.com/ocaml/opam/pull/6992), [#6937](https://github.com/ocaml/opam/issues/6937))
 
