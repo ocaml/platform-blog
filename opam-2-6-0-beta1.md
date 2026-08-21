@@ -48,7 +48,7 @@ opam init --reinit -ni
 
 * Safe mode doesn't reset debuglevel to 0 anymore. Consider updating your scripts to discard `stderr` or add `--debug-level=0` if your script isn't resistant to output on stderr ([#7000](https://github.com/ocaml/opam/issues/7000))
 
-* opam now disable git gc/maintenance on repositories it maintains ([#7031](https://github.com/ocaml/opam/issues/7031))
+* To avoid git underlying maintenance operation from interfering with opam (possible race condition), opam now disable git gc/maintenance on repositories it maintains ([#7031](https://github.com/ocaml/opam/issues/7031))
 
 * opam now respects safe mode when encountering an outdated cache file ([#7066](https://github.com/ocaml/opam/issues/7066))
 
