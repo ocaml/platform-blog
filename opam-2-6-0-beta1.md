@@ -46,7 +46,7 @@ opam init --reinit -ni
 
 * `opam init --reinit` now regenerate the list of valid switches, fix switch internal data (cache, config, packages) ([#7066](https://github.com/ocaml/opam/issues/7066))
 
-* Safe mode doen't reset debuglevel to 0 anymore ([#7000](https://github.com/ocaml/opam/issues/7000))
+* Safe mode doesn't reset debuglevel to 0 anymore. Consider updating your scripts to discard `stderr` or add `--debug-level=0` if your script isn't resistant to output on stderr ([#7000](https://github.com/ocaml/opam/issues/7000))
 
 * opam now disable git gc/maintenance on repositories it maintains ([#7031](https://github.com/ocaml/opam/issues/7031))
 
