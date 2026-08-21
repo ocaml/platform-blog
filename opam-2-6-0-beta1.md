@@ -42,15 +42,15 @@ opam init --reinit -ni
 
 ## Changes compared to 2.6.0~alpha1
 
-* `opam init --reinit` will now stop asking to retry the command when upgrading from a 2.1 root (#7057)
+* `opam init --reinit` will now stop asking to retry the command when upgrading from a 2.1 root ([#7057](https://github.com/ocaml/opam/issues/7057))
 
-* `opam init --reinit` now regenerate the list of valid switches, fix switch internal data (cache, config, packages) (#7066)
+* `opam init --reinit` now regenerate the list of valid switches, fix switch internal data (cache, config, packages) ([#7066](https://github.com/ocaml/opam/issues/7066))
 
-* Safe mode doen't reset debuglevel to 0 anymore (#7000)
+* Safe mode doen't reset debuglevel to 0 anymore ([#7000](https://github.com/ocaml/opam/issues/7000))
 
-* opam now disable git gc/maintenance on repositories it maintains (#7031)
+* opam now disable git gc/maintenance on repositories it maintains ([#7031](https://github.com/ocaml/opam/issues/7031))
 
-* opam now respects safe mode when encountering an outdated cache file (#7066)
+* opam now respects safe mode when encountering an outdated cache file ([#7066](https://github.com/ocaml/opam/issues/7066))
 
 
 Various performance and other improvements were made and bugs were fixed.
