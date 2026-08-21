@@ -53,7 +53,7 @@ opam init --reinit -ni
 * opam now respects safe mode when encountering an outdated cache file ([#7066](https://github.com/ocaml/opam/issues/7066))
 
 
-Various performance and other improvements were made and bugs were fixed.
+Some other internal improvements were made.
 API changes are also denoted in the release note linked above.
 This release also includes a handful of improvement and extensions to our testsuite.
 
