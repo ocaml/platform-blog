@@ -8,6 +8,8 @@ authors: [
 date: "2026-07-21"
 --BODY--
 
+_Feedback on this post is welcome on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-6-0-alpha1/18372/3)!_
+
 We are happy to announce the first beta release of opam 2.6.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.6.0-beta1).
