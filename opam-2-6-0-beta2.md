@@ -42,9 +42,9 @@ opam init --reinit -ni
 
 ## Changes compared to 2.6.0~beta1
 
-* Fix a performance regression where opam project trees were scanned for nothing, when pinning them (#7098)
+* Fix a performance regression where opam project trees were scanned for nothing, when pinning them ([#7098](https://github.com/ocaml/opam/issues/7098))
 
-* The Windows binary generated during our release process is now reproducible (#7097 #7115)
+* The Windows binary generated during our release process is now reproducible ([#7097](https://github.com/ocaml/opam/issues/7097), [#7115](https://github.com/ocaml/opam/issues/7115))
 
 
 Some other internal improvements were made.
