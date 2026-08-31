@@ -5,7 +5,7 @@ authors: [
   "Nathan Rebours - OCamlPro" {"mailto:nathan.rebours(à)ocamlpro.com"}
   "David Allsopp - Jane Street" {"mailto:dallsopp(à)janestreet.com"}
 ]
-date: "2026-07-21"
+date: "2026-08-21"
 --BODY--
 
 _Feedback on this post is welcome on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-6-0-alpha1/18372/3)!_
