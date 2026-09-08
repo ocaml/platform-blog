@@ -8,6 +8,8 @@ authors: [
 date: "2026-09-08"
 --BODY--
 
+_Feedback on this post is welcome on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-6-0-alpha1/18372/5)!_
+
 We are happy to announce the first release candidate of opam 2.6.0.
 You can view the full list of changes in the
 [release note](https://github.com/ocaml/opam/releases/tag/2.6.0-rc1).
@@ -21,15 +23,15 @@ The upgrade instructions are unchanged:
 
 1. Either from binaries: run
 
-   For Unix systems
-   ```
-   bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh) --version 2.6.0~rc1"
-   ```
-   or from PowerShell for Windows systems
-   ```
-   Invoke-Expression "& { $(Invoke-RestMethod https://opam.ocaml.org/install.ps1) } -Version 2.6.0~rc1"
-   ```
-   or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.6.0-rc1) to your PATH.
+For Unix systems
+```
+bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh) --version 2.6.0~rc1"
+```
+or from PowerShell for Windows systems
+```
+Invoke-Expression "& { $(Invoke-RestMethod https://opam.ocaml.org/install.ps1) } -Version 2.6.0~rc1"
+```
+or download manually from [the Github "Releases" page](https://github.com/ocaml/opam/releases/tag/2.6.0-rc1) to your PATH.
 
 2. Or from source, manually: see the instructions in the [README](https://github.com/ocaml/opam/tree/2.6.0-rc1#compiling-this-repo).
 
