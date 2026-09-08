@@ -44,7 +44,7 @@ opam init --reinit -ni
 
 * Fix a 2.6 performance regression where tar.gz repositories were read entirely twice per package installed ([#7131](https://github.com/ocaml/opam/issues/7131))
 
-* The release archive and opam's "lockfile" (used on request when building the opam source code) now contain most of opam's dependencies at their latest version ([#7116](https://github.com/ocaml/opam/issues/7116))
+* The release archive and opam's "lockfile" (used on request when building the opam source code from scratch) now contain most of opam's dependencies at their latest version ([#7116](https://github.com/ocaml/opam/issues/7116))
 
 
 Some other internal improvements were made.
