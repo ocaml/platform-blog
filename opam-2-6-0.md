@@ -8,6 +8,8 @@ authors: [
 date: "2026-09-16"
 --BODY--
 
+_Feedback on this post is welcome on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-6-0-is-out/18536)!_
+
 We're happy to announce the release of opam 2.6.0 and encourage all users to upgrade.
 Please read on for installation and upgrade instructions.
 
