@@ -22,7 +22,7 @@ We advise everyone to upgrade. Please read on for installation and upgrade instr
 
 * Add support for using git repositories owned by another local user (common in docker containers) ([#6963](https://github.com/ocaml/opam/issues/6963))
 
-* Use `/dev/null` on both Unix and Windows when setting `GIT_CONFIG_*` (works around a bug in Git-for-Windows 2.56.0.windows.1) ([#7085](https://github.com/ocaml/opam/issues/7085))
+* Since 2.6.0, to make git calls more deterministic, opam doesn't take into account the user git config. In 2.6.1, it now uses `/dev/null` on both Unix and Windows when setting `GIT_CONFIG_*` instead of `NUL` on Windows to work around a bug in Git-for-Windows 2.56.0.windows.1 ([#7085](https://github.com/ocaml/opam/issues/7085))
 
 
 ## Try it!
