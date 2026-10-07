@@ -8,6 +8,8 @@ authors: [
 date: "2026-10-07"
 --BODY--
 
+_Feedback on this post is welcome on [Discuss](https://discuss.ocaml.org/t/ann-opam-2-6-1/18597)!_
+
 We are pleased to announce the release of opam 2.6.1 fixing a couple of regressions and minor annoyances.
 
 We advise everyone to upgrade. Please read on for installation and upgrade instructions.
