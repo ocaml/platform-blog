@@ -15,14 +15,14 @@ We advise everyone to upgrade. Please read on for installation and upgrade instr
 
 ## Regression fixes
 
-* Fix the depexts installation on `opam install --deps` when the system packages already exist in a repository (#7153)
+* Fix the depexts installation on `opam install --deps` when the system packages already exist in a repository ([#7153](https://github.com/ocaml/opam/issues/7153))
 
 
 ## Improvements
 
-* Add support for using git repositories owned by another local user (common in docker containers) (#6963)
+* Add support for using git repositories owned by another local user (common in docker containers) ([#6963](https://github.com/ocaml/opam/issues/6963))
 
-* Use `/dev/null` on both Unix and Windows when setting `GIT_CONFIG_*` (works around a bug in Git-for-Windows 2.56.0.windows.1) (#7085)
+* Use `/dev/null` on both Unix and Windows when setting `GIT_CONFIG_*` (works around a bug in Git-for-Windows 2.56.0.windows.1) ([#7085](https://github.com/ocaml/opam/issues/7085))
 
 
 ## Try it!
