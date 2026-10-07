@@ -15,7 +15,7 @@ We advise everyone to upgrade. Please read on for installation and upgrade instr
 
 ## Regression fixes
 
-* Fix the depexts installation on `opam install --deps` when the system packages already exist in a repository ([#7153](https://github.com/ocaml/opam/issues/7153))
+* Fix the depexts installation on `opam install --deps-only` when the system packages already exist in a repository ([#7153](https://github.com/ocaml/opam/issues/7153))
 
 
 ## Improvements
